@@ -16,7 +16,7 @@ in
 		];
 	};
 
-#	imports = [ inputs.ags.homeManagerModules.default ];
+#	imports = [ inputs.ags.homeManagerModules.default ]; 
 	imports = [
 		inputs.walker.homeManagerModules.default
 	];
@@ -94,6 +94,9 @@ in
 		"hypr/hyprland.conf".source = link "config-files/hyprland.conf";
 		"hypr/hyprpaper.conf".source = link "config-files/hyprpaper.conf";
 		"hypr/wallpaper.png".source = link "config-files/wallpaper.png";
+		"hypr/hyprlock.conf".source = link "config-files/hyprlock.conf";
+		"hypr/profile.webp".source = link "config-files/profile.webp";
+		"hypr/hypridle.conf".source = link "config-files/hypridle.conf";
 	};
 
 #    programs.ags = {

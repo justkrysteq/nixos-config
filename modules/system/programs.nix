@@ -19,6 +19,12 @@
 		jq # needed for a bind to switch between floating and tiled windows in hyprland
 		hyprpaper
 		hyprpicker
+		wireplumber # audio control
+		brightnessctl
+		playerctl
+		hyprpolkitagent
+		signal-desktop
+		prismlauncher
 	];
 
 	programs = {

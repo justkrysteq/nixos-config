@@ -14,9 +14,9 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		# App launcher
+		# App launcher (walker is undergoing a rewrite so it may not work)
 		walker = {
-			url = "github:abenz1267/walker";
+			url = "github:abenz1267/walker/0.13.26";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
