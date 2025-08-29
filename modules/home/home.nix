@@ -24,11 +24,14 @@ in
 	programs = {
 		neovim = {
 			enable = true;
-#			defaultEditor = true;
+			defaultEditor = true;
 			plugins = with pkgs.vimPlugins; [
 				gruvbox-material
 				nerdtree
 			];
+
+			viAlias = true;
+			vimAlias = true;
 		};
 
 
