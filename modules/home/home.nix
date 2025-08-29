@@ -16,8 +16,8 @@ in
 		];
 	};
 
-#	imports = [ inputs.ags.homeManagerModules.default ]; 
 	imports = [
+#		inputs.ags.homeManagerModules.default
 		inputs.walker.homeManagerModules.default
 	];
 
@@ -83,6 +83,18 @@ in
 		};
 	};
 
+#	ags = {
+#		enable = true;
+
+		# If you want home manager to manage the config
+#		configDir = ../ags;
+
+#		extraPackages = with pkgs; [
+#			inputs.astal.packages.${pkgs.system}.battery
+#			inputs.astal.packages.${pkgs.system}.network
+#		];
+#	};
+
 #	wayland.windowManager.hyprland = {
 #		enable = true;
 #		settings = {
@@ -96,7 +108,20 @@ in
 		"hypr/wallpaper.png".source = link "config-files/wallpaper.png";
 		"hypr/hyprlock.conf".source = link "config-files/hyprlock.conf";
 		"hypr/profile.webp".source = link "config-files/profile.webp";
+		"hypr/profile.png".source = link "config-files/profile.png";
+		"hypr/cat.png".source = link "config-files/cat.png";
+		"hypr/background.png".source = link "config-files/background.png";
 		"hypr/hypridle.conf".source = link "config-files/hypridle.conf";
+		
+		"scripts/lockscreen/weekday.sh".source = link "scripts/lockscreen/weekday.sh";
+		"scripts/lockscreen/network-status.sh".source = link "scripts/lockscreen/network-status.sh";
+		"scripts/lockscreen/battery-status.sh".source = link "scripts/lockscreen/battery-status.sh";
+	};
+	
+	# Fonts
+	xdg.dataFile = {
+		"fonts/Anurati-Regular.otf".source = link "fonts/Anurati-Regular.otf";
+		"fonts/OdinRounded-Regular.otf".source = link "fonts/OdinRounded-Regular.otf";
 	};
 
 #    programs.ags = {

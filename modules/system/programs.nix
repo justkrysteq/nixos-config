@@ -24,7 +24,9 @@
 		playerctl
 		hyprpolkitagent
 		signal-desktop
-		prismlauncher
+		wirelesstools # needed for iwconfig to return wifi signal quicker
+		swaynotificationcenter
+		libnotify # for notify-send
 	];
 
 	programs = {
@@ -79,6 +81,16 @@
 				];
 				theme = "gentoo";
 			};
+
+			shellInit = ''
+				function y() {
+					local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+					yazi "$@" --cwd-file="$tmp"
+					IFS= read -r -d $'\0' cwd < "$tmp"
+					[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+					rm -f -- "$tmp"
+				}
+			'';
 		};
 
 		hyprland = {
@@ -89,6 +101,11 @@
 		};
 
 		hyprlock.enable = true;
+
+		# https://wiki.nixos.org/wiki/Yazi
+		# https://yazi-rs.github.io/docs/quick-start/
+		# https://yazi-rs.github.io/docs/tips#selected-files-to-clipboard
+		yazi.enable = true;
 	};
 
 	services.hypridle.enable = true;
