@@ -5,32 +5,33 @@
 	nixpkgs.config.allowUnfree = true;
 
 	environment.systemPackages = with pkgs; [
+
+		# Browsers
 		brave
-		vesktop
-		kdePackages.kate
-		kdePackages.kcalc
-		kdePackages.kolourpaint
+
+		# Apps
+		vesktop signal-desktop kdePackages.kate kdePackages.kcalc obsidian
+
+		# CLI Tools
 		kitty
-		waybar
 		eza # a modern replacement for ls
 		wev # wayland event viewer
-#		deepin.deepin-calculator
-#		nwg-look # GTK settings editor
 		jq # needed for a bind to switch between floating and tiled windows in hyprland
-		hyprpaper
-		hyprpicker
-		wireplumber # audio control
 		brightnessctl
 		playerctl
-		hyprpolkitagent
-		signal-desktop
+		wireplumber # audio control
 		wirelesstools # needed for iwconfig to return wifi signal quicker
-		swaynotificationcenter
-		libnotify # for notify-send
+		wl-clipboard
+
+		# DE/Rice
+		waybar hyprpaper hyprpicker hyprpolkitagent
+		swaynotificationcenter libnotify # for notify-send
 	];
 
 	programs = {
 		steam.enable = true;
+
+		obs-studio.enable = true;
 
 		git = {
 			enable = true;
@@ -40,32 +41,17 @@
 				init.defaultBranch = "main";
 			};
 		};
+		
+#		neovim = {
+#			enable = true;
+#			defaultEditor = true;
+#		};
 
 		zsh = {
 			enable = true;
 			enableCompletion = true;
 			autosuggestions.enable = true;
 			syntaxHighlighting.enable = true;
-
-			shellAliases = {
-				ff = "fastfetch";
-				la = "eza -a";
-				ls = "eza";
-				lsdir = "eza -D";
-				lsfile = "eza -f";
-				tree = "eza --tree";
-				ll = "eza -l --total-size";
-				lla = "eza -la --total-size";
-				rebuild = "sudo nixos-rebuild switch";
-				lsgen = "nixos-rebuild list-generations";
-				n = "nvim";
-				sn = "sudo nvim";
-				ns = "sudo nvim";
-				s = "sudo";
-				hms = "home-manager switch";
-				clean = "sudo nix-collect-garbage -d";
-				update = "cd /etc/nixos; sudo nix flake update; sudo nixos-rebuild switch";
-			};
 
 			histSize = 5000;
 			histFile = "$HOME/.zsh_history";

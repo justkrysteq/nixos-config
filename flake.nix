@@ -14,14 +14,20 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		# App launcher (walker is undergoing a rewrite so it may not work)
 		walker = {
-			url = "github:abenz1267/walker/0.13.26";
+			url = "github:abenz1267/walker";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-#		ags.url = "github:Aylur/ags";
-#		astal.url = "github:Aylur/astal";
+		ags.url = "github:Aylur/ags";
+		astal.url = "github:Aylur/astal";
+
+		nixCats = {
+#			url = "path:/home/krysteq/Documents/tesciu-nixCats";
+			url = "github:BirdeeHub/nixCats-nvim";
+#			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 	};
 
 	outputs = { self, nixpkgs, ... } @ inputs:

@@ -31,9 +31,15 @@
 		};
 	};
 
-	environment.sessionVariables = {
-		# Hint electron apps to use wayland
-		NIXOS_OZONE_WL = "1";
+	environment = {
+		variables = {
+			EDITOR = "nvim";
+		};
+
+		sessionVariables = {
+			# Hint electron apps to use wayland
+			NIXOS_OZONE_WL = "1";
+		};
 	};
 
 	# Default values from NixOS 25.05
