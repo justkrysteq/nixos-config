@@ -1,36 +1,26 @@
-{ pkgs, inputs, config, flake-dir, ... }:
+{ pkgs, inputs, config, flake-dir, username, ... }:
 let
 	link = f: config.lib.file.mkOutOfStoreSymlink "${flake-dir}/modules/home/${f}";
 in
 {
 	home = {
-		username = "krysteq";
-		homeDirectory = "/home/krysteq";
+		username = "${username}";
+		homeDirectory = "/home/${username}";
 		stateVersion = "25.05";
 
 		packages = with pkgs; [
 			nvtopPackages.intel
+			# inputs.astal.packages.${pkgs.system}.default
+			# inputs.astal.packages.${pkgs.system}.notifd
 		];
 	};
 
 	imports = [
 		inputs.ags.homeManagerModules.default
-		inputs.walker.homeManagerModules.default
+		# inputs.walker.homeManagerModules.default
 	];
 
 	programs = {
-#		neovim = {
-#			enable = true;
-#			defaultEditor = true;
-#			plugins = with pkgs.vimPlugins; [
-#				gruvbox-material
-#				nerdtree
-#			];
-
-#			viAlias = true;
-#			vimAlias = true;
-#		};
-
 		btop = {
 			enable = true;
 #			themes = "";
@@ -42,9 +32,9 @@ in
 #			settings = "";
 		};
 
-		walker = {
-			enable = true;
-			runAsService = true;
+		# walker = {
+		# 	enable = true;
+		# 	runAsService = true;
 
 #			config = {
 #				app_launch_prefix = "";
@@ -88,7 +78,7 @@ in
 #					color: #dcd7b1;
 #				}
 #			'';
-		};
+		# };
 
 		ags = {
 			enable = true;
@@ -96,9 +86,17 @@ in
 			# If you want home manager to manage the config
 #			configDir = ../ags;
 
-			extraPackages = with pkgs; [
+			extraPackages = [
 				inputs.astal.packages.${pkgs.system}.battery
+				inputs.astal.packages.${pkgs.system}.hyprland
 				inputs.astal.packages.${pkgs.system}.network
+				inputs.astal.packages.${pkgs.system}.notifd
+
+				inputs.astal.packages.${pkgs.system}.powerprofiles
+				inputs.astal.packages.${pkgs.system}.wireplumber
+				inputs.astal.packages.${pkgs.system}.tray
+				inputs.astal.packages.${pkgs.system}.mpris
+				inputs.astal.packages.${pkgs.system}.apps
 			];
 		};
 	};

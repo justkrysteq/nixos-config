@@ -2,7 +2,7 @@
 
 {
 	imports = [
-		./bootloader.nix
+		./boot.nix
 		./fonts.nix
 		./kernel.nix
 		./locale.nix
@@ -12,5 +12,6 @@
 		./services.nix
 		./shell-aliases.nix
 		./users.nix
+		./virtualisation.nix
 	];
 }

@@ -1,4 +1,4 @@
-{ inputs, flake-dir, ... }:
+{ inputs, flake-dir, username, ... }:
 
 {
 	imports = [
@@ -11,9 +11,9 @@
 	console.keyMap = "pl2";
 
 	home-manager = {
-		extraSpecialArgs = { inherit inputs flake-dir; };
+		extraSpecialArgs = { inherit inputs flake-dir username; };
 		users = {
-			"krysteq" = import ./modules/home/home.nix;
+			${username} = import ./modules/home/home.nix;
 		};
 	};
 
@@ -28,6 +28,14 @@
 		settings = {
 			# Enable flakes
 			experimental-features = [ "nix-command" "flakes" ];
+
+			# Cachix
+			substituters = [
+				"https://walker.cachix.org"
+			];
+			trusted-public-keys = [
+				"walker.cachix.org-1:fG8q+uAaMqhsMxWjwvk0IMb4mFPFLqHjuvfwQxE4oJM="
+			];
 		};
 	};
 

@@ -9,34 +9,20 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		hyprland = {
-			url = "github:hyprwm/Hyprland";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
-		walker = {
-			url = "github:abenz1267/walker";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
 		ags.url = "github:Aylur/ags";
 		astal.url = "github:Aylur/astal";
 
-		nixCats = {
-#			url = "path:/home/krysteq/Documents/tesciu-nixCats";
-			url = "github:BirdeeHub/nixCats-nvim";
-#			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
+		nixCats.url = "github:BirdeeHub/nixCats-nvim";
 	};
 
 	outputs = { self, nixpkgs, ... } @ inputs:
 	let
 		flake-dir = "/etc/nixos";
+		username = "krysteq";
 	in
 		{
 			nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-				specialArgs = { inherit inputs flake-dir; };
+				specialArgs = { inherit inputs flake-dir username; };
 				modules = [
 					./configuration.nix
 					inputs.home-manager.nixosModules.default

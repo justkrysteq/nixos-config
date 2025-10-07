@@ -22,10 +22,17 @@
 		wireplumber # audio control
 		wirelesstools # needed for iwconfig to return wifi signal quicker
 		wl-clipboard
+		cdrkit # for genisoimage
+		# gdb # debugger do c
+
+		# Dev
+		nodePackages.nodejs nodePackages.typescript
 
 		# DE/Rice
-		waybar hyprpaper hyprpicker hyprpolkitagent
-		swaynotificationcenter libnotify # for notify-send
+		hyprpaper hyprpicker hyprpolkitagent # Hyprland utils
+		hyprshot swappy # Screenshots
+		swaynotificationcenter libnotify # for notify-send # Notifiactions
+		walker # App Launcher
 	];
 
 	programs = {
@@ -82,8 +89,6 @@
 		hyprland = {
 			enable = true;
 			xwayland.enable = true;
-			package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-			portalPackage = inputs.hyprland.packages."${pkgs.system}".xdg-desktop-portal-hyprland;
 		};
 
 		hyprlock.enable = true;

@@ -20,5 +20,6 @@
 		zn = "cd ${flake-dir}";
 		clean = "sudo nix-collect-garbage -d";
 		update = "zn; s nix flake update; rebuild; cd -";
+		genshell = "touch shell.nix; echo '{pkgs ? import <nixpkgs> {} }:' > shell.nix; echo '' >> shell.nix; echo 'pkgs.mkShell {' >> shell.nix; echo '	buildInputs = with pkgs; [];' >> shell.nix; echo '}' >> shell.nix";
 	};
 }

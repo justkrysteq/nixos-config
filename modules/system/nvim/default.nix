@@ -39,6 +39,13 @@ in {
 						stylua
 						markdownlint-cli
 						typescript-language-server
+						rocmPackages.clang
+						superhtml
+						vscode-css-languageserver
+						pyright
+						rust-analyzer
+						intelephense
+						markdown-oxide
 					];
 				};
 				startupPlugins = {
