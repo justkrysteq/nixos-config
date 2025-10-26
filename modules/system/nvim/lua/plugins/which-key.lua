@@ -25,6 +25,8 @@ return {
 				{ "<leader>h", group = "Git [H]unk" },
 				{ "<leader>h_", hidden = true },
 			},
+			{ "<C-W>t", group = "[T]ab management" },
+			{ "<C-W>t_", hidden = true },
 		})
 	end,
 }

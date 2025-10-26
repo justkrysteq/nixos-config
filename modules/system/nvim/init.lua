@@ -5,4 +5,4 @@ vim.g.maplocalleader = " "
 require("options")
 require("keymaps")
 require("autocommands")
-require("lazytest")
+require("lazy-nvim")

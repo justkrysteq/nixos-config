@@ -32,8 +32,8 @@ local lazyOptions = {
 	},
 }
 
--- [[ Configure and install plugins ]]
---
+ -- NOTE: Using Lazy:
+
 --  To check the current status of your plugins, run
 --    :Lazy
 --
@@ -41,9 +41,11 @@ local lazyOptions = {
 --
 --  To update plugins you can run
 --    :Lazy update
+--  TIP:
 --
 -- NOTE: Here is where you install your plugins.
--- NOTE: nixCats: this the lazy wrapper. Use it like require('lazy').setup() but with an extra
+
+-- nixCats: this the lazy wrapper. Use it like require('lazy').setup() but with an extra
 -- argument, the path to lazy.nvim as downloaded by nix, or nil, before the normal arguments.
 require("nixCatsUtils.lazyCat").setup(nixCats.pawsible({ "allPlugins", "start", "lazy.nvim" }), {
 	-- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).

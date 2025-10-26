@@ -11,6 +11,7 @@
 		treed = "eza -TD"; # a directory tree
 		ll = "eza -l --total-size";
 		lla = "eza -la --total-size";
+		llaa = "eza -laa";
 		ls1 = "eza -1 --icons";
 		rebuild = "sudo nixos-rebuild switch";
 		lsgen = "nixos-rebuild list-generations";

@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "ags": "*",
+    "gnim": "*",
+    "typescript": "^5.9.2",
+    "typescript-language-server": "^5.0.0"
+  },
+  "prettier": {
+    "semi": false,
+    "tabWidth": 2
+  }
+}

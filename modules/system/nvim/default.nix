@@ -1,7 +1,8 @@
-{ inputs, ... }: 
+{ inputs, ... }:
 let
 	utils = inputs.nixCats.utils;
-in {
+in
+{
 	imports = [
 		inputs.nixCats.nixosModules.default
 	];
@@ -46,6 +47,7 @@ in {
 						rust-analyzer
 						intelephense
 						markdown-oxide
+						lemminx # XML Language server
 					];
 				};
 				startupPlugins = {
@@ -79,6 +81,8 @@ in {
 						nui-nvim
 						nvim-lint
 						typescript-tools-nvim
+						supermaven-nvim
+						tabby-nvim
 
 						# If you want only certain grammars
 						# (nvim-treesitter.withPlugins (

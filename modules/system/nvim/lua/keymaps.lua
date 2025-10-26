@@ -36,3 +36,21 @@ map("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 -- Keymaps for tabs and spaces manipulation
 map("n", "<leader>i2", ":%s/  /\\t/g<CR>", { desc = "Switch [I]ndentation from [2] spaces to tabs" })
 map("n", "<leader>i4", ":%s/    /\\t/g<CR>", { desc = "Switch [I]ndentation from [4] spaces to tabs" })
+
+-- Tab management
+-- map("n", "<C-Tab>", ":tabnext<CR>", { desc= "Cycle next tab" })
+-- map("n", "<C-S-Tab>", ":tabprevious<CR>", { desc= "Cycle previous tab" })
+map("n", "<C-W>tt", ":tabnew<CR>", { desc= "Open new tab" })
+map("n", "<C-W>tw", ":tabclose<CR>", { desc= "Close current tab" })
+map("n", "<C-W>t1", ":tabfirst<CR>", { desc= "[T]ab [1]" })
+map("n", "<C-W>t2", ":tabnext 2<CR>", { desc= "[T]ab [2]" })
+map("n", "<C-W>t3", ":tabnext 3<CR>", { desc= "[T]ab [3]" })
+map("n", "<C-W>t4", ":tabnext 4<CR>", { desc= "[T]ab [4]" })
+map("n", "<C-W>t5", ":tabnext 5<CR>", { desc= "[T]ab [5]" })
+
+-- Indentation
+map("x", "<Tab>", ">gv", { desc = "Indent Once" })
+map("x", "<S-Tab>", "<gv", { desc = "Outdent Once" })
+
+-- Easier command
+map("n", ";", ":", { desc = "Easier command (map ; to :)" })

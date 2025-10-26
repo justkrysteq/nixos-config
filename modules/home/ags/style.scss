@@ -1,0 +1,95 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+$fg-color: #{"@theme_fg_color"};
+$bg-color: #{"@theme_bg_color"};
+
+$panel-bg: rgba(255, 255, 255, 0.12);
+$nerdfont: "Hack NerdFont";
+$nerdfont-mono: "Hack NerdFont Mono";
+$nerdfont-proto: "Hack NerdFont Proto";
+$deco-font: "Odin Rounded";
+
+window.Bar {
+	background: transparent;
+	color: $fg-color;
+	font-weight: bold;
+
+	> centerbox {
+		/* background: $bg-color; */
+		/* background: rgba(255, 255, 255, 0.075); */
+		background: transparent;
+		/* border-radius: 10px; */
+		border-radius: 0.5rem;
+		margin: 8px;
+		margin-top: 0;
+	}
+
+	button {
+		border-radius: 8px;
+	}
+}
+
+.clock {
+	margin: 0;
+	border-radius: 18px;
+	
+	> button {
+		margin: 0;
+		padding-left: 8px;
+		padding-right: 8px;
+		padding-top: 4px;
+		padding-bottom: 2px;
+		background-color: $panel-bg;
+
+		label {
+			font-size: 24px;
+			opacity: 0.55;
+			font-family: $deco-font;
+			line-height: 0.5;
+			margin-top: 4px;
+		}
+	}
+}
+
+.notification-button {
+	margin: 0;
+	padding-left: 10px;
+	padding-right: 9px;
+	padding-top: 4px;
+	padding-bottom: 6px;
+	background-color: $panel-bg;
+	border-radius: 10px;
+
+	> label {
+		font-size: 28px;
+		opacity: 0.55;
+		font-family: $nerdfont-mono;
+		line-height: 0.5;
+		margin-top: 4px;
+	}
+}
+
+.power-button {
+	margin: 0;
+	padding-left: 8px;
+	padding-right: 7px;
+	padding-top: 2px;
+	padding-bottom: 5px;
+	background-color: $panel-bg;
+	border-radius: 10px;
+
+	> label {
+		font-size: 34px;
+		opacity: 0.55;
+		font-family: $nerdfont-mono;
+		line-height: 0.5;
+		margin-top: 4px;
+		color: #6767F2;
+		opacity: 0.69;
+	}
+}
+
+.quick-settings-panel {
+	> box {
+		padding: 0 4px;
+	}
+}

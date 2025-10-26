@@ -2,7 +2,9 @@ return {
 	-- "gc" to comment visual regions/lines
 	-- NOTE: nixCats: nix downloads it with a different file name.
 	-- tell lazy about that.
-	{ "numToStr/Comment.nvim", name = "comment.nvim", opts = {} },
+	"numToStr/Comment.nvim",
+	name = "comment.nvim",
+	opts = {}
 
 	-- Here is a more advanced example where we pass configuration
 	-- options to `gitsigns.nvim`. This is equivalent to the following Lua:

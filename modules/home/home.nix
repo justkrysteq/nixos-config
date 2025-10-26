@@ -10,15 +10,29 @@ in
 
 		packages = with pkgs; [
 			nvtopPackages.intel
-			# inputs.astal.packages.${pkgs.system}.default
-			# inputs.astal.packages.${pkgs.system}.notifd
 		];
+
+		# pointerCursor = {
+		# 	enable = true;
+		# 	hyprcursor = {
+		# 		enable = true;
+		# 		size = 24;
+		# 	};
+		# 	package = pkgs.kdePackages.breeze;
+		# 	name = "breeze_cursors";
+		# };
 	};
 
 	imports = [
 		inputs.ags.homeManagerModules.default
 		# inputs.walker.homeManagerModules.default
 	];
+
+	# gtk.cursorTheme = {
+	# 	package = pkgs.kdePackages.breeze;
+	# 	name = "breeze_cursors";
+	# 	size = 24;
+	# };
 
 	programs = {
 		btop = {
@@ -32,59 +46,11 @@ in
 #			settings = "";
 		};
 
-		# walker = {
-		# 	enable = true;
-		# 	runAsService = true;
-
-#			config = {
-#				app_launch_prefix = "";
-#				as_window = false;
-#				close_when_open = false;
-#				disable_click_to_close = false;
-#				force_keyboard_focus = false;
-#				hotreload_theme = true; # set to true when changing styles
-#				js_runtime = "node";
-#				locale = "";
-#				monitor = "";
-#				plugin_location = [];
-#				terminal_title_flag = "";
-#				theme = "custom";
-#				theme_location = [];
-#				timeout = 0;
-
-#				activation_mode = {
-#					labels = "jkl;asdf"
-#				};
-
-#				builtins = {
-#					ai = {
-#					icon = "help-browser";
-#					name = "ai";
-#					placeholder = "AI";
-
-#					};
-#				};
-#				search.placeholder = "";
-#				ui.fullscreen = true;
-#				list = {
-#					height = 200;
-#				};
-#				websearch.prefix = ":br";
-#				switcher.prefix = "/"; # No idea what's switcher
-#			};
-
-#			theme.style = ''
-#				* {
-#					color: #dcd7b1;
-#				}
-#			'';
-		# };
-
 		ags = {
 			enable = true;
 
 			# If you want home manager to manage the config
-#			configDir = ../ags;
+			configDir = ./ags;
 
 			extraPackages = [
 				inputs.astal.packages.${pkgs.system}.battery
@@ -101,13 +67,6 @@ in
 		};
 	};
 
-#	wayland.windowManager.hyprland = {
-#		enable = true;
-#		settings = {
-#
-#		};
-#	};
-
 	xdg.configFile = {
 		"hypr/hyprland.conf".source = link "config-files/hyprland.conf";
 		"hypr/hyprpaper.conf".source = link "config-files/hyprpaper.conf";
@@ -118,6 +77,14 @@ in
 		"hypr/cat.png".source = link "config-files/cat.png";
 		"hypr/background.png".source = link "config-files/background.png";
 		"hypr/hypridle.conf".source = link "config-files/hypridle.conf";
+
+		"kitty/kitty.conf".source = link "config-files/kitty.conf";
+
+		"walker/config.toml".source = link "config-files/walker/config.toml";
+		"walker/themes/default.toml".source = link "config-files/walker/themes/default.toml";
+		"walker/themes/custom.toml".source = link "config-files/walker/themes/custom.toml";
+		"walker/themes/default.css".source = link "config-files/walker/themes/default.css";
+		"walker/themes/custom.css".source = link "config-files/walker/themes/custom.css";
 
 		"scripts/lockscreen/weekday.sh".source = link "scripts/lockscreen/weekday.sh";
 		"scripts/lockscreen/network-status.sh".source = link "scripts/lockscreen/network-status.sh";

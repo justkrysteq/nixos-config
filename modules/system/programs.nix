@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
 	# Allow unfree packages
@@ -11,18 +11,22 @@
 
 		# Apps
 		vesktop signal-desktop kdePackages.kate kdePackages.kcalc obsidian
+		mpv # media player
 
 		# CLI Tools
 		kitty
 		eza # a modern replacement for ls
 		wev # wayland event viewer
-		jq # needed for a bind to switch between floating and tiled windows in hyprland
+		jq # required for a bind to switch between floating and tiled windows in hyprland
 		brightnessctl
 		playerctl
 		wireplumber # audio control
-		wirelesstools # needed for iwconfig to return wifi signal quicker
-		wl-clipboard
-		cdrkit # for genisoimage
+		wirelesstools # required for iwconfig to return wifi signal quicker
+		wl-clipboard # required for screenshots
+		trash-cli # required for recycle-bin plugin for yazi
+		# rmpc # music player
+		# joecalsend # TUI Localsend
+		# cdrkit # for genisoimage
 		# gdb # debugger do c
 
 		# Dev
@@ -40,6 +44,8 @@
 
 		obs-studio.enable = true;
 
+		localsend.enable = true;
+
 		git = {
 			enable = true;
 			config = {
@@ -48,11 +54,6 @@
 				init.defaultBranch = "main";
 			};
 		};
-		
-#		neovim = {
-#			enable = true;
-#			defaultEditor = true;
-#		};
 
 		zsh = {
 			enable = true;
@@ -68,11 +69,11 @@
 
 			ohMyZsh = {
 				enable = true;
+				theme = "gentoo";
+
 				plugins = [
 					"git"
-					"z"
 				];
-				theme = "gentoo";
 			};
 
 			shellInit = ''
@@ -86,17 +87,14 @@
 			'';
 		};
 
+		zoxide.enable = true;
+
 		hyprland = {
 			enable = true;
 			xwayland.enable = true;
 		};
 
 		hyprlock.enable = true;
-
-		# https://wiki.nixos.org/wiki/Yazi
-		# https://yazi-rs.github.io/docs/quick-start/
-		# https://yazi-rs.github.io/docs/tips#selected-files-to-clipboard
-		yazi.enable = true;
 	};
 
 	services.hypridle.enable = true;

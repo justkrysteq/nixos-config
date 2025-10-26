@@ -13,5 +13,6 @@
 		./shell-aliases.nix
 		./users.nix
 		./virtualisation.nix
+		./yazi
 	];
 }
