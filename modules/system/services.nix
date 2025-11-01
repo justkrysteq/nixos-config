@@ -3,11 +3,14 @@
 {
 	services = {
 		# Enable KDE Plasma
-		displayManager.sddm.enable = true;
-		desktopManager.plasma6.enable = true;
+		# displayManager.sddm.enable = true;
+		# desktopManager.plasma6.enable = true;
 
 		# Enable CUPS to print documents
 		printing.enable = true;
+
+		# Needed for AstalBattery
+		upower.enable = true;
 
 		# openssh.enable = true;
 

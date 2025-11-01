@@ -5,7 +5,7 @@ import AstalNetwork from "gi://AstalNetwork";
 export function getNetworkStrength(network: AstalNetwork.Network) {
 	const { wifi, wired } = network;
 
-	if (wifi.strength !== 0) {
+	if (wifi && wifi.strength !== 0) {
 		const { strength, internet, enabled } = wifi;
 
 		if (enabled && internet === AstalNetwork.Internet.CONNECTED) {
@@ -13,7 +13,7 @@ export function getNetworkStrength(network: AstalNetwork.Network) {
 		}
 	}
 
-	if (wired.speed !== 0) {
+	if (wired && wired.speed !== 0) {
 		return "eth";
 	}
 
@@ -23,7 +23,7 @@ export function getNetworkStrength(network: AstalNetwork.Network) {
 export function getNetworkSpeed(network: AstalNetwork.Network) {
 	const { wired } = network;
 
-	if (wired.speed !== 0) {
+	if (wired && wired.speed !== 0) {
 		const { speed, internet } = wired;
 
 		if (internet === AstalNetwork.Internet.CONNECTED) {
@@ -37,15 +37,15 @@ export function getNetworkSpeed(network: AstalNetwork.Network) {
 export function getNetworkIcon(network: AstalNetwork.Network) {
 	const { connectivity, wifi, wired } = network;
 
-	if (wired.speed !== 0) {
+	if (wired && wired.speed !== 0) {
 		if (wired.internet === AstalNetwork.Internet.CONNECTED) {
 			return '󰈀';
 		} else {
-			return '󰈀'; // You could add more logic here for wired states if needed
+			return '󰈂';
 		}
 	}
 
-	if (wifi.strength !== 0) {
+	if (wifi && wifi.strength !== 0) {
 		const { strength, internet, enabled } = wifi;
 
 		if (!enabled || connectivity === AstalNetwork.Connectivity.NONE) {

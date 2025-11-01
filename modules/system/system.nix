@@ -1,22 +1,6 @@
-{ inputs, flake-dir, username, ... }:
+{ ... }:
 
 {
-	imports = [
-		./modules/system
-		./modules/hardware
-		inputs.home-manager.nixosModules.default
-	];
-
-	# Configure console keymap
-	console.keyMap = "pl2";
-
-	home-manager = {
-		extraSpecialArgs = { inherit inputs flake-dir username; };
-		users = {
-			${username} = import ./modules/home/home.nix;
-		};
-	};
-
 	nix = {
 		# Auto-delete old system states every week
 		gc = {
@@ -30,6 +14,9 @@
 			experimental-features = [ "nix-command" "flakes" ];
 		};
 	};
+	
+	# Configure console keymap
+	console.keyMap = "pl2";
 
 	environment = {
 		variables = {

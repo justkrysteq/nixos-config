@@ -14,7 +14,7 @@
 				swtpm.enable = true;
 
 				runAsRoot = false;
-			#
+
 				verbatimConfig = ''
 					s = []
 					user = "+krysteq"

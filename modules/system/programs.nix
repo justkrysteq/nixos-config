@@ -10,11 +10,14 @@
 		brave
 
 		# Apps
-		vesktop signal-desktop kdePackages.kate kdePackages.kcalc obsidian
-		mpv # media player
+		vesktop signal-desktop obsidian
+		mpv # Media Player
+		kdePackages.dolphin # File Manager
 
 		# CLI Tools
 		kitty
+		fastfetch
+		btop
 		eza # a modern replacement for ls
 		wev # wayland event viewer
 		jq # required for a bind to switch between floating and tiled windows in hyprland
@@ -27,7 +30,7 @@
 		# rmpc # music player
 		# joecalsend # TUI Localsend
 		# cdrkit # for genisoimage
-		# gdb # debugger do c
+		# gdb # c debugger
 
 		# Dev
 		nodePackages.nodejs nodePackages.typescript
@@ -35,7 +38,7 @@
 		# DE/Rice
 		hyprpaper hyprpicker hyprpolkitagent # Hyprland utils
 		hyprshot swappy # Screenshots
-		swaynotificationcenter libnotify # for notify-send # Notifiactions
+		swaynotificationcenter libnotify # for notify-send # Notifications
 		walker # App Launcher
 	];
 

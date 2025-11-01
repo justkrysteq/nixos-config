@@ -1,8 +1,8 @@
-{ ... }:
+{ hostname, ... }:
 
 {
 	networking = {
-		hostName = "nixos";
+		hostName = hostname;
 
 		networkmanager.enable = true;
 #		wireless.enable = true;

@@ -1,23 +1,18 @@
-// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
-$fg-color: #{"@theme_fg_color"};
-$bg-color: #{"@theme_bg_color"};
-
+$text-color: #FFFFFF;
+$bg-color: transparent;
 $panel-bg: rgba(255, 255, 255, 0.12);
+
 $nerdfont: "Hack NerdFont";
 $nerdfont-mono: "Hack NerdFont Mono";
 $nerdfont-proto: "Hack NerdFont Proto";
 $deco-font: "Odin Rounded";
 
 window.Bar {
-	background: transparent;
-	color: $fg-color;
+	background: $bg-color;
+	color: $text-color;
 	font-weight: bold;
 
 	> centerbox {
-		/* background: $bg-color; */
-		/* background: rgba(255, 255, 255, 0.075); */
-		background: transparent;
-		/* border-radius: 10px; */
 		border-radius: 0.5rem;
 		margin: 8px;
 		margin-top: 0;

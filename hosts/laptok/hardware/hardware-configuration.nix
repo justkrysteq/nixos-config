@@ -8,22 +8,29 @@
 		(modulesPath + "/installer/scan/not-detected.nix")
 	];
 
-	boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
-	boot.initrd.kernelModules = [ ];
-	boot.kernelModules = [ "kvm-intel" ];
-	boot.extraModulePackages = [ ];
+	fileSystems = {
+		"/" = {
+			device = "/dev/disk/by-uuid/e0b25471-48d1-43be-9789-74a5275b476c";
+			fsType = "ext4";
+		};
 
-	fileSystems."/" = {
-		device = "/dev/disk/by-uuid/e0b25471-48d1-43be-9789-74a5275b476c";
-		fsType = "ext4";
+		"/boot" = {
+			device = "/dev/disk/by-uuid/2B84-1FD3";
+			fsType = "vfat";
+			options = [ "fmask=0077" "dmask=0077" ];
+		};
 	};
 
-	boot.initrd.luks.devices."luks-355c0f85-1239-496e-9d0d-d5598e00cdbc".device = "/dev/disk/by-uuid/355c0f85-1239-496e-9d0d-d5598e00cdbc";
+	boot = {
+		initrd = {
+			availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
+			kernelModules = [ ];
+		
+			luks.devices."luks-355c0f85-1239-496e-9d0d-d5598e00cdbc".device = "/dev/disk/by-uuid/355c0f85-1239-496e-9d0d-d5598e00cdbc";
+		};
 
-	fileSystems."/boot" = {
-		device = "/dev/disk/by-uuid/2B84-1FD3";
-		fsType = "vfat";
-		options = [ "fmask=0077" "dmask=0077" ];
+		kernelModules = [ "kvm-intel" ];
+		extraModulePackages = [ ];
 	};
 
 	swapDevices = [ ];
