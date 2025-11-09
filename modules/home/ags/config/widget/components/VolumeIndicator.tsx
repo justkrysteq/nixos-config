@@ -15,8 +15,8 @@ export default function VolumeIndicator(props: { withValue: boolean }) {
 
 	return (
 		<box orientation={Gtk.Orientation.VERTICAL}>
-			<label label={computedVolume(() => getVolumeIcon(defaultSpeaker))} css="font-size: 22px; font-family: Hack NerdFont Mono" />
-			{ props.withValue ? <label label={computedVolume(() => getVolumeValue(defaultSpeaker))} css="font-size: 12px; margin-top: -4px" /> : "" }
+			<label label={computedVolume(() => getVolumeIcon(defaultSpeaker))} css="font-size: 22px; font-family: Hack NerdFont Mono;" />
+			{ props.withValue ? <label label={computedVolume(() => getVolumeValue(defaultSpeaker))} css="font-size: 12px; margin-top: -4px;" /> : "" }
 		</box>
 	);
 }

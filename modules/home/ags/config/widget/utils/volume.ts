@@ -40,7 +40,7 @@ export function getVolumeValue(speaker: Wp.Endpoint) {
 	const volume = Math.round(speaker.volume * 100).toString();
 
 	if (isMuted) {
-		return "x";
+		return "X";
 	} else {
 		return volume;
 	}

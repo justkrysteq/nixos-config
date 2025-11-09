@@ -13,8 +13,8 @@ export default function BatteryIndicator(props: { withValue: boolean }) {
 
 	return (
 		<box visible={createBinding(battery, "isBattery")} orientation={Gtk.Orientation.VERTICAL}>
-			<label label={computedBattery(() => getBatteryIcon(battery))} css="font-size: 22px; font-family: Hack NerdFont Mono" />
-			{ props.withValue ? <label label={computedBattery(() => getBatteryPercentage(battery))} css="font-size: 12px; margin-top: -4px" /> : "" }
+			<label label={computedBattery(() => getBatteryIcon(battery))} css="font-size: 22px; font-family: Hack NerdFont Mono;" />
+			{ props.withValue ? <label label={computedBattery(() => getBatteryPercentage(battery))} css="font-size: 12px; margin-top: -4px;" /> : "" }
 		</box>
 	);
 }

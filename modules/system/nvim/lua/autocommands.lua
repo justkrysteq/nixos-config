@@ -15,3 +15,18 @@ autocmd("TextYankPost", {
 		vim.hl.on_yank()
 	end,
 })
+
+
+-- [[ Filetype Autocommands ]]
+--  See `:help lua-guide-filetype`
+
+-- Fix indentation for scss files
+autocmd("FileType", {
+	pattern = "scss",
+	callback = function()
+		vim.opt_local.expandtab = false
+		vim.opt_local.shiftwidth = 4
+		vim.opt_local.tabstop = 4
+		vim.opt_local.softtabstop = 4
+	end,
+})

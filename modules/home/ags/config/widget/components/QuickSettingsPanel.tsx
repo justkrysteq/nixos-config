@@ -5,9 +5,9 @@ import NetworkIndicator from "./NetworkIndicator";
 export default function QuickSettingsPanel() {
 	return (
 		<box class="quick-settings-panel" cssName="box">
-			<NetworkIndicator withValue={true} />
-			<VolumeIndicator withValue={true} />
-			<BatteryIndicator withValue={true} />
+			<NetworkIndicator withValue />
+			<VolumeIndicator withValue />
+			<BatteryIndicator withValue />
 		</box>
 	);
 }

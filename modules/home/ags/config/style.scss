@@ -1,6 +1,8 @@
 $text-color: #FFFFFF;
 $bg-color: transparent;
 $panel-bg: rgba(255, 255, 255, 0.12);
+/* $panel-bg: #2e2e2e; */
+$text-opacity: 0.55;
 
 $nerdfont: "Hack NerdFont";
 $nerdfont-mono: "Hack NerdFont Mono";
@@ -8,11 +10,12 @@ $nerdfont-proto: "Hack NerdFont Proto";
 $deco-font: "Odin Rounded";
 
 window.Bar {
-	background: $bg-color;
+	background: transparent;
 	color: $text-color;
 	font-weight: bold;
 
 	> centerbox {
+		background: $bg-color;
 		border-radius: 0.5rem;
 		margin: 8px;
 		margin-top: 0;
@@ -23,10 +26,98 @@ window.Bar {
 	}
 }
 
+.power-button {
+	margin: 0;
+	padding-left: 8px;
+	padding-right: 7px;
+	padding-top: 2px;
+	padding-bottom: 5px;
+	background-color: $panel-bg;
+	border-radius: 10px;
+
+	> label {
+		font-size: 34px;
+		font-family: $nerdfont-mono;
+		line-height: 0.5;
+		margin-top: 4px;
+		color: #6767F2;
+		opacity: 0.69;
+	}
+}
+
+.workspaces {
+	margin: 0 0.25rem;
+
+	> box {
+		background-color: $panel-bg;
+		border-radius: 10px;
+		margin: 0 0.25rem;
+		padding: 0 0.5rem;
+
+		> button {
+			all: unset;
+
+			box {
+				all: unset;
+				border-radius: 0.625rem;
+				margin: 0 0.3125rem;
+				min-width: 1.25rem;
+				min-height: 1.25rem;
+				background-color: $text-color;
+				opacity: $text-opacity - 0.2;
+				transition: 0.28s ease;
+				color: black;
+			}
+
+			.active {
+				min-width: 3rem;
+				opacity: $text-opacity;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+.quick-settings-panel {
+	> box {
+		padding: 0 4px;
+	/* 	background-color: $panel-bg; */
+	/* 	border-radius: 8px; */
+	/* 	padding: 0 0.25rem; */
+	/* 	padding-left: 10px; */
+	/* 	padding-right: 10px; */
+	/* 	padding-top: 4px; */
+	/* 	padding-bottom: 2px; */
+	/* 	margin-left: 0.5rem; */
+	/**/
+	/* 	.value { */
+	/* 		opacity: $text-opacity + 0.1; */
+	/* 		font-family: $deco-font; */
+	/* 		font-size: 24px; */
+	/* 		margin-top: 4px; */
+	/* 		margin-left: -2px; */
+	/* 		line-height: 0.5; */
+	/* 		margin-right: 0.625rem; */
+	/* 	} */
+	/**/
+	/* 	.icon { */
+	/* 		opacity: $text-opacity + 0.1; */
+	/* 		font-family: $nerdfont-mono; */
+	/* 		font-size: 28px; */
+	/* 		transform: scale(1.25); */
+	/* 		margin-bottom: 2px; */
+	/* 	} */
+	}
+}
+
 .clock {
 	margin: 0;
-	border-radius: 18px;
-	
+
 	> button {
 		margin: 0;
 		padding-left: 8px;
@@ -37,7 +128,7 @@ window.Bar {
 
 		label {
 			font-size: 24px;
-			opacity: 0.55;
+			opacity: $text-opacity;
 			font-family: $deco-font;
 			line-height: 0.5;
 			margin-top: 4px;
@@ -56,35 +147,9 @@ window.Bar {
 
 	> label {
 		font-size: 28px;
-		opacity: 0.55;
+		opacity: $text-opacity;
 		font-family: $nerdfont-mono;
 		line-height: 0.5;
 		margin-top: 4px;
-	}
-}
-
-.power-button {
-	margin: 0;
-	padding-left: 8px;
-	padding-right: 7px;
-	padding-top: 2px;
-	padding-bottom: 5px;
-	background-color: $panel-bg;
-	border-radius: 10px;
-
-	> label {
-		font-size: 34px;
-		opacity: 0.55;
-		font-family: $nerdfont-mono;
-		line-height: 0.5;
-		margin-top: 4px;
-		color: #6767F2;
-		opacity: 0.69;
-	}
-}
-
-.quick-settings-panel {
-	> box {
-		padding: 0 4px;
 	}
 }

@@ -187,16 +187,79 @@ return {
 		--	- settings (table): Override the default settings passed when initializing the server.
 		--				For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 		-- NOTE: nixCats: there is help in nixCats for lsps at `:h nixCats.LSPs` and also `:h nixCats.luaUtils`
-		local servers = {}
-	-- see https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/configs/
-		servers.clangd = {} -- also see ccls
-		servers.superhtml = {}
-		servers.cssls = {}
-		-- servers.gopls = {},
-		servers.pyright = {} -- also see pyls
-		servers.rust_analyzer = {}
-	-- servers.phpactor = {}
-		servers.markdown_oxide = {}
+		-- see https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/configs/
+		local servers = {
+			-- C/C++
+			clangd = {},
+
+			-- HTML
+			superhtml = {},
+
+			-- CSS
+			cssls = {},
+
+			-- Go
+			-- gopls = {},
+
+			-- Python
+			pyright = {}, -- also see pyls
+
+			-- Rust
+			rust_analyzer = {},
+
+			-- Markdown
+			markdown_oxide = {},
+
+			-- TypeScript
+			-- ts_ls = {},
+
+			-- Lua
+			lua_ls = {
+				-- cmd = {...},
+				-- capabilities = {},
+				-- filetypes = { 'lua' },
+				settings = {
+					Lua = {
+						completion = {
+							callSnippet = "Replace",
+						},
+						-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+						diagnostics = {
+							globals = { "nixCats" },
+							disable = { "missing-fields" },
+						},
+						telemetry = { enabled = false },
+					},
+				},
+			},
+
+			-- PHP
+			intelephense = {
+				settings = {
+					intelephense = {
+					telemetry = { enabled = false }
+					}
+				}
+			},
+
+			-- XML
+			lemminx = {
+				settings = {
+					xml = {
+						server = {
+							workDir = "~/.cache/lemminx";
+						}
+					}
+				}
+			},
+
+			-- QML
+			qmlls = {
+				cmd = { "qmlls", "-E" },
+			}
+
+		}
+
 		-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 		--
 		-- Some languages (like typescript) have entire language plugins that can be useful:
@@ -215,41 +278,6 @@ return {
 			servers.rnix = {}
 			servers.nil_ls = {}
 		end
-		servers.lua_ls = {
-			-- cmd = {...},
-			-- capabilities = {},
-			-- filetypes = { 'lua' },
-			settings = {
-				Lua = {
-					completion = {
-						callSnippet = "Replace",
-					},
-					-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-					diagnostics = {
-						globals = { "nixCats" },
-						disable = { "missing-fields" },
-					},
-					telemetry = { enabled = false },
-				},
-			},
-		}
-		servers.intelephense = {
-			settings = {
-				intelephense = {
-				telemetry = { enabled = false }
-				}
-			}
-		}
-		servers.lemminx = {
-			settings = {
-				xml = {
-					server = {
-						workDir = "~/.cache/lemminx";
-					}
-				}
-			}
-		}
-		-- servers.ts_ls = {}
 
 -- NOTE: nixCats: if nix, use lspconfig instead of mason
 		-- You could MAKE it work, using lspsAndRuntimeDeps and sharedLibraries in nixCats

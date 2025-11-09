@@ -1,12 +1,24 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+	environment.systemPackages = with pkgs; [
+		(brave.override {
+			commandLineArgs = [
+				"--disable-features=WaylandWpColorManagerV1"
+			];
+		})
+	];
+
 	programs.chromium = {
 		enable = true;
-		extensions = [ "eimadpbcbfnmbkopoojfekhnkhdbieeh" ]; # Dark Reader
+
 		defaultSearchProviderEnabled = true;
 		defaultSearchProviderSearchURL = "https://search.brave.com/search?q={searchTerms}&source=desktop";
 		defaultSearchProviderSuggestURL = "https://search.brave.com/api/suggest?q={searchTerms}&rich=true&source=desktop";
+
+		extensions = [
+			"eimadpbcbfnmbkopoojfekhnkhdbieeh;https://clients2.google.com/service/update2/crx" # Dark Reader
+		];
 
 		initialPrefs = {
 			bookmark_bar = {

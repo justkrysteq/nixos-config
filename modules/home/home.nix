@@ -21,4 +21,6 @@
 			name = "breeze-dark";
 		};
 	};
+
+	# programs.quickshell.enable = true;
 }

@@ -5,7 +5,7 @@ export default function NotificationButton() {
 	// const notifications = Notifd.get_default();
 
 	return (
-		<button has_frame={false} class="notification-button flat">
+		<button class="notification-button">
 			<label label="" />
 		</button>
 	);

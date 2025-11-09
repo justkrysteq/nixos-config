@@ -48,6 +48,7 @@ in
 						intelephense
 						markdown-oxide
 						lemminx # XML Language server
+						kdePackages.qtdeclarative # QML Language server and stuff
 					];
 				};
 				startupPlugins = {

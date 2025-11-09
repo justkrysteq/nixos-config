@@ -7,7 +7,7 @@
 	environment.systemPackages = with pkgs; [
 
 		# Browsers
-		brave
+		# brave # now defined in chromium.nix
 
 		# Apps
 		vesktop signal-desktop obsidian
@@ -66,9 +66,6 @@
 
 			histSize = 5000;
 			histFile = "$HOME/.zsh_history";
-#			setOptions = [
-#				"HIST_IGNORE_AALL_DUPS"
-#			];
 
 			ohMyZsh = {
 				enable = true;
@@ -87,6 +84,12 @@
 					[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 					rm -f -- "$tmp"
 				}
+			'';
+
+			loginShellInit = ''
+				if [[ $(tty) == /dev/tty1 && -z $SSH_CONNECTION && -z $DISPLAY ]]; then
+					hyprland
+				fi
 			'';
 		};
 

@@ -14,11 +14,6 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		hyprlauncher = {
-			url = "github:hyprwm/hyprlauncher";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
 		ags.url = "github:Aylur/ags";
 		astal.url = "github:Aylur/astal";
 

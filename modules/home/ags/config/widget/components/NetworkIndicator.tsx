@@ -24,8 +24,8 @@ export default function NetworkIndicator(props: { withValue: boolean }) {
 
 	return (
 		<box orientation={Gtk.Orientation.VERTICAL}>
-			<label label={ computedNetwork(() => getNetworkIcon(network)) } css="font-size: 22px; font-family: Hack NerdFont Mono" />
-			{ props.withValue ? <label label={ computedNetwork(() => getNetworkStrength(network)) } css="font-size: 12px; margin-top: -4px" /> : "" }
+			<label label={ computedNetwork(() => getNetworkIcon(network)) } css="font-size: 22px; font-family: Hack NerdFont Mono;" />
+			{ props.withValue ? <label label={ computedNetwork(() => getNetworkStrength(network)) } css="font-size: 12px; margin-top: -4px;" /> : "" }
 		</box>
 	);
 }
