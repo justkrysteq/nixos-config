@@ -6,5 +6,6 @@
 		./nvim
 		./programs.nix
 		./yazi
+		./zsh.nix
 	];
 }
