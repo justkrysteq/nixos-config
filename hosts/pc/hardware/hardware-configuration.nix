@@ -20,6 +20,12 @@
 			options = [ "rw" "uid=1000" ];
 		};
 
+		"/K" = {
+			device = "/dev/disk/by-uuid/0C5230525230432E";
+			fsType = "ntfs-3g";
+			options = [ "rw" "uid=1000" ];
+		};
+
 		"/boot" = {
 			device = "/dev/disk/by-uuid/CC5B-A41C";
 			fsType = "vfat";

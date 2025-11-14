@@ -14,6 +14,7 @@
 			inherit (pkgs.yaziPlugins) restore;
 			inherit (pkgs.yaziPlugins) mount;
 			inherit (pkgs.yaziPlugins) relative-motions;
+			# inherit (pkgs.yaziPlugins) mediainfo;
 		};
 
 		settings = {

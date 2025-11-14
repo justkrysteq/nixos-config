@@ -27,6 +27,7 @@
 		wirelesstools # required for iwconfig to return wifi signal quicker
 		wl-clipboard # required for screenshots
 		trash-cli # required for recycle-bin plugin for yazi
+		# mediainfo # required for mediainfo plugin for yazi
 		# rmpc # music player
 		# joecalsend # TUI Localsend
 		# cdrkit # for genisoimage
@@ -55,6 +56,7 @@
 				user.name = "Krysteq";
 				user.email = "justkrysteq@proton.me";
 				init.defaultBranch = "main";
+				core.sshCommand = "ssh -i ~/.ssh/git";
 			};
 		};
 
