@@ -49,6 +49,8 @@ in
 						markdown-oxide
 						lemminx # XML Language server
 						kdePackages.qtdeclarative # QML Language server and stuff
+						imagemagick # for image previews
+						go # for hexokinase
 					];
 				};
 				startupPlugins = {
@@ -84,6 +86,8 @@ in
 						typescript-tools-nvim
 						supermaven-nvim
 						tabby-nvim
+						image-nvim
+						vim-hexokinase
 
 						# If you want only certain grammars
 						# (nvim-treesitter.withPlugins (
