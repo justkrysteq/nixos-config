@@ -35,7 +35,7 @@
 
 		fonts = {
 			monospace = {
-				name = "Hack NerdFont";
+				name = "Hack NerdFont Mono";
 				package = pkgs.nerd-fonts.hack;
 			};
 
