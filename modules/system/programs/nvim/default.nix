@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs-old, ... }:
 let
 	utils = inputs.nixCats.utils;
 in
@@ -69,13 +69,13 @@ in
 						lazydev-nvim
 						fidget-nvim
 						conform-nvim
-						nvim-cmp
+						pkgs-old.vimPlugins.nvim-cmp
 						luasnip
 						friendly-snippets
 						cmp_luasnip
 						cmp-nvim-lsp
 						cmp-path
-						onedark-nvim
+						pkgs-old.vimPlugins.onedark-nvim
 						todo-comments-nvim
 						mini-nvim
 						nvim-treesitter.withAllGrammars
@@ -84,7 +84,7 @@ in
 						nui-nvim
 						nvim-lint
 						typescript-tools-nvim
-						supermaven-nvim
+						pkgs-old.vimPlugins.supermaven-nvim
 						tabby-nvim
 						image-nvim
 						vim-hexokinase
