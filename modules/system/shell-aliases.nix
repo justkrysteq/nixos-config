@@ -22,6 +22,8 @@
 		clean = "sudo nix-collect-garbage -d";
 		update = "zn; s nix flake update; rebuild; cd -";
 		nd = "nix develop -c $SHELL";
+		gs = "git status";
+		x = "exit";
 		genshell = "touch shell.nix; echo '{pkgs ? import <nixpkgs> {} }:' > shell.nix; echo '' >> shell.nix; echo 'pkgs.mkShell {' >> shell.nix; echo '	buildInputs = with pkgs; [];' >> shell.nix; echo '}' >> shell.nix";
 	};
 }

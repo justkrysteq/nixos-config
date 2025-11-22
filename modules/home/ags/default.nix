@@ -13,16 +13,16 @@
 			configDir = ./config;
 
 			extraPackages = [
-				inputs.astal.packages.${pkgs.system}.battery
-				inputs.astal.packages.${pkgs.system}.hyprland
-				inputs.astal.packages.${pkgs.system}.network
-				inputs.astal.packages.${pkgs.system}.notifd
+				inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.battery
+				inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
+				inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.network
+				inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.notifd
 
-				inputs.astal.packages.${pkgs.system}.powerprofiles
-				inputs.astal.packages.${pkgs.system}.wireplumber
-				inputs.astal.packages.${pkgs.system}.tray
-				inputs.astal.packages.${pkgs.system}.mpris
-				inputs.astal.packages.${pkgs.system}.apps
+				inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.powerprofiles
+				inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.wireplumber
+				inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.tray
+				inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.mpris
+				inputs.astal.packages.${pkgs.stdenv.hostPlatform.system}.apps
 			];
 		};
 	};

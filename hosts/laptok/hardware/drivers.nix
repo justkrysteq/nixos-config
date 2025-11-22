@@ -49,6 +49,9 @@
 				nvidiaBusId = "PCI:1:0:0";
 			};
 		};
+
+		enableAllFirmware = true;
+		enableAllHardware = true;
 	};
 
 	# Load nvidia driver for Xorg and Wayland
