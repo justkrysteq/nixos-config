@@ -22,7 +22,7 @@
 
 		promptInit = /* bash */''
 			if [[ -n $IN_NIX_SHELL ]]; then
-				PROMPT='%F{cyan}[󱄅] %(!.%B%F{red}.%B%F{green}%n@)%m %F{blue}%(!.%1~.%~) ''${vcs_info_msg_0_}%F{blue}%(!.#.$)%k%b%f'
+				PROMPT='%F{cyan}[󱄅] %(!.%B%F{red}.%B%F{green}%n@)%m %F{blue}%(!.%1~.%~) ''${vcs_info_msg_0_}%F{blue}%(!.#.$)%k%b%f '
 			fi
 		'';
 

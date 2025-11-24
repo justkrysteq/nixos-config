@@ -24,6 +24,7 @@
 		nd = "nix develop -c $SHELL";
 		gs = "git status";
 		x = "exit";
+		nix-shell = "nix-shell --command $SHELL ";
 		genshell = "touch shell.nix; echo '{pkgs ? import <nixpkgs> {} }:' > shell.nix; echo '' >> shell.nix; echo 'pkgs.mkShell {' >> shell.nix; echo '	buildInputs = with pkgs; [];' >> shell.nix; echo '}' >> shell.nix";
 	};
 }

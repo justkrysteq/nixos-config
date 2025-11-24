@@ -40,7 +40,8 @@ in
 						stylua
 						markdownlint-cli
 						typescript-language-server
-						rocmPackages.clang
+						# rocmPackages.clang
+						ccls # C/C++ language server works only in git repo
 						superhtml
 						vscode-css-languageserver
 						pyright
