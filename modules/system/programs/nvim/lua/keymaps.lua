@@ -47,6 +47,12 @@ map("n", "<C-W>t2", ":tabnext 2<CR>", { desc= "[T]ab [2]" })
 map("n", "<C-W>t3", ":tabnext 3<CR>", { desc= "[T]ab [3]" })
 map("n", "<C-W>t4", ":tabnext 4<CR>", { desc= "[T]ab [4]" })
 map("n", "<C-W>t5", ":tabnext 5<CR>", { desc= "[T]ab [5]" })
+map("n", "<C-W>t6", ":tabnext 6<CR>", { desc= "[T]ab [6]" })
+map("n", "<C-W>t7", ":tabnext 7<CR>", { desc= "[T]ab [7]" })
+map("n", "<C-W>t8", ":tabnext 8<CR>", { desc= "[T]ab [8]" })
+map("n", "<C-W>t9", ":tabnext 9<CR>", { desc= "[T]ab [9]" })
+map("n", "<C-W>t0", ":tabnext 10<CR>", { desc= "[T]ab 1[0]" })
+map("n", "<C-W>tl", ":tablast<CR>", { desc= "[T]ab [L]ast" })
 
 -- Indentation
 map("x", "<Tab>", ">gv", { desc = "Indent Once" })
