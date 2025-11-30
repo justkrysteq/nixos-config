@@ -3,16 +3,16 @@
 {
 	environment.shellAliases = {
 		ff = "fastfetch";
-		la = "eza -a";
-		ls = "eza";
+		la = "eza -a --group-directories-first";
+		ls = "eza ";
 		lsdir = "eza -D"; # list only directories
 		lsfile = "eza -f"; # list only files
 		tree = "eza --tree";
 		treed = "eza -TD"; # a directory tree
-		ll = "eza -l --total-size";
-		lla = "eza -la --total-size";
-		llaa = "eza -laa";
-		ls1 = "eza -1 --icons";
+		ll = "eza -l --total-size --group-directories-first";
+		lla = "eza -la --total-size --group-directories-first";
+		llaa = "eza -laa --group-directories-first";
+		ls1 = "eza -1 --icons --group-directories-first";
 		rebuild = "sudo nixos-rebuild switch --flake ${flake-dir}#${hostname}";
 		lsgen = "nixos-rebuild list-generations";
 		n = "nvim";
