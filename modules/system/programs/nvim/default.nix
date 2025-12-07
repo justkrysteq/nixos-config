@@ -76,7 +76,7 @@ in
 						cmp_luasnip
 						cmp-nvim-lsp
 						cmp-path
-						pkgs-old.vimPlugins.onedark-nvim
+						onedark-nvim
 						todo-comments-nvim
 						mini-nvim
 						nvim-treesitter.withAllGrammars

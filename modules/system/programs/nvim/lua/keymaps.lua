@@ -59,4 +59,4 @@ map("x", "<Tab>", ">gv", { desc = "Indent Once" })
 map("x", "<S-Tab>", "<gv", { desc = "Outdent Once" })
 
 -- Easier command
-map("n", ";", ":", { desc = "Easier command (map ; to :)" })
+map({"n", "x"}, ";", ":", { desc = "Easier command (map ; to :)" })
