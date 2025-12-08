@@ -15,6 +15,7 @@
 			inherit (pkgs.yaziPlugins) mount;
 			inherit (pkgs.yaziPlugins) relative-motions;
 			inherit (pkgs.yaziPlugins) compress;
+			inherit (pkgs.yaziPlugins) jump-to-char;
 			# inherit (pkgs.yaziPlugins) mediainfo;
 		};
 
@@ -41,6 +42,7 @@
 						{ on = [ "C" "u" ]; run = "plugin compress -phl"; desc = "Archive selected files (password+header+level)"; }
 						{ on = [ "C" "7" ]; run = "plugin compress 7z"; desc = "Archive selected files to 7z"; }
 						{ on = [ "C" "r" ]; run = "plugin compress rar"; desc = "Archive selected files to rar"; }
+						{ on = "F"; run = "plugin jump-to-char"; desc = "Jump to char"; }
 					];
 
 					prepend_keymap = [
