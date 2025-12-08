@@ -89,6 +89,7 @@ in
 						tabby-nvim
 						image-nvim
 						vim-hexokinase
+						hop-nvim
 
 						# If you want only certain grammars
 						# (nvim-treesitter.withPlugins (

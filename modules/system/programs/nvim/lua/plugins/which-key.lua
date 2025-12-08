@@ -20,6 +20,8 @@ return {
 			{ "<leader>t_", hidden = true },
 			{ "<leader>w", group = "[W]orkspace" },
 			{ "<leader>w_", hidden = true },
+			{ "<leader>h", group = "[H]op" },
+			{ "<leader>h_", hidden = true },
 			{
 				mode = { "v" },
 				{ "<leader>h", group = "Git [H]unk" },
