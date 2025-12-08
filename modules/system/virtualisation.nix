@@ -19,6 +19,10 @@
 					s = []
 					user = "+krysteq"
 				'';
+
+				vhostUserPackages = with pkgs; [
+					virtiofsd
+				];
 			};
 		};
 
