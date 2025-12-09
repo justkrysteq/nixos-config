@@ -32,7 +32,6 @@
 
 	boot = {
 		kernel.sysctl = {
-			"vm.dirty_writeback_centisecs" = 6000;
 			"vm.laptop_mode" = 5;
 		};
 
