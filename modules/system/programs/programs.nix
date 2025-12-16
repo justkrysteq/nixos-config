@@ -13,6 +13,7 @@
 		vesktop signal-desktop obsidian
 		mpv # Media Player
 		kdePackages.dolphin # File Manager
+		qalculate-gtk # Calculator
 
 		# CLI Tools
 		kitty
