@@ -15,6 +15,9 @@
 		kdePackages.dolphin # File Manager
 		qalculate-gtk # Calculator
 
+		# Games
+		prismlauncher # Minecraft
+
 		# CLI Tools
 		kitty
 		fastfetch
