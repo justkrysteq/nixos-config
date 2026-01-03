@@ -34,25 +34,23 @@ map("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 map("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- Keymaps for tabs and spaces manipulation
-map("n", "<leader>i2", ":%s/  /\\t/g<CR>", { desc = "Switch [I]ndentation from [2] spaces to tabs" })
-map("n", "<leader>i4", ":%s/    /\\t/g<CR>", { desc = "Switch [I]ndentation from [4] spaces to tabs" })
+map("n", "<leader>i2", ":%s/  /\\t<CR>", { desc = "Switch [I]ndentation from [2] spaces to tabs" })
+map("n", "<leader>i4", ":%s/    /\\t<CR>", { desc = "Switch [I]ndentation from [4] spaces to tabs" })
 
 -- Tab management
--- map("n", "<C-Tab>", ":tabnext<CR>", { desc= "Cycle next tab" })
--- map("n", "<C-S-Tab>", ":tabprevious<CR>", { desc= "Cycle previous tab" })
-map("n", "<C-W>tt", ":tabnew<CR>", { desc= "Open new tab" })
-map("n", "<C-W>tw", ":tabclose<CR>", { desc= "Close current tab" })
-map("n", "<C-W>t1", ":tabfirst<CR>", { desc= "[T]ab [1]" })
-map("n", "<C-W>t2", ":tabnext 2<CR>", { desc= "[T]ab [2]" })
-map("n", "<C-W>t3", ":tabnext 3<CR>", { desc= "[T]ab [3]" })
-map("n", "<C-W>t4", ":tabnext 4<CR>", { desc= "[T]ab [4]" })
-map("n", "<C-W>t5", ":tabnext 5<CR>", { desc= "[T]ab [5]" })
-map("n", "<C-W>t6", ":tabnext 6<CR>", { desc= "[T]ab [6]" })
-map("n", "<C-W>t7", ":tabnext 7<CR>", { desc= "[T]ab [7]" })
-map("n", "<C-W>t8", ":tabnext 8<CR>", { desc= "[T]ab [8]" })
-map("n", "<C-W>t9", ":tabnext 9<CR>", { desc= "[T]ab [9]" })
-map("n", "<C-W>t0", ":tabnext 10<CR>", { desc= "[T]ab 1[0]" })
-map("n", "<C-W>tl", ":tablast<CR>", { desc= "[T]ab [L]ast" })
+map("n", "<C-W>tt", ":tabnew | Telescope find_files<CR>", { desc = "Open new [T]ab with [T]elescope" })
+map("n", "<C-W>tw", ":tabclose<CR>", { desc = "Close current tab" })
+map("n", "<C-W>t1", ":tabfirst<CR>", { desc = "[T]ab [1]" })
+map("n", "<C-W>t2", ":tabnext 2<CR>", { desc = "[T]ab [2]" })
+map("n", "<C-W>t3", ":tabnext 3<CR>", { desc = "[T]ab [3]" })
+map("n", "<C-W>t4", ":tabnext 4<CR>", { desc = "[T]ab [4]" })
+map("n", "<C-W>t5", ":tabnext 5<CR>", { desc = "[T]ab [5]" })
+map("n", "<C-W>t6", ":tabnext 6<CR>", { desc = "[T]ab [6]" })
+map("n", "<C-W>t7", ":tabnext 7<CR>", { desc = "[T]ab [7]" })
+map("n", "<C-W>t8", ":tabnext 8<CR>", { desc = "[T]ab [8]" })
+map("n", "<C-W>t9", ":tabnext 9<CR>", { desc = "[T]ab [9]" })
+map("n", "<C-W>t0", ":tabnext 10<CR>", { desc = "[T]ab 1[0]" })
+map("n", "<C-W>tl", ":tablast<CR>", { desc = "[T]ab [L]ast" })
 
 -- Indentation
 map("x", "<Tab>", ">gv", { desc = "Indent Once" })
@@ -60,3 +58,12 @@ map("x", "<S-Tab>", "<gv", { desc = "Outdent Once" })
 
 -- Easier command
 map({"n", "x"}, ";", ":", { desc = "Easier command (map ; to :)" })
+
+-- Bind Esc to exit yazi
+vim.api.nvim_create_autocmd("TermOpen", {
+	callback = function()
+		if vim.endswith(vim.fn.expand('%'), '/run/current-system/sw/bin/yazi') then
+			vim.api.nvim_buf_set_keymap(0, 't', '<Esc>', '<C-\\><C-N>:q<CR>', { noremap = true, silent = true })
+		end
+	end,
+})

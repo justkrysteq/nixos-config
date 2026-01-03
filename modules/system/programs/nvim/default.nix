@@ -91,6 +91,7 @@ in
 						vim-hexokinase
 						hop-nvim
 						render-markdown-nvim
+						yazi-nvim
 
 						# If you want only certain grammars
 						# (nvim-treesitter.withPlugins (
