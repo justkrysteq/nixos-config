@@ -34,8 +34,8 @@ map("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 map("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- Keymaps for tabs and spaces manipulation
-map("n", "<leader>i2", ":%s/  /\\t<CR>", { desc = "Switch [I]ndentation from [2] spaces to tabs" })
-map("n", "<leader>i4", ":%s/    /\\t<CR>", { desc = "Switch [I]ndentation from [4] spaces to tabs" })
+map("n", "<leader>i2", ":%s/  /\\t/g<CR>", { desc = "Switch [I]ndentation from [2] spaces to tabs" })
+map("n", "<leader>i4", ":%s/    /\\t/g<CR>", { desc = "Switch [I]ndentation from [4] spaces to tabs" })
 
 -- Tab management
 map("n", "<C-W>tt", ":tabnew | Telescope find_files<CR>", { desc = "Open new [T]ab with [T]elescope" })
