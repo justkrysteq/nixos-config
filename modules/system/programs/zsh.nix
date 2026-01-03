@@ -63,7 +63,7 @@
 
 		loginShellInit = /* bash */''
 			if [[ $(tty) == /dev/tty1 && -z $SSH_CONNECTION && -z $DISPLAY ]]; then
-				hyprland
+				start-hyprland
 			fi
 		'';
 	};
