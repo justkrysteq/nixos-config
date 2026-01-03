@@ -20,6 +20,15 @@
 		};
 
 		settings = {
+			theme = {
+				indicator = {
+					padding = {
+						open = "█";
+						close = "█";
+					};
+				};
+			};
+
 			keymap = {
 				mgr = {
 					append_keymap = [
