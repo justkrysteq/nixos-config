@@ -45,6 +45,7 @@ in
 						superhtml
 						vscode-css-languageserver
 						pyright
+						hyprls
 						rust-analyzer
 						intelephense
 						markdown-oxide

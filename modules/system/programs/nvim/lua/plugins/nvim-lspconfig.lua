@@ -199,6 +199,9 @@ return {
 			-- CSS
 			cssls = {},
 
+			-- Hyprland
+			hyprls = {},
+
 			-- Go
 			-- gopls = {},
 
