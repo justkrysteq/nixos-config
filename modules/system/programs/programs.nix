@@ -32,6 +32,7 @@
 		wl-clipboard # required for screenshots
 		trash-cli # required for recycle-bin plugin for yazi
 		pavucontrol # volume mixer
+		gimp # image editor
 		# mediainfo # required for mediainfo plugin for yazi
 		# rmpc # music player
 		# joecalsend # TUI Localsend
