@@ -9,6 +9,12 @@
 			options = "--delete-older-than 7d";
 		};
 
+		# Auto-optimise nix-store every week
+		optimise = {
+			automatic = true;
+			dates = "weekly";
+		};
+
 		settings = {
 			# Enable flakes
 			experimental-features = [ "nix-command" "flakes" ];
