@@ -49,7 +49,13 @@
 # 				nvidiaBusId = "PCI:1:0:0";
 # 			};
 		};
+
+		opentabletdriver.enable = true;
+
+		uinput.enable = true;
 	};
+
+	boot.kernelModules = [ "uinput" ];
 
 	# Load nvidia driver for Xorg and Wayland
 	services.xserver.videoDrivers = [ "modesetting" "nvidia" ];
