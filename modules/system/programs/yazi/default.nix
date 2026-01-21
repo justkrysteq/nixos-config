@@ -17,6 +17,13 @@
 			inherit (pkgs.yaziPlugins) compress;
 			inherit (pkgs.yaziPlugins) jump-to-char;
 			# inherit (pkgs.yaziPlugins) mediainfo;
+
+			zoom = pkgs.fetchFromGitHub {
+				owner = "yazi-rs";
+				repo = "plugins";
+				rev = "main";
+				hash = "sha256-60xxQZlXsKs7F/TJdRkhgZpTXas6rUvJUb0rvwZIozo=";
+			} + "/zoom.yazi";
 		};
 
 		settings = {
@@ -32,18 +39,15 @@
 			keymap = {
 				mgr = {
 					append_keymap = [
-						{ on = [ "g"  "n" ]; run = "cd ${flake-dir}"; desc = "Go ${flake-dir}"; }
-						{ on = [ "g"  "r" ]; run = "cd /"; desc = "Go /"; }
-						{ on = [ "g"  "p" ]; run = "cd $HOME/Documents/Projects"; desc = "Go ~/Documents/Projects"; }
-						{ on = [ "R" "b" ]; run = "plugin recycle-bin"; desc = "Open Recycle Bin menu"; }
-						# { on = [ "R" "m" ]; run = "plugin mediainfo -- toggle-metadata"; desc = "Toggle media preview metadata"; }
-						{ on = "u"; run = "plugin restore"; desc = "Restore last deleted files/folders"; }
-						{ on = "U"; run = "plugin restore -- --interactive"; desc = "Restore deleted files/folders (Interactive)"; }
-						{ on = "M"; run = "plugin mount"; desc = "Open Mount menu"; }
-						{ on = [ "m" "M" ]; run = "linemode size_and_mtime"; desc = "Linemode: size and modification time"; }
-						{ on = [ "m" "c" ]; run = "linemode size_and_btime"; desc = "Linemode: size and creation time"; }
+						{ on = [ "g" "n" ]; run = "cd ${flake-dir}"; desc = "Go ${flake-dir}"; }
+						{ on = [ "g" "r" ]; run = "cd /"; desc = "Go /"; }
+						{ on = [ "g" "p" ]; run = "cd $HOME/Documents/Projects"; desc = "Go ~/Documents/Projects"; }
 						{ on = [ "g" "t" ]; run = "tab_switch 1 --relative"; desc = "Switch to next tab"; }
 						{ on = [ "g" "T" ]; run = "tab_switch -1 --relative"; desc = "Switch to previous tab"; }
+
+						{ on = [ "m" "M" ]; run = "linemode size_and_mtime"; desc = "Linemode: size and modification time"; }
+						{ on = [ "m" "c" ]; run = "linemode size_and_btime"; desc = "Linemode: size and creation time"; }
+
 						{ on = [ "C" "a" ]; run = "plugin compress"; desc = "Archive selected files"; }
 						{ on = [ "C" "p" ]; run = "plugin compress -p"; desc = "Archive selected files (password)"; }
 						{ on = [ "C" "h" ]; run = "plugin compress -ph"; desc = "Archive selected files (password+header)"; }
@@ -51,7 +55,16 @@
 						{ on = [ "C" "u" ]; run = "plugin compress -phl"; desc = "Archive selected files (password+header+level)"; }
 						{ on = [ "C" "7" ]; run = "plugin compress 7z"; desc = "Archive selected files to 7z"; }
 						{ on = [ "C" "r" ]; run = "plugin compress rar"; desc = "Archive selected files to rar"; }
+
+						{ on = "u"; run = "plugin restore"; desc = "Restore last deleted files/folders"; }
+						{ on = "U"; run = "plugin restore -- --interactive"; desc = "Restore deleted files/folders (Interactive)"; }
+						{ on = "M"; run = "plugin mount"; desc = "Open Mount menu"; }
+
 						{ on = "F"; run = "plugin jump-to-char"; desc = "Jump to char"; }
+
+						{ on = [ "R" "b" ]; run = "plugin recycle-bin"; desc = "Open Recycle Bin menu"; }
+						# { on = [ "R" "m" ]; run = "plugin mediainfo -- toggle-metadata"; desc = "Toggle media preview metadata"; }
+						{ on = [ "R" "d" ]; run = "shell -- dragon-drop -x -i -T -a %s"; desc = "Drag file(s) with dragon"; }
 					];
 
 					prepend_keymap = [
@@ -65,6 +78,9 @@
 						{ on = "8"; run = "plugin relative-motions 8"; desc = "Move in relative steps"; }
 						{ on = "9"; run = "plugin relative-motions 9"; desc = "Move in relative steps"; }
 						{ on = "0"; run = "plugin relative-motions 0"; desc = "Move in relative steps"; }
+
+						{ on = "+"; run = "plugin zoom 1"; desc = "Zoom in hovered file"; }
+						{ on = "-"; run = "plugin zoom -1"; desc = "Zoom out hovered file"; }
 					];
 				};
 
