@@ -1,5 +1,7 @@
 require("relative-motions"):setup({ show_numbers="relative", show_motion = true, enter_mode ="first" })
 
+require("recycle-bin"):setup()
+
 function Linemode:size_and_mtime()
 	local time = math.floor(self._file.cha.mtime or 0)
 	if time == 0 then
