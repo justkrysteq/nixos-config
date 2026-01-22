@@ -59,6 +59,9 @@ map("x", "<S-Tab>", "<gv", { desc = "Outdent Once" })
 -- Easier command
 map({"n", "x"}, ";", ":", { desc = "Easier command (map ; to :)" })
 
+-- Ctrl+Delete in insert mode
+map("i", "<C-Delete>", "<C-o>dw", { desc = "Delete a word forward in insert mode" })
+
 -- Bind Esc to exit yazi
 vim.api.nvim_create_autocmd("TermOpen", {
 	callback = function()
