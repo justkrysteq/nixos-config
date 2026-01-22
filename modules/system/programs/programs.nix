@@ -36,6 +36,7 @@
 		dragon-drop # drag and drop utility
 		nix-prefetch-github # utility to get the latest commit hash of a repo
 		clipse # clipboard manager
+		killall
 		# mediainfo # required for mediainfo plugin for yazi
 		# rmpc # music player
 		# joecalsend # TUI Localsend
