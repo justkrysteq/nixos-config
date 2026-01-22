@@ -55,6 +55,7 @@
 						{ on = [ "C" "u" ]; run = "plugin compress -phl"; desc = "Archive selected files (password+header+level)"; }
 						{ on = [ "C" "7" ]; run = "plugin compress 7z"; desc = "Archive selected files to 7z"; }
 						{ on = [ "C" "r" ]; run = "plugin compress rar"; desc = "Archive selected files to rar"; }
+						{ on = [ "C" "t" ]; run = "plugin compress tar.gz"; desc = "Archive selected files to tar.gz"; }
 
 						{ on = "u"; run = "plugin restore"; desc = "Restore last deleted files/folders"; }
 						{ on = "U"; run = "plugin restore -- --interactive"; desc = "Restore deleted files/folders (Interactive)"; }
