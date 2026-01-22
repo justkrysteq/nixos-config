@@ -16,7 +16,7 @@
 			inherit (pkgs.yaziPlugins) relative-motions;
 			inherit (pkgs.yaziPlugins) compress;
 			inherit (pkgs.yaziPlugins) jump-to-char;
-			# inherit (pkgs.yaziPlugins) mediainfo;
+			inherit (pkgs.yaziPlugins) mediainfo;
 
 			zoom = pkgs.fetchFromGitHub {
 				owner = "yazi-rs";
@@ -32,6 +32,12 @@
 					padding = {
 						open = "█";
 						close = "█";
+					};
+				};
+
+				spot = {
+					title = {
+						fg = "green";
 					};
 				};
 			};
@@ -84,20 +90,22 @@
 						{ on = "-"; run = "plugin zoom -1"; desc = "Zoom out hovered file"; }
 					];
 				};
+			};
 
-				# plugin = {
-				# 	prepend_preloaders = [
-				# 		{ mime = "{audio,video,image}/*"; run = "mediainfo"; }
-				# 		{ mime = "application/subrip"; run = "mediainfo"; }
-				# 		{ mime = "application/postscript"; run = "mediainfo"; }
-				# 	];
-				#
-				# 	prepend_previewers = [
-				# 		{ mime = "{audio,video,image}/*"; run = "mediainfo"; }
-				# 		{ mime = "application/subrip"; run = "mediainfo"; }
-				# 		{ mime = "application/postscript"; run = "mediainfo"; }
-				# 	];
-				# };
+			yazi = {
+				plugin = {
+					prepend_preloaders = [
+						{ mime = "{audio,video,image}/*"; run = "mediainfo"; }
+						{ mime = "application/subrip"; run = "mediainfo"; }
+						{ mime = "application/postscript"; run = "mediainfo"; }
+					];
+
+					prepend_previewers = [
+						{ mime = "{audio,video,image}/*"; run = "mediainfo"; }
+						{ mime = "application/subrip"; run = "mediainfo"; }
+						{ mime = "application/postscript"; run = "mediainfo"; }
+					];
+				};
 			};
 		};
 	};

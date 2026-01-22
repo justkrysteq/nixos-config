@@ -37,7 +37,7 @@
 		nix-prefetch-github # utility to get the latest commit hash of a repo
 		clipse # clipboard manager
 		killall
-		# mediainfo # required for mediainfo plugin for yazi
+		mediainfo # required for mediainfo plugin for yazi
 		# rmpc # music player
 		# joecalsend # TUI Localsend
 		# cdrkit # for genisoimage
