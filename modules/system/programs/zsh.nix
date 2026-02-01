@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
 	programs.zsh = {
@@ -34,9 +34,14 @@
 				[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 				rm -f -- "$tmp"
 			}
+		'';
 
-			# TODO: currently it asks for a passphrase every time
-			# If remote is via ssh, needs a solution
+		interactiveShellInit = /* bash */''
+			source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+			# Auto-checking for new commits in the remote repository
+			# NOTE: currently it asks for a passphrase every time
+			# TODO: If remote is via ssh, needs a solution
 
 			# check_git_repo() {
 			# 	if git rev-parse --is-inside-work-tree &>/dev/null; then
