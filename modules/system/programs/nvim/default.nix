@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs-stable, ... }:
 let
 	utils = inputs.nixCats.utils;
 in
@@ -55,6 +55,7 @@ in
 						go # for hexokinase
 					];
 				};
+
 				startupPlugins = {
 					general = with pkgs.vimPlugins; [
 						# vim-sluth # automatic tab width detection and changes it to spaces -_-
@@ -80,7 +81,7 @@ in
 						onedark-nvim
 						todo-comments-nvim
 						mini-nvim
-						nvim-treesitter.withAllGrammars
+						pkgs-stable.vimPlugins.nvim-treesitter.withAllGrammars
 						nvim-autopairs
 						neo-tree-nvim
 						nui-nvim

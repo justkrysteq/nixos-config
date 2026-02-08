@@ -18,9 +18,11 @@
 
 	services.resolved = {
 		enable = true;
-		dnsovertls = "true";
-		domains = [ "~." ];
-		fallbackDns = [ "" ];
-		llmnr = "false";
+		settings.Resolve = {
+			DNSOverTLS = "true";
+			Domains = [ "~." ];
+			FallbackDNS = [ "" ];
+			LLMNR = "false";
+		};
 	};
 }

@@ -2,6 +2,11 @@
 
 {
 	xdg.configFile = {
+		"scripts/general/minimize-window.sh" = {
+			source = ./general/minimize-window.sh;
+			executable = true;
+		};
+
 		"scripts/lockscreen/weekday.sh" = {
 			source = ./lockscreen/weekday.sh;
 			executable = true;

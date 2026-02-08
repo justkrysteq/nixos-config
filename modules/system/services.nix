@@ -12,6 +12,9 @@
 		# Needed for AstalBattery
 		upower.enable = true;
 
+		# Required for mount.yazi  TODO: read more services.udisks2.settings, services.udisks2.mountOnMedia
+		udisks2.enable = true;
+
 		# openssh.enable = true;
 
 		# Enable sound with pipewire
