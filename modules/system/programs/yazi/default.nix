@@ -21,8 +21,8 @@
 			zoom = pkgs.fetchFromGitHub {
 				owner = "yazi-rs";
 				repo = "plugins";
-				rev = "main";
-				hash = "sha256-60xxQZlXsKs7F/TJdRkhgZpTXas6rUvJUb0rvwZIozo=";
+				rev = "88990a6cf1d31afd9d8db1a0d74bf37ef50d6786";
+				hash = "sha256-0K6qGgbGt8N6HgGNEmn2FDLar6hCPiPBbvOsrTjSubM=";
 			} + "/zoom.yazi";
 		};
 
