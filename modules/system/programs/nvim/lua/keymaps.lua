@@ -70,3 +70,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
 		end
 	end,
 })
+
+-- Paste
+map("x", "<leader>p", "\"_dP", { desc = "[P]aste with retaining the register" })
