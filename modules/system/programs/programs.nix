@@ -38,6 +38,7 @@
 		clipse # clipboard manager
 		killall
 		mediainfo # required for mediainfo plugin for yazi
+		ffmpeg
 		# rmpc # music player
 		# joecalsend # TUI Localsend
 		# cdrkit # for genisoimage
