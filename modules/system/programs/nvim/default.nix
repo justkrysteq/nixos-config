@@ -42,7 +42,7 @@ in
 						typescript-language-server
 						# rocmPackages.clang
 						ccls # C/C++ language server works only in git repo
-						superhtml
+						pkgs-stable.superhtml
 						vscode-css-languageserver
 						pyright
 						hyprls
