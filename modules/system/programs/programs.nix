@@ -51,7 +51,7 @@
 		hyprpaper hyprpicker hyprpolkitagent # Hyprland utils
 		hyprshot swappy # Screenshots
 		swaynotificationcenter libnotify # for notify-send # Notifications
-		walker # App Launcher
+		elephant walker # App Launcher
 	];
 
 	programs = {
