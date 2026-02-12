@@ -82,7 +82,7 @@ in
 						onedark-nvim
 						todo-comments-nvim
 						mini-nvim
-						nvim-treesitter.withAllGrammars
+						pkgs-stable.vimPlugins.nvim-treesitter.withAllGrammars
 						nvim-autopairs
 						neo-tree-nvim
 						nui-nvim

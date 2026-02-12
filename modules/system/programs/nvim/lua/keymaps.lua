@@ -73,3 +73,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
 
 -- Paste
 map("x", "<leader>p", "\"_dP", { desc = "[P]aste with retaining the register" })
+
+-- Quick substitute
+map("n", "<leader>S", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = "[S]ubstitute word under cursor" })

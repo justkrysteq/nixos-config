@@ -12,6 +12,7 @@ return {
 		local map = vim.keymap.set
 
 		map("n", "<leader>hh", ":HopWord<CR>", { desc = "[H]op Word" })
+		map("n", "s", ":HopWord<CR>", { desc = "Hop Word", noremap = true })
 		map("n", "<leader>hw", ":HopWordAC<CR>", { desc = "[H]op [W]ord after cursor" })
 		map("n", "<leader>hW", ":HopWordBC<CR>", { desc = "[H]op [W]ord before cursor" })
 		map("n", "<leader>ha", ":HopAnywhere<CR>", { desc = "[H]op [A]nywhere" })
