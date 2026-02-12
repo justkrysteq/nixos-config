@@ -62,6 +62,10 @@
 						{ name = "Templates"; text = ""; fg = "blue"; }
 						{ name = "Videos"; text = ""; fg = "blue"; }
 					];
+
+					prepend_exts = [
+						{ name = "go"; text = "󰟓"; fg = "#00add8"; }
+					];
 				};
 			};
 
