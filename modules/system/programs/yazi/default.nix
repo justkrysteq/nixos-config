@@ -17,6 +17,7 @@
 			inherit (pkgs.yaziPlugins) compress;
 			inherit (pkgs.yaziPlugins) jump-to-char;
 			inherit (pkgs.yaziPlugins) mediainfo;
+			inherit (pkgs.yaziPlugins) chmod;
 
 			zoom = pkgs.fetchFromGitHub {
 				owner = "yazi-rs";
@@ -39,6 +40,28 @@
 					title = {
 						fg = "green";
 					};
+				};
+
+				icon = {
+					append_dirs = [
+						{ name = "media"; text = ""; fg = "blue"; }
+						{ name = "nvim"; text = ""; fg = "blue"; }
+						{ name = "yazi"; text = "󰇥"; fg = "blue"; }
+					];
+
+					prepend_dirs = [
+						{ name = "Code"; text = ""; fg = "blue"; }
+						{ name = "Desktop"; text = ""; fg = "blue"; }
+						{ name = "Documents"; text = ""; fg = "blue"; }
+						{ name = "Downloads"; text = ""; fg = "blue"; }
+						{ name = "Library"; text = ""; fg = "blue"; }
+						{ name = "Movies"; text = ""; fg = "blue"; }
+						{ name = "Music"; text = ""; fg = "blue"; }
+						{ name = "Pictures"; text = ""; fg = "blue"; }
+						{ name = "Public"; text = ""; fg = "blue"; }
+						{ name = "Templates"; text = ""; fg = "blue"; }
+						{ name = "Videos"; text = ""; fg = "blue"; }
+					];
 				};
 			};
 
@@ -72,6 +95,8 @@
 						{ on = [ "R" "b" ]; run = "plugin recycle-bin"; desc = "Open Recycle Bin menu"; }
 						# { on = [ "R" "m" ]; run = "plugin mediainfo -- toggle-metadata"; desc = "Toggle media preview metadata"; }
 						{ on = [ "R" "d" ]; run = "shell -- dragon-drop -x -i -T -a %s"; desc = "Drag file(s) with dragon"; }
+
+						{ on = [ "c" "m" ]; run = "plugin chmod"; desc = "Chmod on selected files"; }
 					];
 
 					prepend_keymap = [

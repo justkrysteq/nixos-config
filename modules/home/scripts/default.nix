@@ -6,6 +6,10 @@
 			source = ./general/minimize-window.sh;
 			executable = true;
 		};
+		"scripts/general/yazi-as-file-chooser.sh" = {
+			source = ./general/yazi-as-file-chooser.sh;
+			executable = true;
+		};
 
 		"scripts/lockscreen/weekday.sh" = {
 			source = ./lockscreen/weekday.sh;
