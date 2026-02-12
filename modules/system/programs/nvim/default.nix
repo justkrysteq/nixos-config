@@ -53,6 +53,7 @@ in
 						kdePackages.qtdeclarative # QML Language server and stuff
 						imagemagick # for image previews
 						go # for hexokinase
+						tree-sitter
 					];
 				};
 
@@ -81,7 +82,7 @@ in
 						onedark-nvim
 						todo-comments-nvim
 						mini-nvim
-						pkgs-stable.vimPlugins.nvim-treesitter.withAllGrammars
+						nvim-treesitter.withAllGrammars
 						nvim-autopairs
 						neo-tree-nvim
 						nui-nvim
