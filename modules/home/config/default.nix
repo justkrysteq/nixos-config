@@ -8,17 +8,12 @@ in
 		"hypr/hyprlock.conf".source = link "hypr/shared/hyprlock.conf";
 		"hypr/hyprpaper.conf".source = link "hypr/shared/hyprpaper.conf";
 		"hypr/hypridle.conf".source = link "hypr/${hostname}/hypridle.conf";
-		"hypr/modules/input.conf".source = link "hypr/${hostname}/input.conf";
-		"hypr/modules/monitors.conf".source = link "hypr/${hostname}/monitors.conf";
-		"hypr/assets/background.png".source = link "hypr/shared/assets/background.png";
-		"hypr/assets/cat.png".source = link "hypr/shared/assets/cat.png";
-		"hypr/assets/wallpaper.png".source = link "hypr/shared/assets/wallpaper.png";
-		"hypr/assets/profile.png".source = link "hypr/shared/assets/profile.png";
+		"hypr/assets".source = link "hypr/shared/assets";
+		"hypr/modules".source = link "hypr/shared/modules";
+		"hypr/per-device/input.conf".source = link "hypr/${hostname}/input.conf";
+		"hypr/per-device/monitors.conf".source = link "hypr/${hostname}/monitors.conf";
 
-		"kitty" = {
-			source = ./kitty;
-			recursive = true;
-		};
+		"kitty/kitty.conf".source = link "kitty/kitty.conf";
 
 		"xdg-desktop-portal-termfilechooser" = {
 			source = ./xdg-desktop-portal-termfilechooser;
