@@ -10,14 +10,16 @@
 		initLua = ./init.lua;
 
 		plugins = {
-			inherit (pkgs.yaziPlugins) recycle-bin;
-			inherit (pkgs.yaziPlugins) restore;
-			inherit (pkgs.yaziPlugins) mount;
-			inherit (pkgs.yaziPlugins) relative-motions;
-			inherit (pkgs.yaziPlugins) compress;
-			inherit (pkgs.yaziPlugins) jump-to-char;
-			inherit (pkgs.yaziPlugins) mediainfo;
-			inherit (pkgs.yaziPlugins) chmod;
+			inherit (pkgs.yaziPlugins)
+				recycle-bin
+				restore
+				mount
+				relative-motions
+				compress
+				jump-to-char
+				mediainfo
+				chmod
+			;
 
 			zoom = pkgs.fetchFromGitHub {
 				owner = "yazi-rs";
