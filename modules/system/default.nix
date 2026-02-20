@@ -7,6 +7,7 @@
 		./kernel.nix
 		./locale.nix
 		./networking.nix
+		./overlays
 		./programs
 		./services.nix
 		./shell-aliases.nix
