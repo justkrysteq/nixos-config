@@ -2,7 +2,12 @@ return {
 	"folke/which-key.nvim",
 	event = "VimEnter", -- Sets the loading event to 'VimEnter'
 	config = function() -- This is the function that runs, AFTER loading
-		require("which-key").setup()
+		require("which-key").setup({
+			triggers = {
+				{ "<auto>", mode = "nxso" },
+				{ "s", mode = "nx" },
+			},
+		})
 
 		-- Document existing key chains
 		require("which-key").add({
@@ -22,13 +27,10 @@ return {
 			{ "<leader>w_", hidden = true },
 			{ "<leader>h", group = "[H]op" },
 			{ "<leader>h_", hidden = true },
-			{
-				mode = { "v" },
-				{ "<leader>h", group = "Git [H]unk" },
-				{ "<leader>h_", hidden = true },
-			},
 			{ "<C-W>t", group = "[T]ab management" },
 			{ "<C-W>t_", hidden = true },
+			{ "s", group = "[S]urround" },
+			{ "s_", hidden = true },
 		})
 	end,
 }

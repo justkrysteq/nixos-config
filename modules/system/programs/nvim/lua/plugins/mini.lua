@@ -11,20 +11,10 @@ return {
 
 		-- Add/delete/replace surroundings (brackets, quotes, etc.)
 		--
-		-- - Saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-		-- - Sd'   - [S]urround [D]elete [']quotes
-		-- - Sr)'  - [S]urround [R]eplace [)] []
-		require("mini.surround").setup({
-
-			mappings = {
-				add = 'Sa', -- Add surrounding in Normal and Visual modes
-				delete = 'Sd', -- Delete surrounding
-				find = 'Sf', -- Find surrounding (to the right)
-				find_left = 'SF', -- Find surrounding (to the left)
-				highlight = 'Sh', -- Highlight surrounding
-				replace = 'Sr', -- Replace surrounding
-			},
-		})
+		-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
+		-- - sd'   - [S]urround [D]elete [']quotes
+		-- - sr)'  - [S]urround [R]eplace [)] []
+		require("mini.surround").setup()
 
 		-- Simple and easy statusline.
 		--  You could remove this setup call if you dont like it,
