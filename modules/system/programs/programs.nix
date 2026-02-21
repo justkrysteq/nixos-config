@@ -71,6 +71,8 @@
 			};
 		};
 
+		ssh.startAgent = true;
+
 		zoxide.enable = true;
 
 		hyprland = {
