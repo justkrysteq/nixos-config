@@ -71,7 +71,10 @@
 			};
 		};
 
-		ssh.startAgent = true;
+		ssh = {
+			startAgent = true;
+			extraConfig = "AddKeysToAgent yes";
+		};
 
 		zoxide.enable = true;
 
