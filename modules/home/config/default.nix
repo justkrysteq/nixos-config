@@ -15,6 +15,8 @@ in
 
 		"kitty/kitty.conf".source = link "kitty/kitty.conf";
 
+		"fastfetch/config.jsonc".source = link "fastfetch/config.jsonc";
+
 		"xdg-desktop-portal-termfilechooser" = {
 			source = ./xdg-desktop-portal-termfilechooser;
 			recursive = true;
