@@ -54,6 +54,7 @@ in
 						imagemagick # for image previews
 						go # for hexokinase
 						tree-sitter
+						gopls
 					];
 				};
 

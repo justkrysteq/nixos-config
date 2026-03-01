@@ -203,7 +203,7 @@ return {
 			hyprls = {},
 
 			-- Go
-			-- gopls = {},
+			gopls = {},
 
 			-- Python
 			pyright = {}, -- also see pyls
