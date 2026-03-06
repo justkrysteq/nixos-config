@@ -46,6 +46,7 @@
 
 				icon = {
 					append_dirs = [
+						{ name = "go"; text = "󰟓"; fg = "blue"; }
 						{ name = "media"; text = ""; fg = "blue"; }
 						{ name = "nvim"; text = ""; fg = "blue"; }
 						{ name = "yazi"; text = "󰇥"; fg = "blue"; }

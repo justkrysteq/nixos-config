@@ -27,6 +27,7 @@
 	environment = {
 		variables = {
 			EDITOR = "nvim";
+			GOPATH = "$HOME/.cache/go";
 		};
 
 		sessionVariables = {
