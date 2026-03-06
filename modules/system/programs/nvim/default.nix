@@ -1,4 +1,4 @@
-{ inputs, pkgs-stable, ... }:
+{ inputs, pkgs-treesitter, pkgs-stable, ... }:
 let
 	utils = inputs.nixCats.utils;
 in
@@ -55,6 +55,7 @@ in
 						go # for hexokinase
 						tree-sitter
 						gopls
+						bash-language-server
 					];
 				};
 
@@ -83,7 +84,7 @@ in
 						onedark-nvim
 						todo-comments-nvim
 						mini-nvim
-						pkgs-stable.vimPlugins.nvim-treesitter.withAllGrammars
+						pkgs-treesitter.vimPlugins.nvim-treesitter.withAllGrammars
 						nvim-autopairs
 						neo-tree-nvim
 						nui-nvim

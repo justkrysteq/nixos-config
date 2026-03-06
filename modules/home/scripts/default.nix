@@ -2,10 +2,6 @@
 
 {
 	xdg.configFile = {
-		"scripts/general/minimize-window.sh" = {
-			source = ./general/minimize-window.sh;
-			executable = true;
-		};
 		"scripts/general/yazi-as-file-chooser.sh" = {
 			source = ./general/yazi-as-file-chooser.sh;
 			executable = true;

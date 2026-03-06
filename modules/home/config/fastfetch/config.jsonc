@@ -116,13 +116,13 @@
 			"keyColor": "green"
 		},
 		{
-			"type": "uptime",
-			"key": "├─ 󰅐",
+			"type": "display",
+			"key": "├─ 󰍹",
 			"keyColor": "green"
 		},
 		{
-			"type": "display",
-			"key": "╰─ 󰍹",
+			"type": "uptime",
+			"key": "╰─ 󰅐",
 			"keyColor": "green"
 		},
 		{
@@ -130,10 +130,10 @@
 			"format": "└{$1}{$1}┘",
 			"outputColor": "light_black"
 		},
-		"break",
 		{
 			"type": "custom",
 			"format": " {#black}  {#red}  {#green}  {#yellow}  {#blue}  {#magenta}  {#cyan}  {#37}  {#38}  {#39}       {#38}  {#37}  {#cyan}  {#magenta}  {#blue}  {#yellow}  {#green}  {#red}  {#black}"
-		}
+		},
+		"break"
 	]
 }

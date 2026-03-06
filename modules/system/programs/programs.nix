@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
 	# Allow unfree packages
@@ -7,10 +7,10 @@
 	environment.systemPackages = with pkgs; [
 
 		# Browsers
-		# brave # now defined in chromium.nix
+		# brave
 
 		# Apps
-		vesktop signal-desktop obsidian
+		vesktop pkgs-unstable.signal-desktop obsidian
 		mpv # Media Player
 		kdePackages.dolphin # File Manager
 		qalculate-gtk # Calculator
@@ -81,6 +81,7 @@
 		hyprland = {
 			enable = true;
 			xwayland.enable = true;
+			package = pkgs-unstable.hyprland;
 		};
 
 		hyprlock.enable = true;

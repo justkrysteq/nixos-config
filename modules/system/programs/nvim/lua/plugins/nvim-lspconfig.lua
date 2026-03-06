@@ -214,6 +214,9 @@ return {
 			-- Markdown
 			markdown_oxide = {},
 
+			-- Bash
+			bashls = {},
+
 			-- TypeScript
 			-- ts_ls = {},
 
