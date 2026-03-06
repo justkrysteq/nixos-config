@@ -6,8 +6,6 @@ local autocmd = vim.api.nvim_create_autocmd
 --  See `:help lua-guide-autocommands`
 
 -- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.hl.on_yank()`
 autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
@@ -16,6 +14,16 @@ autocmd("TextYankPost", {
 	end,
 })
 
+-- Open help window to the right
+autocmd("BufWinEnter", {
+	group = vim.api.nvim_create_augroup("help_window_right", {}),
+	pattern = { "*.txt" },
+	callback = function()
+		if vim.o.filetype == "help" then
+			vim.cmd.wincmd("L")
+		end
+	end
+})
 
 -- [[ Filetype Autocommands ]]
 --  See `:help lua-guide-filetype`
@@ -29,15 +37,4 @@ autocmd("FileType", {
 		vim.opt_local.tabstop = 4
 		vim.opt_local.softtabstop = 4
 	end,
-})
-
--- Open help window to the right
-autocmd("BufWinEnter", {
-	group = vim.api.nvim_create_augroup("help_window_right", {}),
-	pattern = { "*.txt" },
-	callback = function()
-		if vim.o.filetype == "help" then
-			vim.cmd.wincmd("L")
-		end
-	end
 })

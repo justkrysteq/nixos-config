@@ -30,41 +30,47 @@ in
 			categoryDefinitions.replace = ({ pkgs, settings, categories, extra, name, mkPlugin, ... }@packageDef: {
 				lspsAndRuntimeDeps = {
 					general = with pkgs; [
-						universal-ctags
-						ripgrep
-						fd
-						stdenv.cc.cc
-						nix.doc
-						lua-language-server
-						nixd
-						stylua
-						markdownlint-cli
-						typescript-language-server
-						# clang-tools
-						ccls # C/C++ language server works only in git repo
-						pkgs-stable.superhtml
-						vscode-css-languageserver
-						pyright
-						hyprls
-						rust-analyzer
-						intelephense
-						markdown-oxide
-						lemminx # XML Language server
-						kdePackages.qtdeclarative # QML Language server and stuff
+						# Dependencies
+						tree-sitter
 						imagemagick # for image previews
 						go # for hexokinase
-						tree-sitter
-						gopls
-						bash-language-server
+						ripgrep # for telescope
+						fd # for telescope
+						stdenv.cc.cc
+						nix.doc
+						universal-ctags
+
+						# Formatters
+						stylua
+
+						# Linters
+						markdownlint-cli
+
+						# LSPs
+						# C/C++
+						# clang-tools
+						ccls # Works only in a git repo
+
+						bash-language-server # Bash
+						vscode-css-languageserver # CSS
+						gopls # Go
+						pkgs-stable.superhtml # HTML
+						hyprls # Hyprlang
+						lua-language-server # Lua
+						markdown-oxide # Markdown
+						nixd # Nix
+						intelephense # PHP
+						pyright # Python
+						kdePackages.qtdeclarative # QML
+						rust-analyzer # Rust
+						lemminx # XML
 					];
 				};
 
 				startupPlugins = {
 					general = with pkgs.vimPlugins; [
-						# vim-sluth # automatic tab width detection and changes it to spaces -_-
 						lazy-nvim
 						comment-nvim
-						# gitsigns-nvim # :Gitsigns - shows git changes
 						which-key-nvim
 						telescope-nvim
 						telescope-fzf-native-nvim
@@ -97,14 +103,6 @@ in
 						hop-nvim
 						render-markdown-nvim
 						yazi-nvim
-
-						# If you want only certain grammars
-						# (nvim-treesitter.withPlugins (
-						#	 plugins: with plugins; [
-						#		 nix
-						#		 lua
-						#	 ]
-						# ))
 					];
 					# themer = with pkgs; [
 					#	 # you can even make subcategories based on categories and settings sets!

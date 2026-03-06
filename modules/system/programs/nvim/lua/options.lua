@@ -13,7 +13,7 @@ o.smartindent = true
 -- Enable break indent
 o.breakindent = true
 
--- FONTS
+-- Fonts
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 g.have_nerd_font = true
 
@@ -81,6 +81,3 @@ o.scrolloff = 10
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
 o.confirm = true
-
-
-
