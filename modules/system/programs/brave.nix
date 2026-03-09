@@ -18,6 +18,7 @@
 
 		extensions = [
 			"eimadpbcbfnmbkopoojfekhnkhdbieeh;https://clients2.google.com/service/update2/crx" # Dark Reader
+			"dbepggeogbaibhgnhhndojpepiihcmeb;https://clients2.google.com/service/update2/crx" # Vimium
 		];
 
 		initialPrefs = {
