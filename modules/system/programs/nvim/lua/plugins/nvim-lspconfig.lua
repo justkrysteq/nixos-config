@@ -162,6 +162,9 @@ return {
 			-- Bash
 			bashls = {},
 
+			-- Java
+			jdtls = {},
+
 			-- Lua
 			lua_ls = {
 				settings = {

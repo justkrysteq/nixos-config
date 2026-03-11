@@ -17,6 +17,7 @@
 
 		# Games
 		prismlauncher # Minecraft
+		tty-solitaire
 
 		# CLI Tools
 		kitty

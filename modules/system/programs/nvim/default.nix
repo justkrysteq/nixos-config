@@ -64,6 +64,7 @@ in
 						kdePackages.qtdeclarative # QML
 						rust-analyzer # Rust
 						lemminx # XML
+						jdt-language-server # Java
 					];
 				};
 
