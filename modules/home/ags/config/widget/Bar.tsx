@@ -5,6 +5,7 @@ import NotificationButton from "./components/NotificationButton";
 import PowerButton from "./components/PowerButton";
 import QuickSettingsPanel from "./components/QuickSettingsPanel";
 import Workspaces from "./components/Workspaces";
+import DiscordNotifications from "./components/DiscordNotifications";
 
 export default function Bar(gdkmonitor: Gdk.Monitor) {
 	const { BOTTOM, LEFT, RIGHT } = Astal.WindowAnchor;
@@ -23,6 +24,9 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
 				<box $type="start">
 					<PowerButton />
 					<Workspaces />
+				</box>
+				<box $type="center">
+					<DiscordNotifications withValue />
 				</box>
 				<box $type="end" spacing={6}>
 					<QuickSettingsPanel />
