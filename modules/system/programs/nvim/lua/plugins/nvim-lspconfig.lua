@@ -165,6 +165,10 @@ return {
 			-- Java
 			jdtls = {},
 
+			-- Kotlin
+			-- kotlin_lsp = {}, -- Preferred but no package in nixpkgs
+			-- kotlin_language_server = {}, -- Unofficial
+
 			-- Lua
 			lua_ls = {
 				settings = {

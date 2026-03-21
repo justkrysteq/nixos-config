@@ -21,5 +21,7 @@ return {
 			-- 	return false
 			-- end -- condition to check for stopping supermaven, `true` means to stop supermaven when the condition is true.
 		})
+
+		vim.keymap.set("n", "<leader>tic", "<cmd>SupermavenToggle<CR>", { desc = "[T]oggle [I]nline [C]ompletion" })
 	end,
 }

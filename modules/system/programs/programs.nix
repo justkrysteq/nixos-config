@@ -53,6 +53,7 @@
 		hyprshot swappy # Screenshots
 		swaynotificationcenter libnotify # for notify-send # Notifications
 		elephant walker # App Launcher
+		quickshell # Widgets
 	];
 
 	programs = {

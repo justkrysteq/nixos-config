@@ -65,6 +65,7 @@ in
 						rust-analyzer # Rust
 						lemminx # XML
 						jdt-language-server # Java
+						# kotlin-language-server # Kotlin
 					];
 				};
 

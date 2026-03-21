@@ -33,6 +33,4 @@
 			common."org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
 		};
 	};
-
-	# programs.quickshell.enable = true;
 }
