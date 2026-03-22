@@ -34,11 +34,11 @@ in
 						tree-sitter
 						imagemagick # for image previews
 						go # for hexokinase
-						ripgrep # for telescope
-						fd # for telescope
+						ripgrep fd # for telescope
 						stdenv.cc.cc
 						nix.doc
 						universal-ctags
+						nodePackages.nodejs nodePackages.typescript nodePackages.npm # for typescript-tools-nvim
 
 						# Formatters
 						stylua

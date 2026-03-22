@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-stable, ... }:
 
 {
 	stylix = {
@@ -41,12 +41,12 @@
 
 			serif = {
 				name = "Noto Serif";
-				package = pkgs.noto-fonts;
+				package = pkgs-stable.noto-fonts;
 			};
 
 			sansSerif = {
 				name = "Noto Sans";
-				package = pkgs.noto-fonts;
+				package = pkgs-stable.noto-fonts;
 			};
 
 			emoji = {

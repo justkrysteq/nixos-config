@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, pkgs-unstable, pkgs-stable, ... }:
 
 {
 	# Allow unfree packages
@@ -45,12 +45,9 @@
 		# cdrkit # for genisoimage
 		# gdb # c debugger
 
-		# Dev
-		nodePackages.nodejs nodePackages.typescript
-
 		# DE/Rice
 		hyprpaper hyprpicker hyprpolkitagent # Hyprland utils
-		hyprshot swappy # Screenshots
+		pkgs-stable.hyprshot swappy # Screenshots
 		swaynotificationcenter libnotify # for notify-send # Notifications
 		elephant walker # App Launcher
 		quickshell # Widgets

@@ -1,5 +1,14 @@
-{ ... }:
+{ hostname, ... }:
+let
+	isPC = hostname == "pc";
 
+	fix_nvidia = {
+		LIBVA_DRIVER_NAME = "nvidia";
+		GBM_BACKEND = "nvidia-drm";
+		__GLX_VENDOR_LIBRARY_NAME = "nvidia";
+		NVD_BACKEND = "direct";
+	};
+in
 {
 	nix = {
 		# Auto-delete old system states every week
@@ -28,7 +37,7 @@
 		variables = {
 			EDITOR = "nvim";
 			GOPATH = "$HOME/.cache/go";
-		};
+		} // (if isPC then fix_nvidia else {});
 
 		sessionVariables = {
 			# Hint electron apps to use wayland
