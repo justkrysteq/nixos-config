@@ -40,6 +40,7 @@
 		killall
 		mediainfo # required for mediainfo plugin for yazi
 		ffmpeg
+		vivify
 		# rmpc # music player
 		# joecalsend # TUI Localsend
 		# cdrkit # for genisoimage
