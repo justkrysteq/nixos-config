@@ -65,6 +65,7 @@ in
 						rust-analyzer # Rust
 						lemminx # XML
 						jdt-language-server # Java
+						texlab # LaTeX
 						# kotlin-language-server # Kotlin
 					];
 				};
@@ -104,7 +105,7 @@ in
 						vim-hexokinase
 						hop-nvim
 						render-markdown-nvim
-						yazi-nvim
+						pkgs-stable.vimPlugins.yazi-nvim
 					];
 					# themer = with pkgs; [
 					#	 # you can even make subcategories based on categories and settings sets!

@@ -159,6 +159,9 @@ return {
 			-- Markdown
 			markdown_oxide = {},
 
+			-- LaTeX
+			texlab = {},
+
 			-- Bash
 			bashls = {},
 
