@@ -14,6 +14,7 @@
 		mpv # Media Player
 		kdePackages.dolphin # File Manager
 		qalculate-gtk # Calculator
+		zed-editor
 
 		# Games
 		prismlauncher # Minecraft
