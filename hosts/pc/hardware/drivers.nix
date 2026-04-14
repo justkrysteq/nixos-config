@@ -39,7 +39,7 @@
 			nvidiaSettings = false;
 
 			# Optionally, you may need to select the appropriate driver version for your specific GPU.
-			package = config.boot.kernelPackages.nvidiaPackages.stable;
+			package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
 # 			prime = {
 # 				offload.enable = true; # Puts dGPU to sleep and lets iGPU handle all tasks unless called specifically

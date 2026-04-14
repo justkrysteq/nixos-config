@@ -64,10 +64,16 @@
 		git = {
 			enable = true;
 			config = {
-				user.name = "Krysteq";
-				user.email = "justkrysteq@proton.me";
+				user = {
+					name = "Krysteq";
+					email = "justkrysteq@proton.me";
+					signingKey = "~/.ssh/git.pub";
+				};
+
 				init.defaultBranch = "main";
 				core.sshCommand = "ssh -i ~/.ssh/git";
+				gpg.format = "ssh";
+				commit.gpgSign = true;
 			};
 		};
 

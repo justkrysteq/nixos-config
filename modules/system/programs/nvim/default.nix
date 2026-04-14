@@ -38,7 +38,7 @@ in
 						stdenv.cc.cc
 						nix.doc
 						universal-ctags
-						nodePackages.nodejs nodePackages.typescript nodePackages.npm # for typescript-tools-nvim
+						nodejs typescript # for typescript-tools-nvim
 
 						# Formatters
 						stylua
@@ -54,7 +54,7 @@ in
 						bash-language-server # Bash
 						vscode-css-languageserver # CSS
 						gopls # Go
-						pkgs-stable.superhtml # HTML
+						superhtml # HTML
 						hyprls # Hyprlang
 						lua-language-server # Lua
 						markdown-oxide # Markdown
