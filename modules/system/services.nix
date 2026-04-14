@@ -32,6 +32,8 @@
 
 		};
 
+		tailscale.enable = true;
+
 		# Music Player Daemon
 		# mpd = {
 			# enable = true;
