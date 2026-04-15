@@ -22,6 +22,8 @@ in
 			recursive = true;
 		};
 
+		"zed".source = link "zed";
+
 		# Brave Search Engines
 		# NOTE: This does not work because the file needs to be in that directory, be mutable and not be a symlink
 		# The solution for now is to copy the file to the config directory with this command

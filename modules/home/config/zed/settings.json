@@ -1,0 +1,110 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "lsp_document_colors": "inlay",
+  "git_panel": {
+    "file_icons": false,
+    "tree_view": false
+  },
+  "outline_panel": {
+    "file_icons": true
+  },
+  "project_panel": {
+    "hide_root": true,
+    "git_status": true,
+    "folder_icons": true,
+    "file_icons": true,
+    "entry_spacing": "comfortable",
+    "hide_gitignore": true
+  },
+  "zoomed_padding": true,
+  "active_pane_modifiers": {
+    "inactive_opacity": 1.0
+  },
+  "window_decorations": "client",
+  "bottom_dock_layout": "contained",
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": false,
+    "show_tab_bar_buttons": true,
+    "show_nav_history_buttons": false
+  },
+  "tabs": {
+    "show_diagnostics": "off",
+    "file_icons": false,
+    "git_status": false
+  },
+  "status_bar": {
+    "active_encoding_button": "non_utf8"
+  },
+  "title_bar": {
+    "show_branch_icon": false
+  },
+  "inlay_hints": {
+    "show_value_hints": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "show_background": true,
+    "enabled": false
+  },
+  "vim": {
+    "gdefault": false,
+    "use_system_clipboard": "on_yank",
+    "toggle_relative_line_numbers": true
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "auto_update": false,
+  "which_key": {
+    "enabled": false
+  },
+  "autosave": "off",
+  "ui_font_family": ".ZedSans",
+  "buffer_font_family": "Hack Nerd Font Mono",
+  "terminal": {
+    "toolbar": {
+      "breadcrumbs": false
+    },
+    "font_size": 14.0,
+    "dock": "bottom",
+    "font_family": "Hack Nerd Font Mono",
+    "shell": {
+      "program": "zsh"
+    }
+  },
+  "calls": {
+    "mute_on_join": true
+  },
+  "show_whitespaces": "boundary",
+  "hard_tabs": true,
+  "format_on_save": "on",
+  "relative_line_numbers": "enabled",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "vim_mode": true,
+  "icon_theme": "Colored Zed Icons Theme Light",
+  "ui_font_size": 16.0,
+  "buffer_font_size": 14.0,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Fleet Dark Purple",
+  },
+  "languages": {
+    "Nix": {
+      "format_on_save": "off"
+    },
+  },
+}
