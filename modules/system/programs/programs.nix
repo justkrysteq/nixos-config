@@ -11,7 +11,7 @@
 
 		# Apps
 		vesktop pkgs-unstable.signal-desktop obsidian
-		mpv # Media Player
+		pkgs-stable.mpv # Media Player
 		kdePackages.dolphin # File Manager
 		qalculate-gtk # Calculator
 		zed-editor

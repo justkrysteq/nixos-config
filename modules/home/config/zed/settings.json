@@ -7,15 +7,26 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
   "lsp_document_colors": "inlay",
   "git_panel": {
+    "dock": "left",
     "file_icons": false,
     "tree_view": false
   },
   "outline_panel": {
+    "dock": "left",
     "file_icons": true
   },
   "project_panel": {
+    "dock": "left",
     "hide_root": true,
     "git_status": true,
     "folder_icons": true,
