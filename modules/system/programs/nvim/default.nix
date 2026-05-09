@@ -1,4 +1,4 @@
-{ inputs, pkgs-treesitter, pkgs-stable, ... }:
+{ inputs, pkgs-stable, ... }:
 let
 	utils = inputs.nixCats.utils;
 in
@@ -92,7 +92,7 @@ in
 						onedark-nvim
 						todo-comments-nvim
 						mini-nvim
-						pkgs-treesitter.vimPlugins.nvim-treesitter.withAllGrammars
+						nvim-treesitter.withAllGrammars
 						nvim-autopairs
 						neo-tree-nvim
 						nui-nvim
