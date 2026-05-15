@@ -26,6 +26,7 @@
 		x = "exit";
 		nix-shell = "nix-shell --command $SHELL ";
 		nsp = "nix-shell -p ";
+		nspu = "NIXPKGS_ALLOW_UNFREE=1 nsp ";
 		genshell = "touch shell.nix; echo '{pkgs ? import <nixpkgs> {} }:' > shell.nix; echo '' >> shell.nix; echo 'pkgs.mkShell {' >> shell.nix; echo '	buildInputs = with pkgs; [];' >> shell.nix; echo '}' >> shell.nix";
 	};
 }
