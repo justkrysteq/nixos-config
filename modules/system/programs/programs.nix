@@ -5,6 +5,7 @@
 	nixpkgs.config.allowUnfree = true;
 
 	environment.systemPackages = with pkgs; [
+		(pkgs.callPackage ../packages/zennotes.nix { })
 
 		# Browsers
 		# brave
