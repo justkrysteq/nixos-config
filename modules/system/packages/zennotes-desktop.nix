@@ -7,26 +7,28 @@
   copyDesktopItems,
   electron,
   makeWrapper,
-}:
 
+  installCLI ? false,
+  CLIcommand ? "zen",
+  commandLineArgs ? "",
+}:
+let
+  releaseData = lib.importJSON ./release-data.json;
+in
 buildNpmPackage (finalAttrs: {
   pname = "zennotes-desktop";
-  version = "2.3.0";
+  inherit (releaseData) version npmDepsHash;
 
   src = fetchFromGitHub {
     owner = "ZenNotes";
     repo = "zennotes";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-+tLPVnnMbtMa5blSwHav9ZMlnkUsrdG62mMGxhbmy6g=";
+    inherit (releaseData) hash;
   };
-
-  npmDepsHash = "sha256-7IpGnxVjaJvfSZyKjOylGMhFqa1bx8Ry5O1yqYfNnCE=";
 
   npmWorkspace = "apps/desktop";
 
-  env = {
-    ELECTRON_SKIP_BINARY_DOWNLOAD = "1";
-  };
+  env.ELECTRON_SKIP_BINARY_DOWNLOAD = "1";
 
   nativeBuildInputs = [
     makeWrapper
@@ -35,21 +37,28 @@ buildNpmPackage (finalAttrs: {
     copyDesktopItems
   ];
 
-  dontNpmInstall = true;
-
   installPhase = ''
     runHook preInstall
 
     mkdir -p $out/lib/node_modules/zennotes-monorepo
     cp -r . $out/lib/node_modules/zennotes-monorepo/
 
-    for size in 16 32 48 64 128 256 512; do
-      install -Dm644 apps/desktop/build/icons/''${size}x''${size}.png $out/share/icons/hicolor/''${size}x''${size}/apps/${finalAttrs.pname}.png
+    for icon in apps/desktop/build/icons/*.png; do
+      size="$(basename "$icon" .png)"
+      install -Dm644 $icon $out/share/icons/hicolor/$size/apps/${finalAttrs.pname}.png
     done
 
     mkdir -p $out/bin
     makeWrapper ${electron}/bin/electron $out/bin/${finalAttrs.pname} \
-      --add-flags "$out/lib/node_modules/zennotes-monorepo/apps/desktop"
+      --add-flags "$out/lib/node_modules/zennotes-monorepo/apps/desktop" \
+      --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto}}" \
+      ${lib.optionalString (commandLineArgs != "") "--add-flags ${lib.escapeShellArg commandLineArgs}"}
+
+    ${lib.optionalString installCLI ''
+      makeWrapper ${electron}/libexec/electron/electron $out/bin/${CLIcommand} \
+        --set ELECTRON_RUN_AS_NODE 1 \
+        --add-flags "$out/lib/node_modules/zennotes-monorepo/apps/desktop/out/main/cli.js"
+    ''}
 
     runHook postInstall
   '';
