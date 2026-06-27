@@ -35,6 +35,13 @@ return {
 					return
 				end
 
+				-- Disable treesitter indentation for qml files
+				if filetype == "qml" then
+					if not vim.treesitter.language.add(language) then return end
+					vim.treesitter.start(buf, language)
+					return
+				end
+
 				if not treesitter_try_attach(buf,language) then
 					if vim.tbl_contains(installable_parsers, language) then
 						-- not already installed, so try to install them via nvim-treesitter if possible
