@@ -18,7 +18,7 @@ hl.config({
 		}
 	},
 
-	gesture = {
+	gestures = {
 		workspace_swipe_distance = 125,
 		workspace_swipe_cancel_ratio = 0.3,
 		workspace_swipe_create_new = true,

@@ -71,7 +71,7 @@ export default function Workspaces() {
 								return <button
 									onClicked={() => {
 										if (workspace.monitor.activeWorkspace.id !== workspace.id) {
-											hyprland.dispatch("workspace", workspace.id.toString());
+											hyprland.dispatch(`hl.dsp.focus({workspace="${workspace.id.toString()}"})`, "");
 										}
 									}} >
 										<box class={ workspaceClass } valign={Gtk.Align.CENTER} />
