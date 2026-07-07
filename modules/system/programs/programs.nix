@@ -16,13 +16,15 @@
 		kdePackages.dolphin # File Manager
 		qalculate-gtk # Calculator
 		zed-editor
+		kitty
+		gimp
+		pavucontrol # volume control
 
 		# Games
 		prismlauncher # Minecraft
 		tty-solitaire
 
 		# CLI Tools
-		kitty
 		fastfetch
 		btop
 		eza # a modern replacement for ls
@@ -34,12 +36,9 @@
 		wirelesstools # required for iwconfig to return wifi signal quicker
 		wl-clipboard # required for screenshots
 		trash-cli # required for recycle-bin plugin for yazi
-		pavucontrol # volume mixer
-		gimp # image editor
 		dragon-drop # drag and drop utility
 		nix-prefetch-github # utility to get the latest commit hash of a repo
 		clipse # clipboard manager
-		killall
 		mediainfo # required for mediainfo plugin for yazi
 		ffmpeg
 		vivify
