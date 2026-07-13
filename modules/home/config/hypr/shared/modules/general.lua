@@ -95,6 +95,26 @@ hl.config({
 	},
 
 	binds = {
-		disable_keybind_grabbing = true
+		disable_keybind_grabbing = true,
+		scroll_event_delay = 100
+	},
+
+	group = {
+		col = {
+			border_active = { colors = {"rgba(a60000ee)", "rgba(5402b3ee)"}, angle = 30},
+			border_inactive = "rgba(595959aa)"
+		},
+		groupbar = {
+			-- enabled = false,
+			-- gradients = true,
+			indicator_height = 5,
+			render_titles = false,
+			rounding = 2,
+			keep_upper_gap = false,
+			col = {
+				active = { colors = {"rgba(a60000ee)", "rgba(5402b3ee)"}, angle = 30},
+				inactive = "rgba(595959aa)"
+			}
+		}
 	}
 })

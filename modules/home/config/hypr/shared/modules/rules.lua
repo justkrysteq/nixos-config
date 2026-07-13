@@ -93,7 +93,7 @@ hl.window_rule({
 	name = "idle-inhibit-when-rebuilding",
 	match = {
 		class = "kitty",
-		title = "*sudo nixos-rebuild switch*",
+		title = ".*nixos-rebuild.*",
 	},
 	idle_inhibit = "always",
 })
