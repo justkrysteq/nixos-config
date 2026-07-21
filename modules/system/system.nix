@@ -14,14 +14,14 @@ in
 		# Auto-delete old system states every week
 		gc = {
 			automatic = true;
-			dates = "weekly";
-			options = "--delete-older-than 7d";
+			dates = "Sat *-*-* 01:00:00";
+			options = "--delete-older-than 10d";
 		};
 
 		# Auto-optimise nix-store every week
 		optimise = {
 			automatic = true;
-			dates = "weekly";
+			dates = "Sat *-*-* 01:00:00";
 		};
 
 		settings = {
