@@ -135,8 +135,8 @@ return {
 		-- see https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/configs/
 		local servers = {
 			-- C/C++
-			-- clangd = {},
-			ccls = {},
+			clangd = {},
+			-- ccls = {},
 
 			-- HTML
 			superhtml = {},

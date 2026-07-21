@@ -48,8 +48,8 @@ in
 
 						# LSPs
 						# C/C++
-						# clang-tools
-						ccls # Works only in a git repo
+						clang-tools
+						# ccls # Works only in a git repo
 
 						bash-language-server # Bash
 						vscode-css-languageserver # CSS
