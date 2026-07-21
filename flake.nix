@@ -24,7 +24,7 @@
 		nixCats.url = "github:BirdeeHub/nixCats-nvim";
 	};
 
-	outputs = { self, nixpkgs, ... } @ inputs:
+	outputs = { nixpkgs, ... } @ inputs:
 	let
 		flake-dir = "/etc/nixos";
 		username = "krysteq";
