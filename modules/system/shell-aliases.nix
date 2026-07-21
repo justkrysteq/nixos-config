@@ -1,4 +1,4 @@
-{ flake-dir, hostname, ... }:
+{ flake-dir, hostname, config, username, lib, ... }:
 
 {
 	environment.shellAliases = {
@@ -24,7 +24,7 @@
 		nd = "nix develop -c $SHELL";
 		gs = "git status";
 		x = "exit";
-		nix-shell = "nix-shell --command $SHELL ";
+		nix-shell = "nix-shell --command ${lib.getExe config.users.users.${username}.shell} ";
 		nsp = "nix-shell -p ";
 		nspu = "NIXPKGS_ALLOW_UNFREE=1 nsp ";
 		genshell = "touch shell.nix; echo '{pkgs ? import <nixpkgs> {} }:' > shell.nix; echo '' >> shell.nix; echo 'pkgs.mkShell {' >> shell.nix; echo '	buildInputs = with pkgs; [];' >> shell.nix; echo '}' >> shell.nix";
