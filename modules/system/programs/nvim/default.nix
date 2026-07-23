@@ -52,10 +52,10 @@ in
 						# ccls # Works only in a git repo
 
 						bash-language-server # Bash
-						vscode-css-languageserver # CSS
 						gopls # Go
 						templ # Templ
-						superhtml # HTML
+						vscode-langservers-extracted # HTML CSS JSON ESLint
+						htmx-lsp # HTMX
 						hyprls # Hyprlang
 						lua-language-server # Lua
 						markdown-oxide # Markdown

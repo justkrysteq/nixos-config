@@ -36,7 +36,7 @@ return {
 				end
 
 				-- Disable treesitter indentation for qml files
-				if filetype == "qml" then
+				if filetype == "qml" or filetype == "templ" then
 					if not vim.treesitter.language.add(language) then return end
 					vim.treesitter.start(buf, language)
 					return

@@ -139,10 +139,19 @@ return {
 			-- ccls = {},
 
 			-- HTML
-			superhtml = {},
+			html = {},
+
+			-- HTMX
+			-- htmx = {},
 
 			-- CSS
 			cssls = {},
+
+			-- ESLint
+			eslint = {},
+
+			-- JSON
+			jsonls = {},
 
 			-- Hyprland
 			hyprls = {},
