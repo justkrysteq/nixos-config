@@ -150,6 +150,9 @@ return {
 			-- Go
 			gopls = {},
 
+			-- Templ
+			templ = {},
+
 			-- Python
 			pyright = {},
 

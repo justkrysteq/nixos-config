@@ -54,6 +54,7 @@ in
 						bash-language-server # Bash
 						vscode-css-languageserver # CSS
 						gopls # Go
+						templ # Templ
 						superhtml # HTML
 						hyprls # Hyprlang
 						lua-language-server # Lua
