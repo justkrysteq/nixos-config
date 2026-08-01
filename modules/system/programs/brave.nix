@@ -2,11 +2,12 @@
 
 {
 	environment.systemPackages = with pkgs-unstable; [
-		(brave.override {
-			commandLineArgs = [
-				"--disable-features=WaylandWpColorManagerV1"
-			];
-		})
+		# (brave.override {
+		# 	commandLineArgs = [
+		# 		"--disable-features=WaylandWpColorManagerV1"
+		# 	];
+		# })
+		brave
 	];
 
 	programs.chromium = {
