@@ -166,7 +166,13 @@ return {
 			pyright = {},
 
 			-- Rust
-			rust_analyzer = {},
+			rust_analyzer = {
+				["rust-analyzer"] = {
+					checkOnSave = {
+						command = "clippy"
+					}
+				}
+			},
 
 			-- Markdown
 			markdown_oxide = {},

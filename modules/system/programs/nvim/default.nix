@@ -41,7 +41,9 @@ in
 						nodejs typescript # for typescript-tools-nvim
 
 						# Formatters
-						stylua
+						stylua # Lua
+						gotools # goimports - Go
+						rustfmt # Rust
 
 						# Linters
 						markdownlint-cli
