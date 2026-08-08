@@ -17,7 +17,6 @@ return {
 			local ft = vim.bo[bufnr].filetype
 
 			local allowed = {
-				lua = true,
 				go = true,
 				rust = true,
 			}

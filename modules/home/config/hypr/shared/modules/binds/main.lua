@@ -5,6 +5,7 @@
 require("modules.binds.navigation")
 require("modules.binds.submaps")
 
+-- General
 hl.bind("SUPER + Q", hl.dsp.exec_cmd("kitty"), { desc = "Open kitty, [Q]itty" })
 hl.bind("SUPER + E", hl.dsp.window.close(), { desc = "Close window, [E]xit" })
 hl.bind("SUPER + SHIFT + E", hl.dsp.window.kill(), { desc = "Kill a window, Force [E]xit" })
@@ -61,13 +62,8 @@ hl.bind("SUPER + SHIFT + Grave", hl.dsp.window.move({ monitor = "+1" }), { desc 
 hl.bind("SUPER + CTRL + Grave", hl.dsp.focus({ monitor = "-1" }), { desc = "Cycle monitor focus (reverse)" })
 
 -- Groups
-hl.bind("SUPER + G", hl.dsp.group.toggle(), { desc = "Toggle window group, [G]roup" })
-hl.bind("SUPER + SHIFT + G", hl.dsp.window.move({ into_group = "l" }), { desc = "Move window into a group when it's on the left, [G]roup" }) -- TODO: preferably it should auto detect the first group in the workspace and move into it
-hl.bind("SUPER + CTRL + G", hl.dsp.window.move({ out_of_group = true }), { desc = "Move window out of group, [G]roup" })
 hl.bind("SUPER + Space", hl.dsp.group.next(), { desc = "Next window in group" })
 hl.bind("SUPER + SHIFT + Space", hl.dsp.group.prev(), { desc = "Previous window in group" })
-hl.bind("SUPER + CTRL + Space", hl.dsp.group.move_window(), { desc = "Move window in the group order, Move in [G]roup" })
-hl.bind("SUPER + CTRL + SHIFT + Space", hl.dsp.group.move_window({ forward = false }), { desc = "Move window in the group order (reverse), Move in [G]roup" })
 
 -- Minimize window
 hl.bind("SUPER + D", function()
@@ -80,7 +76,7 @@ hl.bind("SUPER + D", function()
 	end
 end, { desc = "Minimize window, [D]own" })
 
--- Special workspace to float over all workspaces - Change to FIFO minimize
+-- Special workspace to float over all workspaces - Change to LIFO minimize
 -- hl.bind("SUPER + SHIFT + D", hl.dsp.workspace.toggle_special({ name = "superfloat" }), { desc = "Toggle special workspace" })
 -- hl.bind("SUPER + ALT + D", hl.dsp.window.move({ workspace = "special:superfloat" }), { desc = "Move to special workspace" })
 
@@ -96,7 +92,7 @@ hl.bind("SUPER + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m active --mode wind
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind("SUPER + Z", hl.dsp.window.drag(), { mouse = true, desc = "Move window" })
 hl.bind("SUPER + X", hl.dsp.window.resize(), { mouse = true, desc = "Resize window" })
--- hl.bind("SUPER + SHIFT + X", hl.dsp.window.resize({ keep_aspect_ratio = true }), { mouse = true, desc = "Resize window and keep aspect ratio" })
+hl.bind("SUPER + SHIFT + X", hl.dsp.window.resize({ keep_aspect_ratio = true }), { mouse = true, desc = "Resize window and keep aspect ratio" })
 
 -- Multimedia keys for volume and LCD brightness [F-keys]
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 5 @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true, locked = true, desc = "Increase volume" })
@@ -110,9 +106,8 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tru
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true, desc = "Next track" })
 
 -- Binds for apps
--- Currently doesn't work
-hl.bind("SUPER + M", hl.dsp.send_shortcut({ mods = "CTRL SHIFT", key = "M", window = "initialClass:^(vesktop)$" }), { desc = "Mute on Discord, [M]ute" })
-hl.bind("SUPER + SHIFT + M", hl.dsp.send_shortcut({ mods = "CTRL SHIFT", key = "D", window = "initialClass:^(vesktop)$" }), { desc = "Deafen on Discord" })
+hl.bind("SUPER + M", hl.dsp.send_shortcut({ mods = "CTRL SHIFT", key = "M", window = "initialclass:^(vesktop)$" }), { desc = "Mute on Discord, [M]ute" })
+hl.bind("SUPER + SHIFT + M", hl.dsp.send_shortcut({ mods = "CTRL SHIFT", key = "D", window = "initialclass:^(vesktop)$" }), { desc = "Deafen on Discord" })
 
 -- Laptop extra binds
 hl.bind("XF86Calculator", hl.dsp.exec_cmd("qalculate-gtk"), { desc = "Launch Calculator" })

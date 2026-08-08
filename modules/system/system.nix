@@ -40,8 +40,8 @@ in
 		} // (if isPC then fix_nvidia else {});
 
 		sessionVariables = {
-			# Hint electron apps to use wayland
-			NIXOS_OZONE_WL = "1";
+			NIXOS_OZONE_WL = "1"; # Hint electron apps to use wayland
+			GTK_CSD = "0"; # No GTK Client Side Decorations
 		};
 	};
 

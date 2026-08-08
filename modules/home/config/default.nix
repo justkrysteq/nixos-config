@@ -1,20 +1,26 @@
-{ config, flake-dir, hostname, ... }:
+{ config, flake-dir, hostname, pkgs, ... }:
 let
 	link = f: config.lib.file.mkOutOfStoreSymlink "${flake-dir}/modules/home/config/${f}";
 in
 {
 	xdg.configFile = {
-		"hypr/hyprland.conf".source = link "hypr/shared/hyprland.conf";
 		"hypr/hyprland.lua".source = link "hypr/shared/hyprland.lua";
 		"hypr/hyprlock.conf".source = link "hypr/shared/hyprlock.conf";
 		"hypr/hyprpaper.conf".source = link "hypr/shared/hyprpaper.conf";
 		"hypr/hypridle.conf".source = link "hypr/${hostname}/hypridle.conf";
 		"hypr/assets".source = link "hypr/shared/assets";
 		"hypr/modules".source = link "hypr/shared/modules";
-		"hypr/per-device/input.conf".source = link "hypr/${hostname}/input.conf";
 		"hypr/per-device/input.lua".source = link "hypr/${hostname}/input.lua";
-		"hypr/per-device/monitors.conf".source = link "hypr/${hostname}/monitors.conf";
 		"hypr/per-device/monitors.lua".source = link "hypr/${hostname}/monitors.lua";
+		"hypr/.luarc.json".text = /*json*/''
+			{
+				"workspace": {
+					"library": [
+						"${pkgs.hyprland}/share/hypr/stubs/hl.meta.lua"
+					]
+				}
+			}
+		'';
 
 		"kitty/kitty.conf".source = link "kitty/kitty.conf";
 

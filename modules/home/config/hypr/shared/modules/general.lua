@@ -104,6 +104,7 @@ hl.config({
 			border_active = { colors = {"rgba(a60000ee)", "rgba(5402b3ee)"}, angle = 30},
 			border_inactive = "rgba(595959aa)"
 		},
+		drag_into_group = 0,
 		groupbar = {
 			-- enabled = false,
 			-- gradients = true,
