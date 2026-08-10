@@ -51,19 +51,16 @@ end, { desc = "Cycle between floating and tiled windows (reverse)" })
 hl.bind("SUPER + Tab", hl.dsp.window.cycle_next(), { desc = "Cycle window focus" })
 hl.bind("SUPER + SHIFT + Tab", hl.dsp.window.cycle_next({ next = false }), { desc = "Cycle window focus (reverse)" })
 
--- Cycle workspace focus
-hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }), { desc = "Cycle window focus" })
-hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "e-1" }), { desc = "Cycle window focus" })
-hl.bind("SUPER + SHIFT + Tab", hl.dsp.window.cycle_next({ next = false }), { desc = "Cycle window focus (reverse)" })
-
 -- Cycle monitor focus
 hl.bind("SUPER + Grave", hl.dsp.focus({ monitor = "+1" }), { desc = "Cycle monitor focus" })
 hl.bind("SUPER + SHIFT + Grave", hl.dsp.window.move({ monitor = "+1" }), { desc = "Cycle monitor focus (reverse)" })
 hl.bind("SUPER + CTRL + Grave", hl.dsp.focus({ monitor = "-1" }), { desc = "Cycle monitor focus (reverse)" })
 
--- Groups
+-- Cycle window focus in a group
 hl.bind("SUPER + Space", hl.dsp.group.next(), { desc = "Next window in group" })
 hl.bind("SUPER + SHIFT + Space", hl.dsp.group.prev(), { desc = "Previous window in group" })
+hl.bind("SUPER + mouse_down", hl.dsp.group.next(), { desc = "Next window in group" })
+hl.bind("SUPER + mouse_up", hl.dsp.group.prev(), { desc = "Previous window in group" })
 
 -- Minimize window
 hl.bind("SUPER + D", function()
