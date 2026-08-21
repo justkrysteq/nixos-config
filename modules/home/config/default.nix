@@ -33,6 +33,21 @@ in
 
 		"zed".source = link "zed";
 
+		"systemd/user/xdg-desktop-portal.service".text = ''
+[Unit]
+Description=Portal service
+PartOf=graphical-session.target
+Requires=dbus.service
+After=dbus.service
+After=graphical-session.target
+
+[Service]
+Type=dbus
+BusName=org.freedesktop.portal.Desktop
+ExecStart=${pkgs.xdg-desktop-portal}/libexec/xdg-desktop-portal
+Slice=session.slice
+		'';
+
 		# Brave Search Engines
 		# NOTE: This does not work because the file needs to be in that directory, be mutable and not be a symlink
 		# The solution for now is to copy the file to the config directory with this command
