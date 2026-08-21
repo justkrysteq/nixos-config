@@ -7,6 +7,7 @@ in
 		"hypr/hyprland.lua".source = link "hypr/shared/hyprland.lua";
 		"hypr/hyprlock.conf".source = link "hypr/shared/hyprlock.conf";
 		"hypr/hyprpaper.conf".source = link "hypr/shared/hyprpaper.conf";
+		"hypr/xdph.conf".source = link "hypr/shared/xdph.conf";
 		"hypr/hypridle.conf".source = link "hypr/${hostname}/hypridle.conf";
 		"hypr/assets".source = link "hypr/shared/assets";
 		"hypr/modules".source = link "hypr/shared/modules";
