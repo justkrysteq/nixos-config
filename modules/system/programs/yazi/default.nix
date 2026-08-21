@@ -103,6 +103,7 @@
 						{ on = [ "R" "b" ]; run = "plugin recycle-bin"; desc = "Open Recycle Bin menu"; }
 						# { on = [ "R" "m" ]; run = "plugin mediainfo -- toggle-metadata"; desc = "Toggle media preview metadata"; }
 						{ on = [ "R" "d" ]; run = "shell -- dragon-drop -x -i -T -a %s"; desc = "Drag file(s) with dragon"; }
+						{ on = [ "R" "w" ]; run = "shell -- hyprctl hyprpaper wallpaper ,\"%s\""; desc = "Set as wallpaper"; }
 
 						{ on = [ "c" "m" ]; run = "plugin chmod"; desc = "Chmod on selected files"; }
 					];
