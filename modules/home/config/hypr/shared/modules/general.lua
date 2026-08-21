@@ -72,14 +72,31 @@ hl.config({
 		preserve_split = true
 	},
 
+	input = {
+		kb_layout = "pl",
+		kb_model = "pc104",
+
+		follow_mouse = 1,
+
+		sensitivity = 0,
+
+		touchpad = {
+			natural_scroll = false,
+			disable_while_typing = false
+		}
+	},
+
+	gestures = {
+		workspace_swipe_distance = 125,
+		workspace_swipe_cancel_ratio = 0.3,
+		workspace_swipe_create_new = true,
+		workspace_swipe_forever = false
+	},
+
 	-- See https://wiki.hypr.land/Configuring/Master-Layout/ for more
 	master  = {
 		new_status = "master"
 	},
-
-	------------
-	--- MISC ---
-	------------
 
 	misc = {
 		disable_autoreload = false, -- set to true when you finish configuring (might save on battery)

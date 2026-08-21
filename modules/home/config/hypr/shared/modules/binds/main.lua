@@ -2,6 +2,7 @@
 --- KEYBINDINGS ---
 -------------------
 
+require("modules.binds.gestures")
 require("modules.binds.navigation")
 require("modules.binds.submaps")
 
