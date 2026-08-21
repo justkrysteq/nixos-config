@@ -18,7 +18,7 @@ hl.window_rule({
 hl.window_rule({
 	name = "floating-obsidian",
 	match = {
-		class = "obsidian",
+		class = "md.Obsidian",
 	},
 	float = true,
 	move = { 379, 48 },
@@ -53,6 +53,24 @@ hl.window_rule({
 	},
 	float = true,
 	size = { 1018, 1012 },
+	center = true,
+})
+
+hl.window_rule({
+	name = "floating-steamapps",
+	match = {
+		initial_class = "steam_app_(4162040|3893482776|2153588263)",
+	},
+	float = true,
+	center = true,
+})
+
+hl.window_rule({
+	name = "floating-share-picker",
+	match = {
+		initial_title = "Select what to share",
+	},
+	float = true,
 	center = true,
 })
 
