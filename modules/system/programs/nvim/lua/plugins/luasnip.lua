@@ -91,6 +91,26 @@ return {
 					box-sizing: border-box;
 				]], {}
 			)),
+			s("df", fmt(
+				[[
+					display: flex;
+				]], {}
+			)),
+			s("dg", fmt(
+				[[
+					display: grid;
+				]], {}
+			)),
+			s("pic", fmt(
+				[[
+					place-items: center;
+				]], {}
+			)),
+			s("taj", fmt(
+				[[
+					text-align: justify;
+				]], {}
+			)),
 			s("initcss", fmt(
 				[[
 					:root {{
