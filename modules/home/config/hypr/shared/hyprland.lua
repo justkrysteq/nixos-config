@@ -5,10 +5,11 @@
 require("modules.animations")
 require("modules.autostart")
 require("modules.binds.main")
+require("modules.devices")
 require("modules.environment-variables")
 require("modules.general")
-require("modules.devices")
 require("modules.permissions")
 require("modules.rules")
 
 require("per-device.monitors")
+require("per-device.behaviors")

@@ -11,7 +11,7 @@ in
 		"hypr/hypridle.conf".source = link "hypr/${hostname}/hypridle.conf";
 		"hypr/assets".source = link "hypr/shared/assets";
 		"hypr/modules".source = link "hypr/shared/modules";
-		"hypr/per-device/input.lua".source = link "hypr/${hostname}/input.lua";
+		"hypr/per-device/behaviors.lua".source = link "hypr/${hostname}/behaviors.lua";
 		"hypr/per-device/monitors.lua".source = link "hypr/${hostname}/monitors.lua";
 		"hypr/.luarc.json".text = /*json*/''
 			{

@@ -25,19 +25,3 @@ for i = 1, 10 do
 	hl.workspace_rule({ workspace = "" .. i, monitor = monitor1 })
 	hl.workspace_rule({ workspace = "" .. i + 10, monitor = monitor2 })
 end
-
-hl.window_rule({
-	name = "signal-on-2-3",
-	match = {
-		class = "signal",
-	},
-	workspace = "13"
-})
-
-hl.window_rule({
-	name = "vesktop-on-2-1",
-	match = {
-		class = "vesktop",
-	},
-	workspace = "11"
-})
