@@ -38,9 +38,9 @@ hl.define_submap("move", function()
 	hl.bind("right",  hl.dsp.window.move({ x = 10,  y = 0,   relative = true }), { repeating = true, desc = "Move window right" })
 
 	hl.bind("h",      hl.dsp.window.move({ x = -30, y = 0,   relative = true }), { repeating = true, desc = "Move window left" })
-	hl.bind("k",      hl.dsp.window.move({ x = 0, y = -30,   relative = true }), { repeating = true, desc = "Move window up" })
-	hl.bind("j",      hl.dsp.window.move({ x = 0, y = 30,    relative = true }), { repeating = true, desc = "Move window down" })
-	hl.bind("l",      hl.dsp.window.move({ x = 30, y = 0,    relative = true }), { repeating = true, desc = "Move window right" })
+	hl.bind("k",      hl.dsp.window.move({ x = 0,   y = -30, relative = true }), { repeating = true, desc = "Move window up" })
+	hl.bind("j",      hl.dsp.window.move({ x = 0,   y = 30,  relative = true }), { repeating = true, desc = "Move window down" })
+	hl.bind("l",      hl.dsp.window.move({ x = 30,  y = 0,   relative = true }), { repeating = true, desc = "Move window right" })
 
 	hl.bind("escape", hl.dsp.submap("reset"), { desc = "Quit submap" })
 end)

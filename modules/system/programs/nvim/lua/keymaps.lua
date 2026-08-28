@@ -27,6 +27,8 @@ map("n", "<leader>i4", ":%s/    /\\t/g<CR><cmd>nohlsearch<CR>", { desc = "Switch
 
 -- Tab management
 map("n", "<C-W>tt", ":tabnew | Telescope find_files<CR>", { desc = "Open new [T]ab with [T]elescope" })
+map("n", "<C-W>te", ":tabnew<CR>", { desc = "Open new [T]ab [E]mpty" })
+map("n", "<C-W>ty", ":tabnew | Yazi<CR>", { desc = "Open new [T]ab with [Y]azi" })
 map("n", "<C-W>tw", ":tabclose<CR>", { desc = "Close current tab" })
 map("n", "<C-W>t1", ":tabfirst<CR>", { desc = "[T]ab [1]" })
 map("n", "<C-W>t2", ":tabnext 2<CR>", { desc = "[T]ab [2]" })
