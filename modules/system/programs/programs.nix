@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, pkgs-stable, ... }:
+{ pkgs, pkgs-unstable, pkgs-stable, lib, ... }:
 
 {
 	# Allow unfree packages
@@ -61,22 +61,6 @@
 		obs-studio.enable = true;
 
 		localsend.enable = true;
-
-		git = {
-			enable = true;
-			config = {
-				user = {
-					name = "Krysteq";
-					email = "justkrysteq@proton.me";
-					signingKey = "~/.ssh/git.pub";
-				};
-
-				init.defaultBranch = "main";
-				core.sshCommand = "ssh -i ~/.ssh/git";
-				gpg.format = "ssh";
-				commit.gpgSign = true;
-			};
-		};
 
 		ssh = {
 			startAgent = true;

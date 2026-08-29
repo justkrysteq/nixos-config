@@ -3,6 +3,7 @@
 {
 	imports = [
 		./brave.nix
+		./git.nix
 		./nvim
 		./overlays
 		./programs.nix
