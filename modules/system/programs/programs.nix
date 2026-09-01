@@ -42,6 +42,7 @@
 		mediainfo # required for mediainfo plugin for yazi
 		ffmpeg
 		vivify
+		yt-dlp
 		# rmpc # music player
 		# joecalsend # TUI Localsend
 		# cdrkit # for genisoimage

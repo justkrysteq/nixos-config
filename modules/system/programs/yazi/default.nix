@@ -19,6 +19,8 @@
 				jump-to-char
 				mediainfo
 				chmod
+				git
+				easyjump
 			;
 
 			zoom = pkgs.fetchFromGitHub {
@@ -104,8 +106,10 @@
 						# { on = [ "R" "m" ]; run = "plugin mediainfo -- toggle-metadata"; desc = "Toggle media preview metadata"; }
 						{ on = [ "R" "d" ]; run = "shell -- dragon-drop -x -i -T -a %s"; desc = "Drag file(s) with dragon"; }
 						{ on = [ "R" "w" ]; run = "shell -- hyprctl hyprpaper wallpaper ,\"%s\""; desc = "Set as wallpaper"; }
+						{ on = [ "R" "g" ]; run = "shell -- git restore --staged %s"; desc = "Git restore file"; }
 
 						{ on = [ "c" "m" ]; run = "plugin chmod"; desc = "Chmod on selected files"; }
+						{ on = "i"; run = "plugin easyjump"; desc = "Enter hop mode"; }
 					];
 
 					prepend_keymap = [
@@ -138,6 +142,11 @@
 						{ mime = "{audio,video,image}/*"; run = "mediainfo"; }
 						{ mime = "application/subrip"; run = "mediainfo"; }
 						{ mime = "application/postscript"; run = "mediainfo"; }
+					];
+
+					prepend_fetchers = [
+						{ url = "*"; run = "git"; group = "git"; }
+						{ url = "*/"; run = "git"; group = "git"; }
 					];
 				};
 			};
