@@ -21,14 +21,10 @@
 				chmod
 				git
 				easyjump
+				zoom
 			;
 
-			zoom = pkgs.fetchFromGitHub {
-				owner = "yazi-rs";
-				repo = "plugins";
-				rev = "88990a6cf1d31afd9d8db1a0d74bf37ef50d6786";
-				hash = "sha256-0K6qGgbGt8N6HgGNEmn2FDLar6hCPiPBbvOsrTjSubM=";
-			} + "/zoom.yazi";
+			dir-rules = ./plugins/dir-rules;
 		};
 
 		settings = {
@@ -78,10 +74,9 @@
 				mgr = {
 					append_keymap = [
 						{ on = [ "g" "n" ]; run = "cd ${flake-dir}"; desc = "Go ${flake-dir}"; }
-						{ on = [ "g" "r" ]; run = "cd /"; desc = "Go /"; }
+						{ on = [ "g" "/" ]; run = "cd /"; desc = "Go /"; }
+						{ on = [ "g" "r" ]; run = "shell -- ya emit cd \"$(git rev-parse --show-toplevel)\""; desc = "Go to git repository root"; }
 						{ on = [ "g" "p" ]; run = "cd $HOME/Documents/Projects"; desc = "Go ~/Documents/Projects"; }
-						{ on = [ "g" "t" ]; run = "tab_switch 1 --relative"; desc = "Switch to next tab"; }
-						{ on = [ "g" "T" ]; run = "tab_switch -1 --relative"; desc = "Switch to previous tab"; }
 						{ on = "<C-o>"; run = "back"; desc = "Go to previous directory"; }
 
 						{ on = [ "m" "M" ]; run = "linemode size_and_mtime"; desc = "Linemode: size and modification time"; }
@@ -126,6 +121,9 @@
 
 						{ on = "+"; run = "plugin zoom 1"; desc = "Zoom in hovered file"; }
 						{ on = "-"; run = "plugin zoom -1"; desc = "Zoom out hovered file"; }
+
+						{ on = [ "g" "t" ]; run = "tab_switch 1 --relative"; desc = "Switch to next tab"; }
+						{ on = [ "g" "T" ]; run = "tab_switch -1 --relative"; desc = "Switch to previous tab"; }
 					];
 				};
 			};

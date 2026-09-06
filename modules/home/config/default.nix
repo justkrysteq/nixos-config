@@ -49,6 +49,12 @@ ExecStart=${pkgs.xdg-desktop-portal}/libexec/xdg-desktop-portal
 Slice=session.slice
 		'';
 
+		"systemd/user/xdg-desktop-portal-hyprland.service.d/qt-style.conf".text = ''
+[Service]
+Environment=QT_STYLE_OVERRIDE=
+Environment=QT_QPA_PLATFORMTHEME=
+'';
+
 		# Brave Search Engines
 		# NOTE: This does not work because the file needs to be in that directory, be mutable and not be a symlink
 		# The solution for now is to copy the file to the config directory with this command

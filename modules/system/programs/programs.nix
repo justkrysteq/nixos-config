@@ -22,7 +22,7 @@
 
 		# Games
 		prismlauncher # Minecraft
-		tty-solitaire
+		tty-solitaire # freesweep tetris
 
 		# CLI Tools
 		fastfetch
@@ -43,6 +43,7 @@
 		ffmpeg
 		vivify
 		yt-dlp
+		sops
 		# rmpc # music player
 		# joecalsend # TUI Localsend
 		# cdrkit # for genisoimage
