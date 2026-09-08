@@ -7,9 +7,7 @@
 			enable = true;
 			extraPackages = with pkgs; [
 				vpl-gpu-rt # Intel VPL
-				vulkan-loader
-				vulkan-validation-layers
-				vulkan-extension-layer
+				intel-media-driver
 			];
 		};
 
@@ -34,8 +32,6 @@
 			# Only available from driver 515.43.04+
 			open = true;
 
-			# Enable the Nvidia settings menu,
-			# accessible via `nvidia-settings`.
 			nvidiaSettings = false;
 
 			# Optionally, you may need to select the appropriate driver version for your specific GPU.

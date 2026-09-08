@@ -10,8 +10,8 @@
 		};
 
 		nameservers = [
-			"45.90.28.0#374e98.dns.nextdns.io"
-			"45.90.30.0#374e98.dns.nextdns.io"
+			"45.90.28.0#${hostname}-374e98.dns.nextdns.io"
+			"45.90.30.0#${hostname}-374e98.dns.nextdns.io"
 		];
 #		wireless.enable = true;
 	};

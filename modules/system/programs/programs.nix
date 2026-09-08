@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, pkgs-stable, lib, ... }:
+{ pkgs, pkgs-unstable, pkgs-stable, ... }:
 
 {
 	# Allow unfree packages
@@ -8,7 +8,7 @@
 		# (pkgs.callPackage ./packages/zennotes-desktop.nix { })
 
 		# Browsers
-		# brave
+		brave-origin
 
 		# Apps
 		vesktop pkgs-unstable.signal-desktop obsidian

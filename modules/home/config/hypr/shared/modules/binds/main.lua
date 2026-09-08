@@ -15,8 +15,8 @@ hl.bind("SUPER + F", hl.dsp.window.float({ action = "toggle" }), { desc = "Toggl
 hl.bind("SUPER + SHIFT + F", hl.dsp.window.float({ action = "toggle", centered = true }), { desc = "Toggle floating centered, [F]loat centered" })
 hl.bind("SUPER + S", hl.dsp.exec_cmd("walker"), { desc = "Open walker, [S]tart an app" })
 hl.bind("SUPER + P", hl.dsp.window.pseudo(), { desc = "Pseudo window, [P]seudo" }) -- dwindle
-hl.bind("SUPER + B", hl.dsp.exec_cmd("brave"), { desc = "Open Brave, [B]rowser" })
-hl.bind("SUPER + SHIFT + B", hl.dsp.exec_cmd("brave --incognito"), { desc = "Open Brave in incognito mode, [B]rowser incognito" })
+hl.bind("SUPER + B", hl.dsp.exec_cmd("brave-origin"), { desc = "Open Brave, [B]rowser" })
+hl.bind("SUPER + SHIFT + B", hl.dsp.exec_cmd("brave-origin --incognito"), { desc = "Open Brave in incognito mode, [B]rowser incognito" })
 hl.bind("SUPER + W", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }), { desc = "Toggle fullscreen, [W]hole screen" })
 hl.bind("SUPER + SHIFT + W", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }), { desc = "Toggle maximisation, Maximise [W]indow" })
 hl.bind("SUPER + SHIFT + Backslash", hl.dsp.force_renderer_reload(), { desc = "Force renderer reload" })
