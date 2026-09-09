@@ -2,7 +2,7 @@
 
 {
 	imports = [
-		./brave.nix
+		./chromium.nix
 		./git.nix
 		./nvim
 		./overlays

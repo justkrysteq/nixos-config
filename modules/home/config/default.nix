@@ -13,15 +13,9 @@ in
 		"hypr/modules".source = link "hypr/shared/modules";
 		"hypr/per-device/behaviors.lua".source = link "hypr/${hostname}/behaviors.lua";
 		"hypr/per-device/monitors.lua".source = link "hypr/${hostname}/monitors.lua";
-		"hypr/.luarc.json".text = /*json*/''
-			{
-				"workspace": {
-					"library": [
-						"${pkgs.hyprland}/share/hypr/stubs/hl.meta.lua"
-					]
-				}
-			}
-		'';
+		"hypr/.luarc.json".text = builtins.toJSON {
+			workspace.library = [ "${pkgs.hyprland}/share/hypr/stubs/hl.meta.lua" ];
+		};
 
 		"kitty/kitty.conf".source = link "kitty/kitty.conf";
 
@@ -35,37 +29,24 @@ in
 		"zed".source = link "zed";
 
 		"systemd/user/xdg-desktop-portal.service".text = ''
-[Unit]
-Description=Portal service
-PartOf=graphical-session.target
-Requires=dbus.service
-After=dbus.service
-After=graphical-session.target
+			[Unit]
+			Description=Portal service
+			PartOf=graphical-session.target
+			Requires=dbus.service
+			After=dbus.service
+			After=graphical-session.target
 
-[Service]
-Type=dbus
-BusName=org.freedesktop.portal.Desktop
-ExecStart=${pkgs.xdg-desktop-portal}/libexec/xdg-desktop-portal
-Slice=session.slice
+			[Service]
+			Type=dbus
+			BusName=org.freedesktop.portal.Desktop
+			ExecStart=${pkgs.xdg-desktop-portal}/libexec/xdg-desktop-portal
+			Slice=session.slice
 		'';
 
 		"systemd/user/xdg-desktop-portal-hyprland.service.d/qt-style.conf".text = ''
-[Service]
-Environment=QT_STYLE_OVERRIDE=
-Environment=QT_QPA_PLATFORMTHEME=
-'';
-
-		# Brave Search Engines
-		# NOTE: This does not work because the file needs to be in that directory, be mutable and not be a symlink
-		# The solution for now is to copy the file to the config directory with this command
-		# cp /etc/nixos/modules/home/config/brave/search-engines ~/.config/BraveSoftware/Brave-Browser/Default/Web Data
-
-		# "BraveSoftware/Brave-Browser/Default/Web Data" = {
-		# 	source = ./brave/search-engines;
-		# 	force = true;
-		# 	ignorelinks = true;
-		# 	text = "test";
-		# 	onChange = "cp ./brave/search-engines ~/.config/BraveSoftware/Brave-Browser/Default/Web Data";
-		# };
+			[Service]
+			Environment=QT_STYLE_OVERRIDE=
+			Environment=QT_QPA_PLATFORMTHEME=
+		'';
 	};
 }
