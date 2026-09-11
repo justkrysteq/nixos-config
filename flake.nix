@@ -18,8 +18,10 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		ags.url = "github:Aylur/ags";
-		astal.url = "github:Aylur/astal";
+		millennium = {
+			url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
 		nixCats.url = "github:BirdeeHub/nixCats-nvim";
 	};

@@ -21,15 +21,19 @@ hl.bind("SUPER + W", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "t
 hl.bind("SUPER + SHIFT + W", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }), { desc = "Toggle maximisation, Maximise [W]indow" })
 hl.bind("SUPER + SHIFT + Backslash", hl.dsp.force_renderer_reload(), { desc = "Force renderer reload" })
 hl.bind("SUPER + Semicolon", hl.dsp.exec_cmd("hyprlock"), { desc = "Lock screen, [Semicolo]ck" })
-hl.bind("SUPER + N", hl.dsp.exec_cmd("swaync-client -t"), { desc = "Show notifications panel, [N]otifications" })
+hl.bind("SUPER + N", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center notifications"), { desc = "Show notifications panel, [N]otifications" })
 hl.bind("SUPER + T", hl.dsp.exec_cmd("ags toggle \"bar\""), { desc = "Toggle ags bar, [T]oggle bar" })
 hl.bind("SUPER + SHIFT + T", hl.dsp.layout("togglesplit"), { desc = "Toggle split, [T]oggle split" }) -- dwindle
 hl.bind("SUPER + C", hl.dsp.exec_cmd("qalculate-gtk"), { desc = "Open calculator, [C]alculator" })
+hl.bind("SUPER + Y", hl.dsp.exec_cmd("noctalia msg window-switcher"), { desc = "Open window switcher, [Y]yyyy" })
+hl.bind("SUPER + Escape", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center home"), { desc = "Open control center" })
+hl.bind("SUPER + Comma", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center audio"), { desc = "Open audio" })
 
 -- Clipboard manager
-hl.bind("SUPER + V", function()
-	hl.dispatch(hl.dsp.exec_cmd("kitty --class clipse -e clipse; hyprctl dispatch \"hl.dsp.send_shortcut({ mods = \\\"CTRL\\\", key = \\\"V\\\" })\""))
-end, { desc = "Open clipboard manager and autopaste, [V] just like pasting :D" })
+-- hl.bind("SUPER + V", function()
+-- 	hl.dispatch(hl.dsp.exec_cmd("kitty --class clipse -e clipse; hyprctl dispatch \"hl.dsp.send_shortcut({ mods = \\\"CTRL\\\", key = \\\"V\\\" })\""))
+-- end, { desc = "Open clipboard manager and autopaste, [V] just like pasting :D" })
+hl.bind("SUPER + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"), { desc = "Open clipboard manager, [V]iew clipboard" })
 hl.bind("SUPER + SHIFT + V", hl.dsp.exec_cmd("kitty --class clipse -e clipse"), { desc = "Open clipboard manager, [V]iew clipboard" })
 
 -- Switch between floating and tiled windows
@@ -79,7 +83,8 @@ end, { desc = "Minimize window, [D]own" })
 -- hl.bind("SUPER + ALT + D", hl.dsp.window.move({ workspace = "special:superfloat" }), { desc = "Move to special workspace" })
 
 -- Screenshots
-hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("hyprshot -zsm region --clipboard-only"), { desc = "Screenshot region to clipboard" })
+-- hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("hyprshot -zsm region --clipboard-only"), { desc = "Screenshot region to clipboard" })
+hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("noctalia msg screenshot-region"), { desc = "Screenshot region to clipboard" })
 hl.bind("SUPER + CTRL + SHIFT + S", hl.dsp.exec_cmd("hyprshot -zm region -o $HOME/Pictures/Screenshots"), { desc = "Screenshot region to clipboard and save to ~/Pictures/Screenshots/" })
 hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -sm active --mode output --clipboard-only"), { desc = "Screenshot screen to clipboard" })
 hl.bind("CTRL + PRINT", hl.dsp.exec_cmd("wl-paste | swappy -f -"), { desc = "Open swappy with an image from clipboard" })

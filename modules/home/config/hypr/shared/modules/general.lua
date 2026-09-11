@@ -8,7 +8,7 @@
 hl.config({
 	general = {
 		gaps_in = 3,
-		gaps_out = 10,
+		gaps_out = { top = 10, left = 10, right = 10, bottom = 2 },
 
 		border_size = 2,
 
@@ -46,7 +46,7 @@ hl.config({
 			-- vibrancy_darkness = 0.3
 
 			-- Style 2
-			enabled = true,
+			enabled = false,
 			size = 10,
 			passes = 3,
 			brightness = 1,
@@ -123,7 +123,7 @@ hl.config({
 		},
 		drag_into_group = 0,
 		groupbar = {
-			-- enabled = false,
+			enabled = false,
 			-- gradients = true,
 			indicator_height = 5,
 			render_titles = false,

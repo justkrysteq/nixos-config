@@ -47,7 +47,7 @@ end)
 
 -- SECTION: WORKSPACE NAVIGATION
 
-hl.bind("SUPER + Escape", hl.dsp.submap("workspace_navigation"), { desc = "Enter a workspace navigation submap" })
+hl.bind("SUPER + CTRL + Escape", hl.dsp.submap("workspace_navigation"), { desc = "Enter a workspace navigation submap" })
 
 hl.define_submap("workspace_navigation", function()
 	for i = 1, 10 do
@@ -57,6 +57,8 @@ hl.define_submap("workspace_navigation", function()
 			hl.dispatch(hl.dsp.focus({ workspace = 10*monitor_id + i }))
 		end, "Focus workspace " .. i .. " on the current monitor")
 	end
+
+	hl.bind("escape", hl.dsp.submap("reset"), { desc = "Quit submap" })
 end)
 
 -- SECTION: MONITOR NAVIGATION
@@ -67,6 +69,8 @@ hl.define_submap("monitor_navigation", function()
 	for i = 1, 10 do
 		map(tostring(i % 10), hl.dsp.focus({ monitor = i - 1 }), "Focus monitor with id " .. i - 1)
 	end
+
+	hl.bind("escape", hl.dsp.submap("reset"), { desc = "Quit submap" })
 end)
 
 -- SECTION: GROUP MANAGEMENT

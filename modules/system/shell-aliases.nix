@@ -16,12 +16,12 @@
 		rebuild = "sudo nixos-rebuild switch --flake ${flake-dir}#${hostname}";
 		lsgen = "nixos-rebuild list-generations";
 		n = "nvim";
-		ns = "sudo -EH nvim"; # May lead to potential permission issues in $XDG_RUNTIME_DIR but the -EH flag is needed for clipboard to work when opening files as root
 		s = "sudo ";
 		zn = "cd ${flake-dir}";
-		clean = "sudo nix-collect-garbage -d";
-		update = "zn; s nix flake update; rebuild; cd -";
-		nd = "nix develop -c $SHELL";
+		clean = "s nix-collect-garbage -d";
+		update = "zn; nix flake update; rebuild; cd -";
+		nd = "nix develop -c ${lib.getExe config.users.users.${username}.shell}";
+		nb = "nix build";
 		gs = "git status";
 		x = "exit";
 		nix-shell = "nix-shell --command ${lib.getExe config.users.users.${username}.shell} ";

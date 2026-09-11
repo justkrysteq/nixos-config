@@ -48,6 +48,38 @@
 						{ name = "media"; text = ""; fg = "blue"; }
 						{ name = "nvim"; text = ""; fg = "blue"; }
 						{ name = "yazi"; text = "󰇥"; fg = "blue"; }
+						{ name = "hypr"; text = ""; fg = "blue"; }
+						{ name = "pc"; text = "󰪫"; fg = "blue"; }
+						{ name = "laptok"; text = ""; fg = "blue"; }
+						{ name = "nix"; text = "󱄅"; fg = "blue"; }
+						{ name = "system"; text = ""; fg = "blue"; }
+						{ name = "home"; text = ""; fg = "blue"; }
+						{ name = "packages"; text = "󰏗"; fg = "blue"; }
+						{ name = "programs"; text = ""; fg = "blue"; }
+						{ name = "24.07 *"; text = "󰀥"; fg = "blue"; }
+						{ name = "gimp"; text = ""; fg = "blue"; }
+						{ name = "overlays"; text = ""; fg = "blue"; }
+						{ name = "forgejo"; text = ""; fg = "blue"; }
+						{ name = "Notatki"; text = ""; fg = "blue"; }
+						{ name = "ISO"; text = ""; fg = "blue"; }
+						{ name = "Books"; text = "󰗚"; fg = "blue"; }
+						{ name = "fonts"; text = "󰛖"; fg = "blue"; }
+						{ name = "config"; text = ""; fg = "blue"; }
+						{ name = "scripts"; text = ""; fg = "blue"; }
+						{ name = "plugins"; text = ""; fg = "blue"; }
+						{ name = "lua"; text = ""; fg = "blue"; }
+						{ name = "lockscreen"; text = "󰌾"; fg = "blue"; }
+						{ name = "docs"; text = "󱔗"; fg = "blue"; }
+						{ name = "assets"; text = ""; fg = "blue"; }
+						{ name = "_old"; text = "󰯊"; fg = "blue"; }
+						{ name = "Archive"; text = ""; fg = "blue"; }
+						{ name = "Archived"; text = ""; fg = "blue"; }
+						{ name = "hosts"; text = "󰾰"; fg = "blue"; }
+						{ name = "devices"; text = "󰾰"; fg = "blue"; }
+						{ name = "modules"; text = "󰀻"; fg = "blue"; }
+						{ name = "nixos"; text = ""; fg = "blue"; }
+						{ name = ".ssh"; text = "󰣀"; fg = "blue"; }
+						{ name = "Projects"; text = ""; fg = "blue"; }
 					];
 
 					prepend_dirs = [
@@ -66,6 +98,7 @@
 
 					prepend_exts = [
 						{ name = "go"; text = "󰟓"; fg = "#00add8"; }
+						{ name = "mid"; text = "󰣱"; fg = "cyan"; }
 					];
 				};
 			};

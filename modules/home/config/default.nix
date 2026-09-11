@@ -21,6 +21,8 @@ in
 
 		"fastfetch/config.jsonc".source = link "fastfetch/config.jsonc";
 
+		"noctalia".source = link "noctalia";
+
 		"xdg-desktop-portal-termfilechooser" = {
 			source = ./xdg-desktop-portal-termfilechooser;
 			recursive = true;
@@ -43,10 +45,10 @@ in
 			Slice=session.slice
 		'';
 
-		"systemd/user/xdg-desktop-portal-hyprland.service.d/qt-style.conf".text = ''
-			[Service]
-			Environment=QT_STYLE_OVERRIDE=
-			Environment=QT_QPA_PLATFORMTHEME=
-		'';
+		# "systemd/user/xdg-desktop-portal-hyprland.service.d/qt-style.conf".text = ''
+		# 	[Service]
+		# 	Environment=QT_STYLE_OVERRIDE=
+		# 	Environment=QT_QPA_PLATFORMTHEME=
+		# '';
 	};
 }

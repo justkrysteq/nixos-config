@@ -3,7 +3,7 @@
 {
 	stylix = {
 		enable = true;
-		# autoEnable = false;
+		autoEnable = false;
 
 		image = ../home/config/hypr/shared/assets/wallpaper.png;
 
@@ -72,11 +72,11 @@
 
 		polarity = "dark";
 
-		targets = {
-			chromium.enable = false;
-			console.enable = false;
-			gnome.enable = false;
-		};
+		# targets = {
+		# 	chromium.enable = false;
+		# 	console.enable = false;
+		# 	gnome.enable = false;
+		# };
 
 		# targets = {
 		# 	gtk.enable = true;

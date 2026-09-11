@@ -1,11 +1,10 @@
 { pkgs, pkgs-unstable, pkgs-stable, ... }:
+
 {
 	# Allow unfree packages
 	nixpkgs.config.allowUnfree = true;
 
 	environment.systemPackages = with pkgs; [
-		# (pkgs.callPackage ./packages/zennotes-desktop.nix { })
-
 		# Browsers
 		brave-origin
 
@@ -49,15 +48,19 @@
 		# gdb # c debugger
 
 		# DE/Rice
-		hyprpaper hyprpicker hyprpolkitagent # Hyprland utils
+		hyprpaper hyprpicker # hyprpolkitagent # Hyprland utils
 		pkgs-stable.hyprshot swappy # Screenshots
-		swaynotificationcenter libnotify # for notify-send # Notifications
+		libnotify # for notify-send # Notifications
+		# swaynotificationcenter
 		elephant walker # App Launcher
-		quickshell # Widgets
+		# quickshell # Widgets
 	];
 
 	programs = {
-		steam.enable = true;
+		steam = {
+			enable = true;
+			package = pkgs.millennium-steam;
+		};
 
 		obs-studio.enable = true;
 
@@ -77,6 +80,8 @@
 		};
 
 		hyprlock.enable = true;
+
+		noctalia.enable = true;
 	};
 
 	services.hypridle.enable = true;

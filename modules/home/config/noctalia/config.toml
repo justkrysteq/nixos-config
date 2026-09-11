@@ -1,0 +1,233 @@
+config_version = 14
+
+[audio]
+enable_overdrive = true
+
+[bar.default]
+background_opacity = 0.0
+capsule = true
+capsule_fill = "surface"
+capsule_padding = 8.0
+capsule_radius = 8
+center = [ "clipboard", "taskbar", "bluetooth", "screenshot", "privacy" ]
+color = "primary"
+concave_edge_corners = false
+end = [ "media", "tray", "group:g1", "clock", "notifications" ]
+font_family = "Odin Rounded"
+font_weight = 700
+margin_ends = 0
+padding = 8
+position = "bottom"
+radius = 0
+scale = 1.1500000096857548
+shadow = false
+start = [ "control-center", "workspaces", "launcher", "wallhaven" ]
+thickness = 50
+
+    [bar.default.dead_zone.actions]
+    right = "none"
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface"
+    id = "g1"
+    members = [ "brightness", "network", "volume", "battery" ]
+    opacity = 1.0
+    padding = 10.0
+    radius = 8.0
+
+[control_center]
+width = 900
+
+    [[control_center.shortcuts]]
+    type = "wifi"
+
+    [[control_center.shortcuts]]
+    type = "bluetooth"
+
+    [[control_center.shortcuts]]
+    type = "dark_mode"
+
+    [[control_center.shortcuts]]
+    type = "mic_mute"
+
+    [[control_center.shortcuts]]
+    type = "wallpaper"
+
+    [[control_center.shortcuts]]
+    type = "noctalia/wallhaven:shortcut"
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[location]
+address = "Gdańsk, Poland"
+
+[lockscreen]
+enabled = false
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[osd]
+position = "bottom_center"
+
+    [osd.kinds]
+    lock_keys = false
+    media = false
+
+[plugins]
+auto_update = "none"
+enabled = [ "noctalia/wallhaven" ]
+
+[shell]
+avatar_path = "~/.config/noctalia/assets/krysteq.webp"
+font_family = "Noto Sans CJK JP"
+password_style = "random"
+polkit_agent = true
+screen_time_enabled = true
+
+    [shell.panel]
+    control_center_placement = "floating"
+    open_near_click_control_center = true
+    open_near_click_session = true
+    open_near_click_wallpaper = true
+    session_placement = "floating"
+    session_position = "bottom_left"
+    wallpaper_placement = "floating"
+
+    [shell.screenshot]
+    save_to_file = false
+
+    [shell.session]
+    grid = true
+    grid_columns = 1
+
+[theme]
+builtin = "Ayu"
+community_palette = "Shien"
+custom_palette = "Shien_Custom"
+mode = "dark"
+source = "custom"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "qt" ]
+    community_ids = [ "discord", "gimp", "prismlauncher", "steam", "obs", "hyprtoolkit" ]
+
+[wallpaper]
+directory = "~/Pictures/Wallpapers"
+
+    [wallpaper.default]
+    path = "~/Pictures/Wallpapers/violet.png"
+
+    [wallpaper.last]
+    path = "~/Pictures/Wallpapers/violet.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "~/Pictures/Wallpapers/violet.png"
+
+[widget.battery]
+hide_when_full = true
+
+[widget.bluetooth]
+enabled = false
+
+[widget.brightness]
+capsule_padding = 48
+capsule_radius = 8
+show_label = false
+
+[widget.clipboard]
+enabled = false
+
+[widget.clock]
+font_scale = 1.3699999999999999
+
+[widget.control-center]
+custom_image = "~/.config/noctalia/assets/nixicon.png"
+
+[widget.launcher]
+capsule = true
+enabled = false
+
+[widget.media]
+enabled = false
+hide_when_no_media = true
+show_progress = true
+
+[widget.network]
+show_label = false
+
+[widget.notifications]
+capsule_radius = 6
+
+[widget.privacy]
+enabled = false
+
+[widget.screenshot]
+enabled = false
+
+[widget.taskbar]
+color = "primary"
+group_single_icon_per_app = true
+icon_color = "primary"
+inactive_opacity = 0.90000000000000002
+only_active_workspace = true
+show_window_title = true
+
+[widget.wallhaven]
+enabled = false
+type = "noctalia/wallhaven:wallhaven"
+
+[widget.workspaces]
+capsule = true
+capsule_padding = 10
+capsule_radius = "auto"
+focused_color = "secondary"
+occupied_color = "outline"
+show_labels = false

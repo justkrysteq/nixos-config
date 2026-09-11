@@ -2,7 +2,6 @@
 
 {
 	imports = [
-		./ags
 		./config
 		./fonts
 		./scripts
@@ -31,6 +30,12 @@
 
 		config = {
 			common."org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
+		};
+	};
+
+	dconf.settings = {
+		"org/gnome/desktop/interface" = {
+			color-scheme = "prefer-dark";
 		};
 	};
 }
