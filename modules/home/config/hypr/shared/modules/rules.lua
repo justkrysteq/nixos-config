@@ -115,3 +115,11 @@ hl.window_rule({
 	},
 	idle_inhibit = "always",
 })
+
+hl.layer_rule({
+	name = "disable-blur-for-noctalia",
+	match = {
+		namespace = "noctalia-bar-.*"
+	},
+	ignore_alpha = 0,
+})

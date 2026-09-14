@@ -46,7 +46,7 @@ hl.config({
 			-- vibrancy_darkness = 0.3
 
 			-- Style 2
-			enabled = false,
+			enabled = true,
 			size = 10,
 			passes = 3,
 			brightness = 1,
