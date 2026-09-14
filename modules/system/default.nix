@@ -10,7 +10,6 @@
 		./programs
 		./services.nix
 		./shell-aliases.nix
-		./stylix.nix
 		./system.nix
 		./users.nix
 		./virtualisation.nix

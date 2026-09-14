@@ -11,6 +11,13 @@
 		username = "${username}";
 		homeDirectory = "/home/${username}";
 		stateVersion = "26.05";
+
+		pointerCursor = {
+			enable = true;
+			name = "breeze_cursors";
+			size = 24;
+			package = pkgs.kdePackages.breeze;
+		};
 	};
 
 	gtk = {
@@ -18,6 +25,13 @@
 		iconTheme = {
 			package = pkgs.kdePackages.breeze-icons;
 			name = "breeze-dark";
+		};
+
+		colorScheme = "dark";
+
+		font = {
+			name = "Noto Sans";
+			size = 10;
 		};
 	};
 
@@ -30,12 +44,6 @@
 
 		config = {
 			common."org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
-		};
-	};
-
-	dconf.settings = {
-		"org/gnome/desktop/interface" = {
-			color-scheme = "prefer-dark";
 		};
 	};
 }

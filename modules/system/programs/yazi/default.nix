@@ -80,6 +80,7 @@
 						{ name = "nixos"; text = ""; fg = "blue"; }
 						{ name = ".ssh"; text = "󰣀"; fg = "blue"; }
 						{ name = "Projects"; text = ""; fg = "blue"; }
+						{ name = "utils"; text = "󱁤"; fg = "blue"; }
 					];
 
 					prepend_dirs = [

@@ -9,14 +9,15 @@
 		brave-origin
 
 		# Apps
-		vesktop pkgs-unstable.signal-desktop obsidian
-		pkgs-stable.mpv # Media Player
+		vesktop signal-desktop obsidian
+		mpv # Media Player
 		kdePackages.dolphin # File Manager
 		qalculate-gtk # Calculator
 		zed-editor
 		kitty
 		gimp
-		pavucontrol # volume control
+		pavucontrol # Volume Control
+		# foliate # E-Book Reader
 
 		# Games
 		prismlauncher # Minecraft
@@ -39,21 +40,21 @@
 		clipse # clipboard manager
 		mediainfo # required for mediainfo plugin for yazi
 		ffmpeg
-		vivify
+		vivify # view markdown in a browser
 		yt-dlp
 		sops
 		# rmpc # music player
 		# joecalsend # TUI Localsend
 		# cdrkit # for genisoimage
-		# gdb # c debugger
 
 		# DE/Rice
 		hyprpaper hyprpicker # hyprpolkitagent # Hyprland utils
-		pkgs-stable.hyprshot swappy # Screenshots
+		hyprshot swappy # Screenshots
 		libnotify # for notify-send # Notifications
 		# swaynotificationcenter
 		elephant walker # App Launcher
 		# quickshell # Widgets
+		libsForQt5.qt5ct qt6Packages.qt6ct
 	];
 
 	programs = {
@@ -62,7 +63,10 @@
 			package = pkgs.millennium-steam;
 		};
 
-		obs-studio.enable = true;
+		obs-studio = {
+			enable = true;
+			enableVirtualCamera = true;
+		};
 
 		localsend.enable = true;
 
@@ -76,7 +80,7 @@
 		hyprland = {
 			enable = true;
 			xwayland.enable = true;
-			package = pkgs-unstable.hyprland;
+			package = pkgs.hyprland;
 		};
 
 		hyprlock.enable = true;

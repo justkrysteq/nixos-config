@@ -23,6 +23,9 @@ in
 
 		"noctalia".source = link "noctalia";
 
+		"qt5ct/qt5ct.conf".source = link "qt5ct/qt5ct.conf";
+		"qt6ct/qt6ct.conf".source = link "qt6ct/qt6ct.conf";
+
 		"xdg-desktop-portal-termfilechooser" = {
 			source = ./xdg-desktop-portal-termfilechooser;
 			recursive = true;

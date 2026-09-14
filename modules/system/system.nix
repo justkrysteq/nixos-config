@@ -42,6 +42,7 @@ in
 		sessionVariables = {
 			NIXOS_OZONE_WL = "1"; # Hint electron apps to use wayland
 			GTK_CSD = "0"; # No GTK Client Side Decorations
+			QT_QPA_PLATFORMTHEME = "qt6ct"; # Set QT Theme
 		};
 	};
 

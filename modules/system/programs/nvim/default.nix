@@ -107,7 +107,7 @@ in
 						vim-hexokinase
 						hop-nvim
 						render-markdown-nvim
-						pkgs-stable.vimPlugins.yazi-nvim
+						yazi-nvim
 					];
 					# themer = with pkgs; [
 					#	 # you can even make subcategories based on categories and settings sets!

@@ -56,7 +56,7 @@ map("i", "<C-Delete>", "<C-o>dw", { desc = "Delete a word forward in insert mode
 vim.api.nvim_create_autocmd("TermOpen", {
 	callback = function()
 		if vim.endswith(vim.fn.expand('%'), '/run/current-system/sw/bin/yazi') then
-			vim.api.nvim_buf_set_keymap(0, 't', '<Esc>', '<C-\\><C-N>:q<CR>', { noremap = true, silent = true })
+			vim.api.nvim_buf_set_keymap(0, 't', '<Esc>', 'q', { noremap = true, silent = true })
 		end
 	end,
 })

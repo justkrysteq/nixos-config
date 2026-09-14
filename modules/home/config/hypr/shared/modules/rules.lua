@@ -18,7 +18,7 @@ hl.window_rule({
 hl.window_rule({
 	name = "floating-obsidian",
 	match = {
-		class = "md.Obsidian",
+		class = "md.obsidian.Obsidian",
 	},
 	float = true,
 	move = { 379, 48 },
