@@ -2,9 +2,8 @@
 --- LOOK AND FEEL ---
 ---------------------
 
--- Refer to https://wiki.hypr.land/Configuring/Variables/
+local bottom_right_border_color = "rgba(5402b3ee)"
 
--- https://wiki.hypr.land/Configuring/Variables/#general
 hl.config({
 	general = {
 		gaps_in = 3,
@@ -14,7 +13,7 @@ hl.config({
 
 		-- https://wiki.hypr.land/Configuring/Variables/#variable-types for info about colors
 		col = {
-			active_border = { colors = {"rgba(1c99ffee)", "rgba(5402b3ee)"}, angle = 30},
+			active_border = { colors = {"rgba(a392cdee)", bottom_right_border_color}, angle = 30 },
 			inactive_border = "rgba(595959aa)"
 		},
 
@@ -118,7 +117,7 @@ hl.config({
 
 	group = {
 		col = {
-			border_active = { colors = {"rgba(a60000ee)", "rgba(5402b3ee)"}, angle = 30},
+			border_active = { colors = {"rgba(a60000ee)", bottom_right_border_color}, angle = 30},
 			border_inactive = "rgba(595959aa)"
 		},
 		drag_into_group = 0,

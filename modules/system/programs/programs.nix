@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, pkgs-stable, ... }:
+{ pkgs, ... }:
 
 {
 	# Allow unfree packages
@@ -35,7 +35,7 @@
 		wirelesstools # required for iwconfig to return wifi signal quicker
 		wl-clipboard # required for screenshots
 		trash-cli # required for recycle-bin plugin for yazi
-		dragon-drop # drag and drop utility
+		# dragon-drop # drag and drop utility
 		nix-prefetch-github # utility to get the latest commit hash of a repo
 		clipse # clipboard manager
 		mediainfo # required for mediainfo plugin for yazi

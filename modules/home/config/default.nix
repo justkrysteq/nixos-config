@@ -48,10 +48,10 @@ in
 			Slice=session.slice
 		'';
 
-		# "systemd/user/xdg-desktop-portal-hyprland.service.d/qt-style.conf".text = ''
-		# 	[Service]
-		# 	Environment=QT_STYLE_OVERRIDE=
-		# 	Environment=QT_QPA_PLATFORMTHEME=
-		# '';
+		"systemd/user/xdg-desktop-portal-hyprland.service.d/qt-style.conf".text = ''
+			[Service]
+			Environment=QT_STYLE_OVERRIDE=
+			Environment=QT_QPA_PLATFORMTHEME=
+		'';
 	};
 }

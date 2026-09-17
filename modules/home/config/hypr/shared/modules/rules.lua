@@ -121,5 +121,5 @@ hl.layer_rule({
 	match = {
 		namespace = "noctalia-bar-.*"
 	},
-	ignore_alpha = 0,
+	ignore_alpha = 1,
 })

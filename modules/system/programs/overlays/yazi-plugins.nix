@@ -10,18 +10,18 @@ final: prev:
 			};
 		};
 
-		# easyjump = prev.yaziPlugins.mkYaziPlugin (finalAttrs: {
-		# 	pname = "easyjump.yazi";
-		# 	version = "3.0.0";
-		#
-		# 	src = prev.fetchFromGitHub {
-		# 		owner = "mikavilpas";
-		# 		repo = "easyjump.yazi";
-		# 		rev = "v${finalAttrs.version}";
-		# 		hash = "sha256-ecrBur2bTV805WR5JS8xx01Fn/Y6JLwuZJK8Xvl2kgc=";
-		# 	};
-		#
-		# 	sourceRoot = "source/easyjump.yazi";
-		# });
+		compress = prev.yaziPlugins.mkYaziPlugin (finalAttrs: {
+			pname = "compress.yazi";
+			version = "0.7.0";
+
+			src = prev.fetchFromGitHub {
+				owner = "KKV9";
+				repo = "compress.yazi";
+				rev = "80e5268ec74c7ac17d4d739e13a9958cba4c70d3";
+				hash = "sha256-9cdA8D/TtwHcLqrtoyIixA0YJmTs+c8FSNrjxp8CYI0=";
+			};
+
+			# sourceRoot = "source/easyjump.yazi";
+		});
 	};
 }
