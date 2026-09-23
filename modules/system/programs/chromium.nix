@@ -30,7 +30,8 @@
 			SiteSearchSettings = [
 				{ name = "Nix Packages"; shortcut = ":np"; url = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}"; }
 				{ name = "Nix Options"; shortcut = ":no"; url = "https://search.nixos.org/options?channel=unstable&query={searchTerms}"; }
-				{ name = "Home Manager"; shortcut = ":hm"; url = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master"; }
+				# { name = "Home Manager"; shortcut = ":hm"; url = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master"; }
+				{ name = "Home Manager"; shortcut = ":hm"; url = "https://search.nixos.org/options?channel=unstable&query={searchTerms}&source=home_manager"; }
 				{ name = "YouTube"; shortcut = ":yt"; url = "https://www.youtube.com/results?search_query={searchTerms}"; }
 				{ name = "SoundCloud"; shortcut = ":sc"; url = "https://soundcloud.com/search?q={searchTerms}"; }
 				{ name = "Google Translate"; shortcut = ":tr"; url = "https://translate.google.com/?source=osdd&sl=auto&tl=auto&text={searchTerms}&op=translate"; }

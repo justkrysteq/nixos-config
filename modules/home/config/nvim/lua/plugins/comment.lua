@@ -1,9 +1,7 @@
 return {
 	-- "gc" to comment visual regions/lines
-	-- NOTE: nixCats: nix downloads it with a different file name.
-	-- tell lazy about that.
 	"numToStr/Comment.nvim",
-	name = "comment.nvim",
+	name = "comment.nvim", -- NOTE: Nix downloads it with a different name
 	opts = {}
 
 	-- Here is a more advanced example where we pass configuration

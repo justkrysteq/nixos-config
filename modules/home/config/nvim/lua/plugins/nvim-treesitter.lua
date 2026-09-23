@@ -1,6 +1,6 @@
 return {
 	'nvim-treesitter/nvim-treesitter',
-	build = require('nixCatsUtils').lazyAdd ':TSUpdate',
+	-- build = ":TSUpdate",
 	branch = 'main',
 	lazy = false,
 	config = function(_, opts)
@@ -42,14 +42,15 @@ return {
 					return
 				end
 
-				if not treesitter_try_attach(buf,language) then
-					if vim.tbl_contains(installable_parsers, language) then
-						-- not already installed, so try to install them via nvim-treesitter if possible
-						require("nvim-treesitter").install(language):await(function()
-							treesitter_try_attach(buf, language)
-						end)
-					end
-				end
+				treesitter_try_attach(buf,language)
+				-- if not treesitter_try_attach(buf,language) then
+				-- 	if vim.tbl_contains(installable_parsers, language) then
+				-- 		-- not already installed, so try to install them via nvim-treesitter if possible
+				-- 		require("nvim-treesitter").install(language):await(function()
+				-- 			treesitter_try_attach(buf, language)
+				-- 		end)
+				-- 	end
+				-- end
 			end,
 		})
 	end,

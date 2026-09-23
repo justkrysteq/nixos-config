@@ -37,6 +37,19 @@ vim.schedule(function()
 	o.clipboard = "unnamedplus"
 end)
 
+-- g.clipboard = {
+-- 	name = 'wl-clipboard',
+-- 	copy = {
+-- 		['+'] = 'wl-copy',
+-- 		['*'] = 'wl-copy',
+-- 	},
+-- 	paste = {
+-- 		['+'] = 'wl-paste',
+-- 		['*'] = 'wl-paste',
+-- 	},
+-- 	cache_enabled = 1,
+-- }
+
 -- Save undo history
 o.undofile = true
 
@@ -84,3 +97,6 @@ o.confirm = true
 
 -- Use tabs in rust files
 g.rust_recommended_style = false
+
+-- Disable auto-inserting comment leader after <CR> and o
+opt.formatoptions:remove({ "r", "o" })

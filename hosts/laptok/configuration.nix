@@ -1,4 +1,4 @@
-{ inputs, flake-dir, username, hostname, ... }:
+{ inputs, ... }:
 
 {
 	imports = [
@@ -6,11 +6,4 @@
 		./hardware
 		inputs.home-manager.nixosModules.default
 	];
-
-	home-manager = {
-		extraSpecialArgs = { inherit inputs flake-dir username hostname; };
-		users = {
-			${username} = import ../../modules/home/home.nix;
-		};
-	};
 }

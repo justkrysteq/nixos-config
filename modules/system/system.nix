@@ -1,4 +1,4 @@
-{ hostname, ... }:
+{ inputs, flake-dir, username, hostname, ... }:
 let
 	isPC = hostname == "pc";
 
@@ -10,6 +10,14 @@ let
 	};
 in
 {
+	home-manager = {
+		extraSpecialArgs = { inherit inputs flake-dir username hostname; };
+		useGlobalPkgs = true;
+		users = {
+			${username} = import ../../modules/home/home.nix;
+		};
+	};
+
 	nix = {
 		# Auto-delete old system states every week
 		gc = {

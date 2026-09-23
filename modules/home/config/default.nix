@@ -1,4 +1,4 @@
-{ config, flake-dir, hostname, pkgs, ... }:
+{ config, osConfig, flake-dir, hostname, pkgs, ... }:
 let
 	link = f: config.lib.file.mkOutOfStoreSymlink "${flake-dir}/modules/home/config/${f}";
 in
@@ -22,6 +22,24 @@ in
 		"fastfetch/config.jsonc".source = link "fastfetch/config.jsonc";
 
 		"noctalia".source = link "noctalia";
+
+		"nvim".source = link "nvim";
+		"nvim-plugins-nix.lua".text = ''
+			return {
+				${builtins.concatStringsSep ",\n" (
+					map (plugin: ''
+						{
+							name = "${plugin.pname or plugin.name}",
+							dir = "${plugin}",
+						}
+					'') (builtins.concatLists (
+						map (plugin:
+							[ plugin ] ++ (plugin.dependencies or [])
+						) osConfig.programs.neovim.configure.packages.myPlugins.start
+					))
+				)}
+			}
+		'';
 
 		"qt5ct/qt5ct.conf".source = link "qt5ct/qt5ct.conf";
 		"qt6ct/qt6ct.conf".source = link "qt6ct/qt6ct.conf";

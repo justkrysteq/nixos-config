@@ -4,8 +4,8 @@
 	imports = [
 		./chromium.nix
 		./git.nix
-		./nvim
 		./overlays
+		./neovim.nix
 		./programs.nix
 		./yazi
 		./zsh.nix

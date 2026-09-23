@@ -11,10 +11,27 @@ return {
 
 		-- Add/delete/replace surroundings (brackets, quotes, etc.)
 		--
-		-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-		-- - sd'   - [S]urround [D]elete [']quotes
-		-- - sr)'  - [S]urround [R]eplace [)] []
-		require("mini.surround").setup()
+		-- - ysiw)       - [Y]add [S]urrounding [I]nner [W]ord [)]Paren
+		-- - ds'         - [D]elete [S]urrounding [']quotes
+		-- - cs)'        - [C]hange [S]urrounding [)] [']
+		-- - ysiwtp<CR>  - [Y]add [S]urrounding [I]nner [W]ord [T]ag [p]
+		require("mini.surround").setup({
+			mappings = {
+				add = "ys",
+				delete = "ds",
+				replace = "cs",
+				find = '',
+				find_left = '',
+				highlight = '',
+			}
+		})
+
+		-- Remap adding surrounding to Visual mode selection
+		vim.keymap.del('x', 'ys')
+		vim.keymap.set('x', 'S', [[:<C-u>lua MiniSurround.add('visual')<CR>]], { silent = true })
+
+		-- Make special mapping for "add surrounding for line"
+		vim.keymap.set('n', 'yss', 'ys_', { remap = true })
 
 		-- Simple and easy statusline.
 		--  You could remove this setup call if you dont like it,

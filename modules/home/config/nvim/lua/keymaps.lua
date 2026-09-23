@@ -46,13 +46,16 @@ map("n", "<C-W>tl", ":tablast<CR>", { desc = "[T]ab [L]ast" })
 map("x", "<Tab>", ">gv", { desc = "Indent Once" })
 map("x", "<S-Tab>", "<gv", { desc = "Outdent Once" })
 
+map("n", "<Tab>", ">>", { desc = "Indent Once" })
+map("n", "<S-Tab>", "<<", { desc = "Outdent Once" })
+
 -- Easier command
 map({"n", "x"}, ";", ":", { desc = "Easier command (map ; to :)" })
 
 -- Ctrl+Delete in insert mode
 map("i", "<C-Delete>", "<C-o>dw", { desc = "Delete a word forward in insert mode" })
 
--- Bind Esc to exit yazi
+-- Bind Esc to q in yazi
 vim.api.nvim_create_autocmd("TermOpen", {
 	callback = function()
 		if vim.endswith(vim.fn.expand('%'), '/run/current-system/sw/bin/yazi') then
@@ -62,7 +65,14 @@ vim.api.nvim_create_autocmd("TermOpen", {
 })
 
 -- Paste
-map("x", "<leader>p", "\"_dP", { desc = "[P]aste with retaining the register" })
+map("x", "<leader>p", "\"_dP", { desc = "[P]aste retaining the register" })
 
 -- Quick substitute
 map("n", "<leader>S", [[:%s/\<<C-r><C-w>\>//g<Left><Left><Esc>]], { desc = "[S]ubstitute word under cursor" })
+
+-- Yank to system clipboard
+-- map({"n", "x"}, "y", '"+y', { desc = "[Y]ank to system clipboard", silent = true, noremap = true })
+-- map({"n", "x"}, "Y", '"+Y', { desc = "[Y]ank to system clipboard", silent = true, noremap = true })
+
+-- map({"n", "x"}, "p", '"*p', { desc = "[P]aste from system clipboard", silent = true, noremap = true })
+
