@@ -5,9 +5,6 @@
 	nixpkgs.config.allowUnfree = true;
 
 	environment.systemPackages = with pkgs; [
-		# Browsers
-		brave-origin
-
 		# Apps
 		vesktop signal-desktop obsidian
 		mpv # Media Player

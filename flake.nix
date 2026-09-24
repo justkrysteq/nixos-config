@@ -17,8 +17,6 @@
 			url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-
-		nixCats.url = "github:BirdeeHub/nixCats-nvim";
 	};
 
 	outputs = { nixpkgs, ... } @ inputs:

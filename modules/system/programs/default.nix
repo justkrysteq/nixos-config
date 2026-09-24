@@ -2,7 +2,9 @@
 
 {
 	imports = [
-		./chromium.nix
+		./brave.nix
+		./brave-module.nix
+		# ./chromium.nix
 		./git.nix
 		./overlays
 		./neovim.nix
