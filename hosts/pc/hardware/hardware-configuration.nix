@@ -7,27 +7,27 @@
 
 	fileSystems = {
 		"/" = {
-			device = "/dev/disk/by-uuid/bc1d6ae8-592b-4b90-9acf-17c70a88e0b4";
+			device = "/dev/disk/by-uuid/8cb78b32-3f65-4140-ad88-6b4cd98027e1";
 			fsType = "ext4";
 		};
 
 		"/boot" = {
-			device = "/dev/disk/by-uuid/01E7-6BC2";
+			device = "/dev/disk/by-uuid/8B2A-F346";
 			fsType = "vfat";
 			options = [ "fmask=0077" "dmask=0077" ];
 		};
 
 		"/F" = {
 			device = "/dev/disk/by-uuid/F8BA6370BA632A78";
-			fsType = "ntfs-3g";
-			options = [ "rw" "uid=1000" ];
+			fsType = "ntfs";
+			options = [ "nofail" "x-systemd.device-timeout=5s" ];
 		};
 
-		"/K" = {
-			device = "/dev/disk/by-uuid/0C5230525230432E";
-			fsType = "ntfs-3g";
-			options = [ "rw" "uid=1000" ];
-		};
+		# "/K" = {
+		# 	device = "/dev/disk/by-uuid/0C5230525230432E";
+		# 	fsType = "ntfs";
+		# 	options = [ "nofail" ];
+		# };
 	};
 
 	boot = {
@@ -35,12 +35,11 @@
 			availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
 			kernelModules = [ ];
 			
-			luks.devices."luks-d5764546-b744-4659-9719-7d5c7145ac7b".device = "/dev/disk/by-uuid/d5764546-b744-4659-9719-7d5c7145ac7b";
+			luks.devices."luks-4186d49f-8a40-43dd-adc7-643a5f7b63e3".device = "/dev/disk/by-uuid/4186d49f-8a40-43dd-adc7-643a5f7b63e3";
 		};
 
 		kernelModules = [ "kvm-intel" ];
 		extraModulePackages = [ ];
-		supportedFilesystems = [ "ntfs" ];
 	};
 
 	swapDevices = [ {
