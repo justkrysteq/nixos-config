@@ -20,7 +20,7 @@
 		"/F" = {
 			device = "/dev/disk/by-uuid/F8BA6370BA632A78";
 			fsType = "ntfs";
-			options = [ "nofail" "x-systemd.device-timeout=5s" ];
+			options = [ "nofail" "x-systemd.device-timeout=5s" "nosuid" "nodev" "uid=1000" "gid=1000" "fmask=0177" "dmask=0077" "windows_names" "sys_immutable" ];
 		};
 
 		# "/K" = {
