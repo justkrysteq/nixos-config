@@ -17,6 +17,11 @@
 			url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		additional-modules = {
+			url = "github:justkrysteq/nixos-modules";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
 	outputs = { nixpkgs, ... } @ inputs:
@@ -36,6 +41,7 @@
 				modules = [
 					./hosts/laptok/configuration.nix
 					inputs.home-manager.nixosModules.default
+					inputs.additional-modules.nixosModules.default
 				];
 			};
 
@@ -47,6 +53,7 @@
 				modules = [
 					./hosts/pc/configuration.nix
 					inputs.home-manager.nixosModules.default
+					inputs.additional-modules.nixosModules.default
 				];
 			};
 
