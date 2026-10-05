@@ -76,7 +76,6 @@
 					onedark-nvim
 					todo-comments-nvim
 					mini-nvim
-					nvim-treesitter.withAllGrammars
 					nvim-autopairs
 					neo-tree-nvim
 					nui-nvim
@@ -89,6 +88,100 @@
 					hop-nvim
 					render-markdown-nvim
 					yazi-nvim
+
+					(nvim-treesitter.withPlugins (p: [
+						# p.asm
+						# p.astro
+						p.awk
+						p.bash
+						p.c
+						p.c_sharp
+						p.cmake
+						p.comment
+						p.cpp
+						p.css
+						p.csv
+						p.dart
+						p.desktop
+						# p.dockerfile
+						# p.elixir
+						# p.elm
+						p.git_config
+						p.git_rebase
+						p.gitattributes
+						p.gitcommit
+						p.gitignore
+						p.go
+						p.goctl
+						p.gomod
+						p.gosum
+						p.gotmpl
+						p.gowork
+						# p.gpg
+						p.haskell
+						p.html
+						p.http
+						p.hyprlang
+						p.ini
+						p.java
+						p.javadoc
+						p.javascript
+						p.jq
+						p.jsdoc
+						p.json
+						# p.json5
+						# p.julia
+						# p.just
+						p.kitty
+						p.kotlin
+						p.latex
+						# p.llvm
+						p.lua
+						p.luadoc
+						p.luap
+						p.luau
+						p.make
+						p.markdown
+						p.mermaid
+						# p.nasm
+						# p.nginx
+						# p.ninja
+						p.nix
+						# p.nu
+						# p.odin
+						# p.perl
+						# p.php
+						# p.php_only
+						# p.phpdoc
+						# p.powershell
+						p.printf
+						# p.prisma
+						p.python
+						# p.qmldir
+						# p.qmljs
+						p.regex
+						# p.ruby
+						p.rust
+						# p.scss
+						p.sql
+						p.ssh_config
+						# p.svelte
+						p.templ
+						p.terraform
+						p.todotxt
+						p.toml
+						p.tsx
+						p.typescript
+						# p.typst
+						# p.vala
+						# p.vim
+						# p.vimdoc
+						# p.vue
+						p.xml
+						p.yaml
+						p.zig
+						p.zsh
+					]))
 				];
 				# opt = [];
 			};

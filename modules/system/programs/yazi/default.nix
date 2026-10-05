@@ -111,6 +111,7 @@
 						{ on = [ "g" "/" ]; run = "cd /"; desc = "Go /"; }
 						{ on = [ "g" "r" ]; run = "shell -- ya emit cd \"$(git rev-parse --show-toplevel)\""; desc = "Go to git repository root"; }
 						{ on = [ "g" "p" ]; run = "cd $HOME/Documents/Projects"; desc = "Go ~/Documents/Projects"; }
+						{ on = [ "g" "b" ]; run = "plugin trash"; desc = "Go to the trash bin"; }
 						{ on = "<C-o>"; run = "back"; desc = "Go to previous directory"; }
 
 						{ on = [ "m" "M" ]; run = "linemode size_and_mtime"; desc = "Linemode: size and modification time"; }

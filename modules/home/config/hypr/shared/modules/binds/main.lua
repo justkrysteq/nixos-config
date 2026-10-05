@@ -27,7 +27,7 @@ hl.bind("SUPER + SHIFT + T", hl.dsp.layout("togglesplit"), { desc = "Toggle spli
 hl.bind("SUPER + C", hl.dsp.exec_cmd("qalculate-gtk"), { desc = "Open calculator, [C]alculator" })
 hl.bind("SUPER + Y", hl.dsp.exec_cmd("noctalia msg window-switcher"), { desc = "Open window switcher, [Y]yyyy" })
 hl.bind("SUPER + Escape", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center home"), { desc = "Open control center" })
-hl.bind("SUPER + Comma", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center audio"), { desc = "Open audio" })
+hl.bind("SUPER + SHIFT + C", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center audio"), { desc = "Open audio [C]ontrol" })
 
 -- Clipboard manager
 -- hl.bind("SUPER + V", function()

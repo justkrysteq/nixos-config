@@ -57,11 +57,21 @@ hl.window_rule({
 })
 
 hl.window_rule({
-	name = "floating-steamapps",
+	name = "floating-game-launchers",
 	match = {
-		initial_class = "steam_app_(4162040|3893482776|2153588263)",
+		initial_title = "HoYoPlay",
 	},
 	float = true,
+	center = true,
+})
+
+hl.window_rule({
+	name = "floating-honkers",
+	match = {
+		initial_title = "The Honkers Railway Launcher",
+	},
+	float = true,
+	size = { 1154, 698 },
 	center = true,
 })
 

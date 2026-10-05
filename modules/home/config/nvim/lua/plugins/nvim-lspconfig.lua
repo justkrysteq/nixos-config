@@ -212,8 +212,10 @@ return {
 			-- QML
 			qmlls = {
 				cmd = { "qmlls", "-E" },
-			}
+			},
 
+			-- Ada
+			ada_ls = {},
 		}
 		-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 
