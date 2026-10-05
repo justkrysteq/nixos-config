@@ -127,7 +127,7 @@ enabled = [ "noctalia/wallhaven" ]
 
 [shell]
 avatar_path = "~/.config/noctalia/assets/krysteq.webp"
-font_family = "Noto Sans CJK JP"
+font_family = "Noto Sans"
 password_style = "random"
 polkit_agent = true
 screen_time_enabled = true
