@@ -22,7 +22,7 @@
 
 		# CLI Tools
 		fastfetch
-		btop
+		btop iotop
 		eza # a modern replacement for ls
 		wev # wayland event viewer
 		jq # required for a bind to switch between floating and tiled windows in hyprland NOT ANYMORE
