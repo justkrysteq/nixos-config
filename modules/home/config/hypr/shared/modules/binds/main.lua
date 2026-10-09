@@ -17,6 +17,7 @@ hl.bind("SUPER + S", hl.dsp.exec_cmd("walker"), { desc = "Open walker, [S]tart a
 hl.bind("SUPER + P", hl.dsp.window.pseudo(), { desc = "Pseudo window, [P]seudo" }) -- dwindle
 hl.bind("SUPER + B", hl.dsp.exec_cmd("brave-origin"), { desc = "Open Brave, [B]rowser" })
 hl.bind("SUPER + SHIFT + B", hl.dsp.exec_cmd("brave-origin --incognito"), { desc = "Open Brave in incognito mode, [B]rowser incognito" })
+hl.bind("SUPER + CTRL + B", hl.dsp.exec_cmd("brave-origin --incognito --new-window --temporary-container https://search.brave.com"), { desc = "Open Brave in temporary incognito container, [B]rowser temp incognito container" })
 hl.bind("SUPER + W", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }), { desc = "Toggle fullscreen, [W]hole screen" })
 hl.bind("SUPER + SHIFT + W", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }), { desc = "Toggle maximisation, Maximise [W]indow" })
 hl.bind("SUPER + SHIFT + Backslash", hl.dsp.force_renderer_reload(), { desc = "Force renderer reload" })
