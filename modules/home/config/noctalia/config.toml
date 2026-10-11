@@ -232,3 +232,6 @@ capsule_radius = "auto"
 focused_color = "secondary"
 occupied_color = "outline"
 show_labels = false
+
+[plugin_settings."noctalia/wallhaven"]
+browser_placement = "floating"
