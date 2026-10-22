@@ -62,7 +62,7 @@
 
 		obs-studio = {
 			enable = true;
-			enableVirtualCamera = true;
+			# enableVirtualCamera = true;
 		};
 
 		localsend.enable = true;
