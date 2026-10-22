@@ -35,15 +35,31 @@
 		};
 	};
 
-	xdg.portal = {
-		enable = true;
-		extraPortals = with pkgs; [
-			xdg-desktop-portal-termfilechooser
-			xdg-desktop-portal-hyprland
-		];
+	xdg = {
+		portal = {
+			enable = true;
+			extraPortals = with pkgs; [
+				xdg-desktop-portal-termfilechooser
+				xdg-desktop-portal-hyprland
+			];
 
-		config = {
-			common."org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
+			config = {
+				common."org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
+			};
+		};
+
+		mimeApps = {
+			enable = true;
+
+			defaultApplications = {
+				"application/pdf" = [ "org.pwmt.zathura.desktop" "brave-origin.desktop" ];
+
+				"x-scheme-handler/http" = "brave-origin.desktop";
+				"x-scheme-handler/https" = "brave-origin.desktop";
+				"x-scheme-handler/about" = "brave-origin.desktop";
+				"x-scheme-handler/unknown" = "brave-origin.desktop";
+				"x-scheme-handler/discord" = "vesktop.desktop";
+			};
 		};
 	};
 }

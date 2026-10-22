@@ -15,6 +15,7 @@
 		gimp
 		pavucontrol # Volume Control
 		# foliate # E-Book Reader
+		zathura # PDF Reader
 
 		# Games
 		prismlauncher # Minecraft

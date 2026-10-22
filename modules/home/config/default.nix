@@ -49,6 +49,8 @@ in
 			recursive = true;
 		};
 
+		"zathura".source = link "zathura";
+
 		"zed".source = link "zed";
 
 		"systemd/user/xdg-desktop-portal.service".text = ''
