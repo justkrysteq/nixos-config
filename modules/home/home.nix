@@ -59,6 +59,8 @@
 				"x-scheme-handler/about" = "brave-origin.desktop";
 				"x-scheme-handler/unknown" = "brave-origin.desktop";
 				"x-scheme-handler/discord" = "vesktop.desktop";
+				"x-scheme-handler/sgnl" = "signal.desktop";
+				"x-scheme-handler/signalcaptcha" = "signal.desktop";
 			};
 		};
 	};
