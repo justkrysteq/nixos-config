@@ -41,6 +41,7 @@
 		vivify # view markdown in a browser
 		yt-dlp
 		sops
+		exiftool # show exif meta info in yazi opener
 		# rmpc # music player
 		# joecalsend # TUI Localsend
 		# cdrkit # for genisoimage

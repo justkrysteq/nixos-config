@@ -182,6 +182,18 @@
 						{ url = "*/"; run = "git"; group = "git"; }
 					];
 				};
+
+				opener = {
+					browser = [{ run = "brave-origin %s"; orphan = true; desc = "View in browser"; }];
+					gimp = [{ run = "gimp %s"; orphan = true; desc = "Edit in GIMP"; }];
+				};
+
+				open = {
+					prepend_rules = [
+						{ url = "*.html"; use = [ "edit" "browser" "reveal" "exif" ]; }
+						{ mime = "image/*"; use = [ "open" "gimp" "reveal" "exif" ]; }
+					];
+				};
 			};
 		};
 	};
