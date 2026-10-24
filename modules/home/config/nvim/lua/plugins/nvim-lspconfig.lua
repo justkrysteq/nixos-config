@@ -214,8 +214,17 @@ return {
 				cmd = { "qmlls", "-E" },
 			},
 
+			-- SECTION: NOT installed on system
+
 			-- Ada
 			ada_ls = {},
+
+			-- Assembly
+			asm_lsp = {
+				cmd = { 'asm-lsp' },
+				filetypes = { 'asm', 'vmasm', 'masm' },
+				single_file_support = true,
+			},
 		}
 		-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 
