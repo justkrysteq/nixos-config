@@ -41,7 +41,7 @@
 				modules = [
 					./hosts/laptok/configuration.nix
 					inputs.home-manager.nixosModules.default
-					inputs.additional-modules.nixosModules.default
+					inputs.additional-modules.nixosModules.brave
 				];
 			};
 
@@ -53,7 +53,7 @@
 				modules = [
 					./hosts/pc/configuration.nix
 					inputs.home-manager.nixosModules.default
-					inputs.additional-modules.nixosModules.default
+					inputs.additional-modules.nixosModules.brave
 				];
 			};
 
