@@ -38,6 +38,7 @@ hl.bind("SUPER + SHIFT + L", hl.dsp.window.swap({ direction = "r" }), { desc = "
 for i = 1, 10 do
 	local key = i % 10
 	local j = 10 + i
+	local k = 20 + i
 
 	-- Switch workspaces with mainMod + [0-9]
 	hl.bind("SUPER + " .. key, hl.dsp.focus({ workspace = "" .. i }), { desc = "Switch to workspace " .. i })
@@ -46,10 +47,13 @@ for i = 1, 10 do
 	hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = "" .. i }), { desc = "Move window to workspace " .. i })
 
 	-- Move active window silently to a workspace with mainMod + ALT + [0-9]
-	hl.bind("SUPER + ALT + " .. key, hl.dsp.window.move({ workspace = "" .. i, follow = false }), { desc = "Move window to workspace " .. i .. " silently" })
+	-- hl.bind("SUPER + ALT + " .. key, hl.dsp.window.move({ workspace = "" .. i, follow = false }), { desc = "Move window to workspace " .. i .. " silently" })
 
 	-- Switch workspaces with mainMod + CTRL + [0-9] on the 2nd monitor
 	hl.bind("SUPER + CTRL + " .. key, hl.dsp.focus({ workspace = "" .. j }), { desc = "Switch to workspace " .. i .. " on the 2nd monitor" })
+
+	-- Switch workspaces with mainMod + ALT + [0-9] on the 3nd monitor
+	hl.bind("SUPER + ALT + " .. key, hl.dsp.focus({ workspace = "" .. k }), { desc = "Switch to workspace " .. i .. " on the 3nd monitor" })
 
 	-- Move active window to a workspace with mainMod + CTRL + SHIFT + [0-9] on the 2nd monitor
 	hl.bind("SUPER + CTRL + SHIFT + " .. key, hl.dsp.window.move({ workspace = "" .. j }), { desc = "Move window to workspace " .. i .. " on the 2nd monitor" })
@@ -57,3 +61,33 @@ for i = 1, 10 do
 	-- Move active window silently to a workspace with mainMod + CTRL + ALT + [0-9] on the 2nd monitor
 	hl.bind("SUPER + CTRL + ALT + " .. key, hl.dsp.window.move({ workspace = j, follow = false }), { desc = "Move window to workspace " .. i .. " on the 2nd monitor silently" })
 end
+
+-- Cycle monitor focus
+hl.bind("SUPER + Grave", function()
+	if hl.get_active_monitor() == hl.get_monitor(MONITOR_MAIN) then
+		hl.dispatch(hl.dsp.focus({ monitor = hl.get_monitor(MONITOR_RIGHT) }))
+	else
+		hl.dispatch(hl.dsp.focus({ monitor = hl.get_monitor(MONITOR_MAIN) }))
+	end
+end, { desc = "Cycle monitor focus (Main -> Right)" })
+hl.bind("SUPER + CTRL + Grave", function()
+	if hl.get_active_monitor() == hl.get_monitor(MONITOR_MAIN) then
+		hl.dispatch(hl.dsp.focus({ monitor = hl.get_monitor(MONITOR_BUILTIN) }))
+	else
+		hl.dispatch(hl.dsp.focus({ monitor = hl.get_monitor(MONITOR_MAIN) }))
+	end
+end, { desc = "Cycle monitor focus (Main -> Builtin)" })
+hl.bind("SUPER + SHIFT + Grave", function()
+	if hl.get_active_monitor() == hl.get_monitor(MONITOR_MAIN) then
+		hl.dispatch(hl.dsp.window.move({ monitor = hl.get_monitor(MONITOR_RIGHT) }))
+	else
+		hl.dispatch(hl.dsp.window.move({ monitor = hl.get_monitor(MONITOR_MAIN) }))
+	end
+end, { desc = "Move window to next monitor (Main -> Right)" })
+hl.bind("SUPER + CTRL + SHIFT + Grave", function()
+	if hl.get_active_monitor() == hl.get_monitor(MONITOR_MAIN) then
+		hl.dispatch(hl.dsp.window.move({ monitor = hl.get_monitor(MONITOR_BUILTIN) }))
+	else
+		hl.dispatch(hl.dsp.window.move({ monitor = hl.get_monitor(MONITOR_MAIN) }))
+	end
+end, { desc = "Move window to next monitor (Main -> Builtin)" })

@@ -17,7 +17,8 @@ hl.bind("SUPER + S", hl.dsp.exec_cmd("walker"), { desc = "Open walker, [S]tart a
 hl.bind("SUPER + P", hl.dsp.window.pseudo(), { desc = "Pseudo window, [P]seudo" }) -- dwindle
 hl.bind("SUPER + B", hl.dsp.exec_cmd("brave-origin"), { desc = "Open Brave, [B]rowser" })
 hl.bind("SUPER + SHIFT + B", hl.dsp.exec_cmd("brave-origin --incognito"), { desc = "Open Brave in incognito mode, [B]rowser incognito" })
-hl.bind("SUPER + CTRL + B", hl.dsp.exec_cmd("brave-origin --incognito --new-window --temporary-container https://search.brave.com"), { desc = "Open Brave in temporary incognito container, [B]rowser temp incognito container" })
+hl.bind("SUPER + CTRL + B", hl.dsp.exec_cmd("brave-origin --incognito --new-window --temporary-container https://search.brave.com"), { desc = "Open new Brave window in temporary incognito container, [B]rowser temp incognito container new window" })
+hl.bind("SUPER + CTRL + SHIFT + B", hl.dsp.exec_cmd("brave-origin --incognito --temporary-container https://search.brave.com"), { desc = "Open Brave in temporary incognito container, [B]rowser temp incognito container" })
 hl.bind("SUPER + W", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }), { desc = "Toggle fullscreen, [W]hole screen" })
 hl.bind("SUPER + SHIFT + W", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }), { desc = "Toggle maximisation, Maximise [W]indow" })
 hl.bind("SUPER + SHIFT + Backslash", hl.dsp.force_renderer_reload(), { desc = "Force renderer reload" })
@@ -56,11 +57,6 @@ end, { desc = "Cycle between floating and tiled windows (reverse)" })
 -- Cycle window focus
 hl.bind("SUPER + Tab", hl.dsp.window.cycle_next(), { desc = "Cycle window focus" })
 hl.bind("SUPER + SHIFT + Tab", hl.dsp.window.cycle_next({ next = false }), { desc = "Cycle window focus (reverse)" })
-
--- Cycle monitor focus
-hl.bind("SUPER + Grave", hl.dsp.focus({ monitor = "+1" }), { desc = "Cycle monitor focus" })
-hl.bind("SUPER + SHIFT + Grave", hl.dsp.window.move({ monitor = "+1" }), { desc = "Cycle monitor focus (reverse)" })
-hl.bind("SUPER + CTRL + Grave", hl.dsp.focus({ monitor = "-1" }), { desc = "Cycle monitor focus (reverse)" })
 
 -- Cycle window focus in a group
 hl.bind("SUPER + Space", hl.dsp.group.next(), { desc = "Next window in group" })
