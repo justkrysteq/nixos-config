@@ -115,6 +115,29 @@ widget_order = [ "lockscreen-login-box@eDP-1" ]
         show_unlock_hint = true
         show_weather = true
 
+[notification]
+filter_order = [ "filter", "filter-2" ]
+history_retention_hours = 3
+layer = "overlay"
+
+    [notification.filter.filter]
+    allow_permanent = true
+    bypass_dnd = false
+    enabled = true
+    match = "signal"
+    play_sound = false
+    save_history = false
+    show_toast = false
+
+    [notification.filter.filter-2]
+    allow_permanent = true
+    bypass_dnd = false
+    enabled = true
+    match = "vesktop"
+    play_sound = false
+    save_history = false
+    show_toast = false
+
 [osd]
 position = "bottom_center"
 
