@@ -4,7 +4,7 @@
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-		nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-25.11";
+		nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-26.05";
 
 		nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixpkgs-unstable";
 
@@ -28,8 +28,9 @@
 	let
 		flake-dir = "/etc/nixos";
 		username = "krysteq";
-		pkgs-stable = inputs.nixpkgs-stable.legacyPackages.x86_64-linux;
-		pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
+		system = "x86_64-linux";
+		pkgs-stable = import inputs.nixpkgs-stable { inherit system; config.allowUnfree = true; };
+		pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; config.allowUnfree = true; };
 	in
 	{
 		nixosConfigurations = {
