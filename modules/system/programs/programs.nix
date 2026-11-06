@@ -85,6 +85,10 @@
 		hyprlock.enable = true;
 
 		noctalia.enable = true;
+
+		bat = {
+			enable = true;
+		};
 	};
 
 	services.hypridle.enable = true;

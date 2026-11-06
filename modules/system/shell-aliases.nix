@@ -4,7 +4,7 @@
 	environment.shellAliases = {
 		ff = "fastfetch";
 		la = "eza -a --group-directories-first";
-		ls = "eza ";
+		ls = "eza --group-directories-first";
 		lsdir = "eza -D"; # list only directories
 		lsfile = "eza -f"; # list only files
 		tree = "eza --tree";
@@ -13,7 +13,7 @@
 		lla = "eza -la --total-size --group-directories-first";
 		llaa = "eza -laa --group-directories-first";
 		ls1 = "eza -1 --icons --group-directories-first";
-		rebuild = "sudo nixos-rebuild switch --flake ${flake-dir}#${hostname}";
+		rebuild = "nixos-rebuild switch --flake ${flake-dir}#${hostname} --sudo";
 		lsgen = "nixos-rebuild list-generations";
 		n = "nvim";
 		s = "sudo ";
@@ -27,6 +27,6 @@
 		nix-shell = "nix-shell --command ${lib.getExe config.users.users.${username}.shell} ";
 		nsp = "nix-shell -p ";
 		nspu = "NIXPKGS_ALLOW_UNFREE=1 nsp ";
-		genshell = "touch shell.nix; echo '{pkgs ? import <nixpkgs> {} }:' > shell.nix; echo '' >> shell.nix; echo 'pkgs.mkShell {' >> shell.nix; echo '	buildInputs = with pkgs; [];' >> shell.nix; echo '}' >> shell.nix";
+		cat = "bat";
 	};
 }
