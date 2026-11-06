@@ -23,6 +23,11 @@ in
 				format = "ssh";
 				ssh.program = lib.getExe gitCustomGpgProgram;
 			};
+
+			url = {
+				"git@github.com".insteadOf = [ "gh" "github" ];
+				"git@codeberg.org".insteadOf = [ "cb" "codeberg" ];
+			};
 		};
 	};
 }
