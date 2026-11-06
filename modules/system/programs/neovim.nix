@@ -101,7 +101,7 @@
 						cpp
 						css
 						csv
-						dart
+						# dart
 						desktop
 						# dockerfile
 						# elixir
@@ -164,7 +164,7 @@
 						rust
 						# scss
 						sql
-						ssh_config
+						# ssh_config
 						# svelte
 						templ
 						terraform
