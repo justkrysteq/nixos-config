@@ -93,7 +93,7 @@ hl.define_submap("group_management", function()
 	map("f", hl.dsp.group.move_window(), "Move window forward in the group order")
 	map("b", hl.dsp.group.move_window({ forward = false }), "Move window backward in the group order")
 
-	map("r", hl.dsp.group.lock_active(), "Toggle group lock")
+	map("r", hl.dsp.group.lock(), "Toggle group lock")
 
 	for i = 1, 10 do
 		map(tostring(i % 10), hl.dsp.group.active({ index = i }), "Focus window " .. i .. " in a group")

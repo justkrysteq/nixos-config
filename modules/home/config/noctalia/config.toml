@@ -253,7 +253,7 @@ capsule = true
 capsule_padding = 10
 capsule_radius = "auto"
 focused_color = "secondary"
-occupied_color = "outline"
+occupied_color = "outline_variant"
 show_labels = false
 
 [plugin_settings."noctalia/wallhaven"]
