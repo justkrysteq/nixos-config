@@ -52,14 +52,17 @@ for i = 1, 10 do
 	-- Switch workspaces with mainMod + CTRL + [0-9] on the 2nd monitor
 	hl.bind("SUPER + CTRL + " .. key, hl.dsp.focus({ workspace = "" .. j }), { desc = "Switch to workspace " .. i .. " on the 2nd monitor" })
 
-	-- Switch workspaces with mainMod + ALT + [0-9] on the 3nd monitor
-	hl.bind("SUPER + ALT + " .. key, hl.dsp.focus({ workspace = "" .. k }), { desc = "Switch to workspace " .. i .. " on the 3nd monitor" })
-
 	-- Move active window to a workspace with mainMod + CTRL + SHIFT + [0-9] on the 2nd monitor
 	hl.bind("SUPER + CTRL + SHIFT + " .. key, hl.dsp.window.move({ workspace = "" .. j }), { desc = "Move window to workspace " .. i .. " on the 2nd monitor" })
 
 	-- Move active window silently to a workspace with mainMod + CTRL + ALT + [0-9] on the 2nd monitor
 	hl.bind("SUPER + CTRL + ALT + " .. key, hl.dsp.window.move({ workspace = j, follow = false }), { desc = "Move window to workspace " .. i .. " on the 2nd monitor silently" })
+
+	-- Switch workspaces with mainMod + ALT + [0-9] on the 3rd monitor
+	hl.bind("SUPER + ALT + " .. key, hl.dsp.focus({ workspace = "" .. k }), { desc = "Switch to workspace " .. i .. " on the 3rd monitor" })
+
+	-- Move active window to a workspace with mainMod + ALT + SHIFT + [0-9] on the 3rd monitor
+	hl.bind("SUPER + ALT + SHIFT + " .. key, hl.dsp.window.move({ workspace = "" .. k }), { desc = "Move window to workspace " .. i .. " on the 3rd monitor" })
 end
 
 -- Cycle monitor focus
