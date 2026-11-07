@@ -67,11 +67,5 @@ in
 			ExecStart=${pkgs.xdg-desktop-portal}/libexec/xdg-desktop-portal
 			Slice=session.slice
 		'';
-
-		"systemd/user/xdg-desktop-portal-hyprland.service.d/qt-style.conf".text = ''
-			[Service]
-			Environment=QT_STYLE_OVERRIDE=
-			Environment=QT_QPA_PLATFORMTHEME=
-		'';
 	};
 }

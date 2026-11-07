@@ -1,5 +1,6 @@
 [filechooser]
 cmd=$HOME/.config/scripts/general/yazi-as-file-chooser.sh
+env=TERMCMD='kitty --class terminal-filechooser -e'
 default_dir=$HOME/Downloads
 open_mode=suggested
 save_mode=last

@@ -1,9 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
 	xdg.configFile = {
 		"scripts/general/yazi-as-file-chooser.sh" = {
-			source = ./general/yazi-as-file-chooser.sh;
+			source = "${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh";
 			executable = true;
 		};
 
