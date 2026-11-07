@@ -38,7 +38,10 @@
 			package = config.boot.kernelPackages.nvidiaPackages.stable;
 
 			prime = {
-				offload.enable = true; # Puts dGPU to sleep and lets iGPU handle all tasks unless called specifically
+				offload = {
+					enable = true; # Puts dGPU to sleep and lets iGPU handle all tasks unless called specifically
+					enableOffloadCmd = true;
+				};
 #				sync.enable = true; # Rendering dedicated to dGPU
 
 				intelBusId = "PCI:0:2:0";
