@@ -47,8 +47,9 @@ map("n", "<C-W>tl", ":tablast<CR>", { desc = "[T]ab [L]ast" })
 map("x", "<Tab>", ">gv", { desc = "Indent Once" })
 map("x", "<S-Tab>", "<gv", { desc = "Outdent Once" })
 
-map("n", "<Tab>", ">>", { desc = "Indent Once" })
-map("n", "<S-Tab>", "<<", { desc = "Outdent Once" })
+-- NOTE: this break Ctrl+I map
+-- map("n", "<Tab>", ">>", { desc = "Indent Once" })
+-- map("n", "<S-Tab>", "<<", { desc = "Outdent Once" })
 
 -- Easier command
 map({"n", "x"}, ";", ":", { desc = "Easier command (map ; to :)" })
