@@ -38,3 +38,11 @@ autocmd("FileType", {
 		vim.opt_local.softtabstop = 4
 	end,
 })
+
+-- Fix comments for Templ
+autocmd("FileType", {
+	pattern = "templ",
+	callback = function()
+		vim.bo.commentstring = "// %s"
+	end,
+})
