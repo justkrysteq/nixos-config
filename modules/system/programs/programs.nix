@@ -59,7 +59,7 @@
 	programs = {
 		steam = {
 			enable = true;
-			package = pkgs.millennium-steam;
+			package = pkgs.steamWithMillennium;
 		};
 
 		obs-studio = {
