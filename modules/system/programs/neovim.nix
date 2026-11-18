@@ -41,6 +41,7 @@
 		lemminx # XML
 		jdt-language-server # Java
 		# kotlin-language-server # Kotlin
+		roslyn-ls # C#
 	];
 
 	programs.neovim = {
@@ -88,6 +89,7 @@
 					hop-nvim
 					render-markdown-nvim
 					yazi-nvim
+					roslyn-nvim
 
 					(nvim-treesitter.withPlugins (p: with p; [
 						# asm
