@@ -6,8 +6,6 @@
 
 		nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-26.05";
 
-		nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixpkgs-unstable";
-
 		home-manager = {
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -20,10 +18,9 @@
 		username = "krysteq";
 		system = "x86_64-linux";
 		pkgs-stable = import inputs.nixpkgs-stable { inherit system; config.allowUnfree = true; };
-		pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; config.allowUnfree = true; };
 
 		mkHost = hostname: nixpkgs.lib.nixosSystem {
-			specialArgs = { inherit inputs flake-dir username hostname pkgs-stable pkgs-unstable; };
+			specialArgs = { inherit inputs flake-dir username hostname pkgs-stable; };
 			modules = [
 				# Modules
 				inputs.home-manager.nixosModules.default
