@@ -38,5 +38,7 @@
 			laptok = mkHost "laptok";
 			pc = mkHost "pc";
 		};
+
+		nixosModules.yazi = import ./modules/system/programs/yazi/default.nix;
 	};
 }
