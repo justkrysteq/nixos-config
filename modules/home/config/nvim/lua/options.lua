@@ -100,3 +100,10 @@ g.rust_recommended_style = false
 
 -- Disable auto-inserting comment leader after <CR> and o
 opt.formatoptions:remove({ "r", "o" })
+
+-- Treat AXAML files as XML files
+vim.filetype.add({
+	extension = {
+		axaml = "xml"
+	}
+})

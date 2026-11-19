@@ -46,11 +46,3 @@ autocmd("FileType", {
 		vim.bo.commentstring = "// %s"
 	end,
 })
-
--- Treat AXAML files as XML files
-autocmd({ "BufNewFile", "BufRead" }, {
-  pattern = { "*.axaml" },
-  callback = function()
-    vim.cmd("setfiletype xml")
-  end
-})
