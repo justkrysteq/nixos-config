@@ -42,6 +42,7 @@
 		jdt-language-server # Java
 		# kotlin-language-server # Kotlin
 		roslyn-ls # C#
+		avalonia-ls # Avalonia
 	];
 
 	programs.neovim = {

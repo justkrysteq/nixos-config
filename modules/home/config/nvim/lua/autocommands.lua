@@ -46,3 +46,15 @@ autocmd("FileType", {
 		vim.bo.commentstring = "// %s"
 	end,
 })
+
+-- Avalonia LSP
+autocmd({ 'BufEnter', 'BufWinEnter' }, {
+	pattern = { "*.axaml" },
+	callback = function()
+		vim.lsp.start {
+			name = "avalonia",
+			cmd = { "avalonia-ls" },
+			root_dir = vim.fn.getcwd(),
+		}
+	end
+})
