@@ -97,6 +97,11 @@
 						{ name = "Videos"; text = ""; fg = "blue"; }
 					];
 
+					append_exts = [
+						{ name = "axaml"; text = ""; fg = "#1451e0"; }
+						{ name = "plist"; text = ""; fg = "#fb8d2b"; }
+					];
+
 					prepend_exts = [
 						{ name = "go"; text = "󰟓"; fg = "#00add8"; }
 						{ name = "mid"; text = "󰣱"; fg = "cyan"; }
