@@ -21,31 +21,22 @@
 		system = "x86_64-linux";
 		pkgs-stable = import inputs.nixpkgs-stable { inherit system; config.allowUnfree = true; };
 		pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; config.allowUnfree = true; };
+
+		mkHost = hostname: nixpkgs.lib.nixosSystem {
+			specialArgs = { inherit inputs flake-dir username hostname pkgs-stable pkgs-unstable; };
+			modules = [
+				# Modules
+				inputs.home-manager.nixosModules.default
+
+				# Per Host Config
+				(./hosts + "/${hostname}/configuration.nix")
+			];
+		};
 	in
 	{
 		nixosConfigurations = {
-			laptok = nixpkgs.lib.nixosSystem {
-				specialArgs = {
-					inherit inputs flake-dir username pkgs-stable pkgs-unstable;
-					hostname = "laptok";
-				};
-				modules = [
-					./hosts/laptok/configuration.nix
-					inputs.home-manager.nixosModules.default
-				];
-			};
-
-			pc = nixpkgs.lib.nixosSystem {
-				specialArgs = {
-					inherit inputs flake-dir username pkgs-stable pkgs-unstable;
-					hostname = "pc";
-				};
-				modules = [
-					./hosts/pc/configuration.nix
-					inputs.home-manager.nixosModules.default
-				];
-			};
-
+			laptok = mkHost "laptok";
+			pc = mkHost "pc";
 		};
 	};
 }
