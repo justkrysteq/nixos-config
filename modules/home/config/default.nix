@@ -17,9 +17,11 @@ in
 			workspace.library = [ "${pkgs.hyprland}/share/hypr/stubs/hl.meta.lua" ];
 		};
 
-		"kitty/kitty.conf".source = link "kitty/kitty.conf";
+		"fastfetch".source = link "fastfetch";
 
-		"fastfetch/config.jsonc".source = link "fastfetch/config.jsonc";
+		"gitui".source = link "gitui";
+
+		"kitty".source = link "kitty";
 
 		"noctalia".source = link "noctalia";
 

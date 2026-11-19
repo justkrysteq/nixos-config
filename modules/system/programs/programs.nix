@@ -38,6 +38,7 @@
 		yt-dlp
 		sops
 		exiftool # show exif meta info in yazi opener
+		gitui
 		# clipse # clipboard manager
 		# wirelesstools # required for iwconfig to return wifi signal quicker
 		# dragon-drop # drag and drop utility
