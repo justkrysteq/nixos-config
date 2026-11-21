@@ -56,7 +56,6 @@
 						{ name = "home"; text = ""; fg = "blue"; }
 						{ name = "packages"; text = "󰏗"; fg = "blue"; }
 						{ name = "programs"; text = ""; fg = "blue"; }
-						{ name = "24.07 *"; text = "󰀥"; fg = "blue"; }
 						{ name = "gimp"; text = ""; fg = "blue"; }
 						{ name = "overlays"; text = ""; fg = "blue"; }
 						{ name = "forgejo"; text = ""; fg = "blue"; }
@@ -105,6 +104,10 @@
 					prepend_exts = [
 						{ name = "go"; text = "󰟓"; fg = "#00add8"; }
 						{ name = "mid"; text = "󰣱"; fg = "cyan"; }
+					];
+
+					prepend_globs = [
+						{ url = "**/24.07 */"; text = "󰀥"; fg = "blue"; }
 					];
 				};
 			};
