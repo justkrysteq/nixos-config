@@ -42,15 +42,14 @@
 					enable = true; # Puts dGPU to sleep and lets iGPU handle all tasks unless called specifically
 					enableOffloadCmd = true;
 				};
-#				sync.enable = true; # Rendering dedicated to dGPU
+#				sync.enable = true; # Rendering dedicated to dGPU, currently X11 only
 
 				intelBusId = "PCI:0:2:0";
 				nvidiaBusId = "PCI:1:0:0";
 			};
 		};
 
-		enableAllFirmware = true;
-		enableAllHardware = true;
+		opentabletdriver.enable = true;
 	};
 
 	# Load nvidia driver for Xorg and Wayland
