@@ -43,6 +43,7 @@
 		# kotlin-language-server # Kotlin
 		roslyn-ls # C#
 		avalonia-ls # Avalonia
+		haskell-language-server # Haskell
 	];
 
 	programs.neovim = {
