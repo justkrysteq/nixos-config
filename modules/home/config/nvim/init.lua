@@ -6,6 +6,3 @@ require("options")
 require("keymaps")
 require("autocommands")
 require("lazy-nvim")
-
-local ok, matugen = pcall(require, 'matugen')
-if ok then matugen.setup() end

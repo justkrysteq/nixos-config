@@ -92,7 +92,6 @@
 					render-markdown-nvim
 					yazi-nvim
 					roslyn-nvim
-					base16-nvim # for matugen
 
 					(nvim-treesitter.withPlugins (p: with p; [
 						# asm
